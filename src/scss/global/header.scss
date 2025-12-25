@@ -1,7 +1,7 @@
 
 
-@use "../partials/index" as *;
-@use "../partials/typography" as *;
+@import "../partials/variables";
+@import "../partials/mixins";
 
 .codeconfig-header {
   padding: 20px 0;

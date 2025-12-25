@@ -32,4 +32,15 @@
     height: #{$height + px};
 }
 
+// Font Face Mixin for Custom Fonts
+@mixin font-face($font-name, $font-file, $font-weight: normal, $font-style: normal) {
+    @font-face {
+        font-family: $font-name;
+        src: url('../fonts/#{$font-file}.woff2') format('woff2');
+        font-weight: $font-weight;
+        font-style: $font-style;
+        font-display: swap;
+    }
+}
+
 // mixin style end

@@ -22,8 +22,9 @@ const paths = {
     dest: 'assets/'
   },
   styles: {
-    src: 'src/scss/**/*.scss',
-    dest: 'assets/css/'
+    src: 'src/scss/**/[^_]*.scss',
+    dest: 'assets/css/',
+    watch: 'src/scss/**/*.scss'
   },
   scripts: {
     src: 'src/js/**/*.js',
@@ -122,15 +123,25 @@ function fonts() {
 function serve() {
   browserSync.init({
     server: {
-      baseDir: './assets'
+      baseDir: './assets',
+      serveStaticOptions: {
+        extensions: ['html']
+      }
     },
     port: 3000,
     open: true,
-    notify: false
+    notify: false,
+    middleware: function (req, res, next) {
+      // Add proper MIME types for fonts
+      if (req.url.match(/\.(woff|woff2|ttf|eot|otf)$/)) {
+        res.setHeader('Content-Type', 'font/woff2');
+      }
+      next();
+    }
   });
 
   watch(paths.html.src, html);
-  watch(paths.styles.src, styles);
+  watch(paths.styles.watch, styles);
   watch(paths.scripts.src, scripts);
   watch(paths.images.src, images);
   watch(paths.fonts.src, fonts);
@@ -159,7 +170,7 @@ const build = series(
 // Watch task
 function watchFiles() {
   watch(paths.html.src, html);
-  watch(paths.styles.src, styles);
+  watch(paths.styles.watch, styles);
   watch(paths.scripts.src, scripts);
   watch(paths.images.src, images);
   watch(paths.fonts.src, fonts);

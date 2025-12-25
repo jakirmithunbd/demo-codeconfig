@@ -1,11 +1,17 @@
-// @use 'partials/index' as *;
-// @use 'partials/typography' as *;
-// Other file imports go here
+// Import Variables & Mixins
+@import 'partials/variables';
+@import 'partials/mixins';
 
+// Local Custom Fonts
+@include font-face('DM Sans', 'DMSans-Regular', 400, normal);
+@include font-face('DM Sans', 'DMSans-Medium', 500, normal);
+@include font-face('DM Sans', 'DMSans-Bold', 700, normal);
 
+// Import Typography
+@import 'partials/typography';
 
 // Header & Footer 
-@forward 'global/header';
+@import 'global/header';
 
 // Products 
-@forward 'products/google-drive';
+@import 'products/google-drive';

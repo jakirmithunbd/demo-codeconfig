@@ -1,5 +1,5 @@
-@use '../partials/index' as *;
-@use '../partials/typography' as *;
+@import '../partials/variables';
+@import '../partials/mixins';
 
 
 
@@ -18,7 +18,7 @@ $ccpigd-secondary-radius: 12px;
 $ccpigd-radius-full: 100%;
 $ccpigd-radius-zero: 0;
 $dms: "DM Sans", sans-serif;
-$sp: "Square Peg", sans-serif;
+// $sp: "Square Peg", sans-serif;
 
 body { 
     // when uplad in theme it will nesting by template name 

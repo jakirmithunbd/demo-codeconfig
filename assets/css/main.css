@@ -1,3 +1,24 @@
+@font-face {
+  font-family: "DM Sans";
+  src: url("../fonts/DMSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("../fonts/DMSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("../fonts/DMSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 * {
   margin: 0;
   padding: 0;
@@ -187,7 +208,7 @@ svg {
   display: none !important;
 }
 
-.d-flex, .ccpigd-section .feature-content ul, .codeconfig-header .header-menu-wrap .main-header-menu, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.contact-btn a, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a {
+.d-flex, .ccpigd-section .feature-content ul, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.contact-btn a, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item, .codeconfig-header .header-menu-wrap .main-header-menu {
   display: flex;
 }
 
@@ -207,7 +228,7 @@ svg {
   text-align: right;
 }
 
-.align-center, .codeconfig-header .header-menu-wrap .main-header-menu, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.contact-btn a {
+.align-center, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.contact-btn a, .codeconfig-header .header-menu-wrap .main-header-menu {
   align-items: center;
 }
 
@@ -228,7 +249,7 @@ svg {
   justify-content: center;
 }
 
-.flex-center, .ccpigd-section .ccpigd-btn-group, .ccpigd-section .ccpigd-btn, .ccpigd-section .ccpigd-list-mark ul li, .ccpigd-section .ccpigd-icon-box .ccpigd-box-icon, .cc-google-drive-header .cc-google-drive-main-header .menu-site .main-header-menu .menu-item.ccpigd-header-btn a, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.contact-btn a:before, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a .image-wrapper {
+.flex-center, .cc-google-drive-header .cc-google-drive-main-header .menu-site .main-header-menu .menu-item.ccpigd-header-btn a, .ccpigd-section .ccpigd-icon-box .ccpigd-box-icon, .ccpigd-section .ccpigd-list-mark ul li, .ccpigd-section .ccpigd-btn, .ccpigd-section .ccpigd-btn-group, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a .image-wrapper, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.contact-btn a:before {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -246,7 +267,7 @@ svg {
   flex-direction: row;
 }
 
-.flex-wrap, .ccpigd-section .feature-content ul, .ccpigd-section .ccpigd-btn-group {
+.flex-wrap, .ccpigd-section .ccpigd-btn-group, .ccpigd-section .feature-content ul {
   flex-wrap: wrap;
 }
 
@@ -275,11 +296,11 @@ svg {
   cursor: pointer;
 }
 
-.transition, .ccpigd-section .ccpigd-btn, .ccpigd-section .ccpigd-btn.icon::before, .cc-google-drive-header .cc-google-drive-main-header .menu-site .main-header-menu .menu-item.ccpigd-header-btn a, .cc-google-drive-header .cc-google-drive-main-header .menu-site .main-header-menu .menu-item.ccpigd-header-btn a:before, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item a, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.contact-btn a, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.menu-item-has-children::after, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.menu-item-has-children .dropdown-menu::before, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a::after, body #cc-header {
+.transition, .cc-google-drive-header .cc-google-drive-main-header .menu-site .main-header-menu .menu-item.ccpigd-header-btn a:before, .cc-google-drive-header .cc-google-drive-main-header .menu-site .main-header-menu .menu-item.ccpigd-header-btn a, .ccpigd-section .ccpigd-btn.icon::before, .ccpigd-section .ccpigd-btn, body #cc-header, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a::after, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.menu-item-has-children .dropdown-menu::before, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.menu-item-has-children::after, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.contact-btn a, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item a {
   transition: all 0.3s ease;
 }
 
-.relative, .ccpigd-section .ccpigd-btn-group, .ccpigd-section .ccpigd-btn.icon, .ccpigd-section .ccpigd-list-mark ul li, .ccpigd-section .ccpigd-icon-box .ccpigd-box-icon, .cc-google-drive-header .cc-google-drive-main-header .menu-site .main-header-menu .menu-item.ccpigd-header-btn a, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.contact-btn a, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.menu-item-has-children, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.menu-item-has-children .dropdown-menu, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a {
+.relative, .cc-google-drive-header .cc-google-drive-main-header .menu-site .main-header-menu .menu-item.ccpigd-header-btn a, .ccpigd-section .ccpigd-icon-box .ccpigd-box-icon, .ccpigd-section .ccpigd-list-mark ul li, .ccpigd-section .ccpigd-btn.icon, .ccpigd-section .ccpigd-btn-group, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.menu-item-has-children .dropdown-menu, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.menu-item-has-children, .codeconfig-header .header-menu-wrap .main-header-menu li.menu-item.contact-btn a {
   position: relative;
 }
 
@@ -299,7 +320,7 @@ svg {
   bottom: 0;
 }
 
-.mask-cover, .ccpigd-section .ccpigd-btn.icon::before, .cc-google-drive-header .cc-google-drive-main-header .menu-site .main-header-menu .menu-item.ccpigd-header-btn a:before {
+.mask-cover, .cc-google-drive-header .cc-google-drive-main-header .menu-site .main-header-menu .menu-item.ccpigd-header-btn a:before, .ccpigd-section .ccpigd-btn.icon::before {
   -webkit-mask-size: cover !important;
           mask-size: cover !important;
   -webkit-mask-position: center !important;
