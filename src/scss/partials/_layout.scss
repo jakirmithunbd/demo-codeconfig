@@ -1,0 +1,39 @@
+// Layout
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacer;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -#{$spacer / 2};
+}
+
+.col {
+  flex: 1;
+  padding: 0 #{$spacer / 2};
+}
+
+.header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: $spacer 0;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: $spacer * 2 0;
+  margin-top: $spacer * 3;
+}
+
+// Responsive utilities
+@media (max-width: $breakpoint-md) {
+  .col {
+    flex: 0 0 100%;
+  }
+}
