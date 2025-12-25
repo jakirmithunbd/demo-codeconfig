@@ -1,83 +1,66 @@
 "use strict";
 
-// Main JavaScript file
+//Common Header For CodeConfig
+function ccpCommonHeader() {
+  var common_header = document.getElementById("cc-header");
+  var hamburger_menu_open = document.querySelector(".ccp-mobile-menu-open");
+  var hamburger_menu_close = document.querySelector(".ccp-mobile-menu-close");
+  if (common_header && hamburger_menu_open) {
+    var stickyFunction = function stickyFunction() {
+      return setTimeout(function () {
+        common_header.classList.remove("sticky-bar");
+      }, 2000);
+    }; // Add sticky behavior based on scroll
+    // common_header.classList.add("sticky-bar", "sticky-hero");
 
-// Import modules here if needed
-
-// DOM Content Loaded
-document.addEventListener('DOMContentLoaded', function () {
-  console.log('Document is ready!');
-
-  // Initialize your app here
-  initApp();
-});
-
-// Initialize application
-function initApp() {
-  // Mobile menu toggle
-  var mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-  var mobileMenu = document.querySelector('.mobile-menu');
-  if (mobileMenuToggle && mobileMenu) {
-    mobileMenuToggle.addEventListener('click', function () {
-      mobileMenu.classList.toggle('active');
+    hamburger_menu_open.addEventListener("click", function () {
+      common_header.classList.toggle("ccp-mobile-menu-active");
     });
-  }
-
-  // Smooth scroll for anchor links
-  var anchorLinks = document.querySelectorAll('a[href^="#"]');
-  anchorLinks.forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      var targetId = this.getAttribute('href');
-      var targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+    hamburger_menu_close === null || hamburger_menu_close === void 0 || hamburger_menu_close.addEventListener("click", function () {
+      if (common_header.classList.contains("ccp-mobile-menu-active")) {
+        common_header.classList.remove("ccp-mobile-menu-active");
       }
     });
-  });
-}
-
-// Utility functions
-var utils = {
-  // Debounce function
-  debounce: function debounce(func, wait) {
-    var timeout;
-    return function executedFunction() {
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
+    var lastScrollY = window.scrollY;
+    var removeStickyTimeout;
+    window.onscroll = function () {
+      var currentScrollY = window.scrollY;
+      if (window.pageYOffset > 1) {
+        common_header.classList.add("sticky");
+      } else {
+        common_header.classList.remove("sticky");
       }
-      var later = function later() {
-        clearTimeout(timeout);
-        func.apply(void 0, args);
-      };
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-    };
-  },
-  // Throttle function
-  throttle: function throttle(func, limit) {
-    var inThrottle;
-    return function () {
-      var args = arguments;
-      var context = this;
-      if (!inThrottle) {
-        func.apply(context, args);
-        inThrottle = true;
-        setTimeout(function () {
-          return inThrottle = false;
-        }, limit);
+      if (currentScrollY < 500) {
+        if (removeStickyTimeout) {
+          clearTimeout(removeStickyTimeout);
+        }
+        common_header.classList.add("sticky-bar");
+        common_header.classList.add("sticky-hero");
+        return;
       }
+      if (currentScrollY > lastScrollY) {
+        clearTimeout(removeStickyTimeout);
+        removeStickyTimeout = stickyFunction();
+        common_header.classList.remove("sticky-hero");
+      } else {
+        clearTimeout(removeStickyTimeout);
+        common_header.classList.add("sticky-bar");
+      }
+      lastScrollY = currentScrollY;
     };
+    common_header.addEventListener("mouseover", function () {
+      clearTimeout(removeStickyTimeout);
+      common_header.classList.add("sticky-bar");
+    });
+    common_header.addEventListener("mouseout", function () {
+      removeStickyTimeout = stickyFunction();
+    });
   }
-};
-
-// Export for use in other modules
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = {
-    utils: utils
-  };
 }
+
+// Global On Load
+function codeConfigGlobalOnLoad() {
+  ccpCommonHeader();
+}
+window.addEventListener("DOMContentLoaded", codeConfigGlobalOnLoad);
 //# sourceMappingURL=main.js.map

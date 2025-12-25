@@ -1,76 +1,78 @@
-// Main JavaScript file
+//Common Header For CodeConfig
+  function ccpCommonHeader() {
+    const common_header = document.getElementById("cc-header");
+    const hamburger_menu_open = document.querySelector(".ccp-mobile-menu-open");
+    const hamburger_menu_close = document.querySelector(
+      ".ccp-mobile-menu-close"
+    );
 
-// Import modules here if needed
+    if (common_header && hamburger_menu_open) {
+      // common_header.classList.add("sticky-bar", "sticky-hero");
 
-// DOM Content Loaded
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('Document is ready!');
-  
-  // Initialize your app here
-  initApp();
-});
+      hamburger_menu_open.addEventListener("click", function () {
+        common_header.classList.toggle("ccp-mobile-menu-active");
+      });
+      hamburger_menu_close?.addEventListener("click", function () {
+        if (common_header.classList.contains("ccp-mobile-menu-active")) {
+          common_header.classList.remove("ccp-mobile-menu-active");
+        }
+      });
 
-// Initialize application
-function initApp() {
-  // Mobile menu toggle
-  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  
-  if (mobileMenuToggle && mobileMenu) {
-    mobileMenuToggle.addEventListener('click', function() {
-      mobileMenu.classList.toggle('active');
-    });
-  }
+      let lastScrollY = window.scrollY;
+      let removeStickyTimeout;
 
-  // Smooth scroll for anchor links
-  const anchorLinks = document.querySelectorAll('a[href^="#"]');
-  anchorLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+      function stickyFunction() {
+        return setTimeout(function () {
+          common_header.classList.remove("sticky-bar");
+        }, 2000);
       }
-    });
-  });
-}
 
-// Utility functions
-const utils = {
-  // Debounce function
-  debounce: function(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-      const later = () => {
-        clearTimeout(timeout);
-        func(...args);
+      // Add sticky behavior based on scroll
+      window.onscroll = function () {
+        let currentScrollY = window.scrollY;
+
+        if (window.pageYOffset > 1) {
+          common_header.classList.add("sticky");
+        } else {
+          common_header.classList.remove("sticky");
+        }
+
+        if (currentScrollY < 500) {
+          if (removeStickyTimeout) {
+            clearTimeout(removeStickyTimeout);
+          }
+          common_header.classList.add("sticky-bar");
+          common_header.classList.add("sticky-hero");
+          return;
+        }
+
+        if (currentScrollY > lastScrollY) {
+          clearTimeout(removeStickyTimeout);
+          removeStickyTimeout = stickyFunction();
+          common_header.classList.remove("sticky-hero");
+        } else {
+          clearTimeout(removeStickyTimeout);
+          common_header.classList.add("sticky-bar");
+        }
+
+        lastScrollY = currentScrollY;
       };
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-    };
-  },
 
-  // Throttle function
-  throttle: function(func, limit) {
-    let inThrottle;
-    return function() {
-      const args = arguments;
-      const context = this;
-      if (!inThrottle) {
-        func.apply(context, args);
-        inThrottle = true;
-        setTimeout(() => inThrottle = false, limit);
-      }
-    };
+      common_header.addEventListener("mouseover", function () {
+        clearTimeout(removeStickyTimeout);
+        common_header.classList.add("sticky-bar");
+      });
+
+      common_header.addEventListener("mouseout", function () {
+        removeStickyTimeout = stickyFunction();
+      });
+    }
   }
-};
 
-// Export for use in other modules
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { utils };
-}
+
+
+  // Global On Load
+  function codeConfigGlobalOnLoad() {
+    ccpCommonHeader();
+  }
+  window.addEventListener("DOMContentLoaded", codeConfigGlobalOnLoad);
