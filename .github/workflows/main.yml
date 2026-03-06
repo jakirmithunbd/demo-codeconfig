@@ -1,0 +1,44 @@
+name: 🚀 Branch-Based Deploy
+
+on:
+    push:
+        branches:
+            - "**"
+
+jobs:
+    deploy:
+        if: contains(github.event.head_commit.message, 'deploy')
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: 🚚 Checkout code
+              uses: actions/checkout@v4
+
+            - name: 🟢 Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 18
+                  cache: npm
+
+            - name: 📦 Install dependencies
+              run: npm ci
+
+            - name: 🛠️ Build assets
+              run: npm run build
+
+            - name: 🧱 Prepare deploy directory
+              run: |
+                  mkdir deploy
+                  cp -r assets deploy/
+                  cp index.php deploy/
+
+            - name: 🌎 Deploying
+              uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+              with:
+                  server: ${{ secrets.FTP_HOST }}
+                  username: ${{ secrets.FTP_USER }}
+                  password: ${{ secrets.FTP_PASS }}
+                  local-dir: ./deploy/
+                  server-dir: /wp-content/themes/demo-codeconfig/
+                  timeout: 70000
+                  protocol: ftp
