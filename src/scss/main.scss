@@ -1,17 +1,4 @@
-// Import Variables & Mixins
-@import 'partials/variables';
-@import 'partials/mixins';
+@use "google-fonts"; 
+@use "mixins";
+@use "base";
 
-// Local Custom Fonts
-@include font-face('DM Sans', 'DMSans-Regular', 400, normal);
-@include font-face('DM Sans', 'DMSans-Medium', 500, normal);
-@include font-face('DM Sans', 'DMSans-Bold', 700, normal);
-
-// Import Typography
-@import 'partials/typography';
-
-// Header & Footer 
-@import 'global/header';
-
-// Products 
-@import 'products/google-drive';

@@ -1,0 +1,132 @@
+@use "variables" as *;
+
+@use "sass:map";
+@use "sass:math";
+
+@mixin bp($key) {
+    $val: null;
+    @if map.has-key($breakpoints, $key) {
+        $val: map.get($breakpoints, $key);
+        @media (min-width: #{$val}px) {
+            @content;
+        }
+    } @else {
+        $media-val: null;
+        @if math.unit($key) == "" {
+            $media-val: #{$key}px;
+        } @else {
+            $media-val: #{$key};
+        }
+        @media (min-width: $media-val) {
+            @content;
+        }
+    }
+}
+
+@mixin font-size($font-size, $line-height) {
+    font-size: math.div($font-size, $base-font-size) * 1rem;
+    line-height: math.div($line-height, $base-font-size) * 1rem;
+}
+
+@mixin flex(
+    $direction : row,
+    $justify   : flex-start,
+    $align     : stretch,
+    $wrap      : nowrap,
+    $gap       : null
+) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+
+    @if $gap != null {
+        @if type-of($gap) == number and unitless($gap) {
+            gap: rem($gap);
+        } @else {
+            gap: $gap;
+        }
+    }
+}
+
+@mixin flex-center($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between($align: center) {
+    display: flex;
+    justify-content: space-between;
+    align-items: $align;
+}
+
+@function rem($px) {
+    @return math.div($px, $base-font-size) * 1rem;
+}
+
+@function space($key) {
+    @return rem(map.get($space, $key));
+}
+
+@mixin font($min, $max, $line-height: 110, $min-vw: 320, $max-vw: 1440, $base: 16) {
+    @if $min == $max {
+        // no scaling needed, just output fixed size
+        font-size: #{math.div($min, $base)}rem;
+        line-height: math.div($line-height, 100);
+    } @else {
+        $slope         : math.div($max - $min, $max-vw - $min-vw);
+        $intercept-rem : math.div($min - ($slope * $min-vw), $base) * 1rem;
+
+        font-size: clamp(
+            #{math.div($min, $base)}rem,
+            #{$slope * 100}vw + #{$intercept-rem},
+            #{math.div($max, $base)}rem
+        );
+
+        line-height: math.div($line-height, 100);
+    }
+}
+
+@mixin transition($properties: all, $duration: 0.3s, $timing: ease) {
+    transition: $properties $duration $timing;
+}
+
+$columns: 12;
+$gap: 24;
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: rem($gap);
+}
+
+// Generate .col-{n} and .col-{bp}-{n}
+@mixin make-cols($suffix: "") {
+    @for $i from 1 through $columns {
+        .col#{$suffix}-#{$i} {
+            grid-column: span $i;
+        }
+    }
+}
+
+// Base (mobile first)
+@include make-cols();
+
+// Responsive variants
+$col-breakpoints: (
+    xs:  0,
+    sm:  576,
+    md:  768,
+    lg:  1024,
+    xl:  1280,
+    2xl: 1440,
+);
+
+@each $bp, $val in $col-breakpoints {
+    @include bp($val) {
+        @include make-cols("-#{$bp}");
+    }
+}

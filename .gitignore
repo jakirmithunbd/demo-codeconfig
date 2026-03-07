@@ -1,26 +1,15 @@
-# Ignore node modules
-node_modules/
-
-# Ignore dist folder (build output)
-assets/
-
-# Ignore OS files
+no.php
+.history
+node_modules
 .DS_Store
-Thumbs.db
-
-# Ignore editor files
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
-
-# Ignore logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Ignore temporary files
-*.tmp
-*.temp
-.cache/
+*.map
+.env
+.env.local
+.env.*.local
+.vscode
+.idea
+.sass-cache
+Thumbs.db
+assets/css/*.css
+assets/js/*.js

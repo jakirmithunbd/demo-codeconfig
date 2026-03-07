@@ -1,189 +1,91 @@
-const { src, dest, watch, series, parallel } = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
-const babel = require('gulp-babel');
-const terser = require('gulp-terser');
-const concat = require('gulp-concat');
-const rename = require('gulp-rename');
-const sourcemaps = require('gulp-sourcemaps');
-const imagemin = require('gulp-imagemin');
-const htmlmin = require('gulp-htmlmin');
-const browserSync = require('browser-sync').create();
-const gulpif = require('gulp-if');
-const cleanCSS = require('gulp-clean-css');
-const del = require('del');
+const gulp = require("gulp");
+const sass = require("gulp-sass")(require("sass"));
+const cleanCSS = require("gulp-clean-css");
+const rename = require("gulp-rename");
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
+const path = require("path");
 
-// Paths configuration
-const paths = {
-  html: {
-    src: 'src/**/*.html',
-    dest: 'assets/'
-  },
-  styles: {
-    src: 'src/scss/**/[^_]*.scss',
-    dest: 'assets/css/',
-    watch: 'src/scss/**/*.scss'
-  },
-  scripts: {
-    src: 'src/js/**/*.js',
-    dest: 'assets/js/'
-  },
-  images: {
-    src: 'src/images/**/*',
-    dest: 'assets/images/'
-  },
-  fonts: {
-    src: 'src/fonts/**/*',
-    dest: 'assets/fonts/'
-  }
+// 🧹 ESM-compatible del wrapper
+const del = async (paths) => {
+  const { deleteAsync } = await import('del');
+  return deleteAsync(paths);
 };
 
-// Environment check
-let isProduction = false;
+// Paths
+const scssPath = [
+  "src/scss/main.scss",
+];
+const watchPath = "src/scss/**/*.scss";
+const outputPath = "assets/css/";
+const jsOutputPath = "assets/js/";
 
-// Clean assets folder
-function clean() {
-  return del(['assets']);
+// 🧹 Clean old sourcemaps
+function cleanMaps() {
+  return del("assets/css/*.css.map");
 }
 
-// HTML task
-function html() {
-  return src(paths.html.src)
-    .pipe(gulpif(isProduction, htmlmin({
-      collapseWhitespace: true,
-      removeComments: true
-    })))
-    .pipe(dest(paths.html.dest))
-    .pipe(browserSync.stream());
-}
-
-// Styles task
-function styles() {
-  return src(paths.styles.src)
-    .pipe(gulpif(!isProduction, sourcemaps.init()))
-    .pipe(sass({
-      outputStyle: isProduction ? 'compressed' : 'expanded'
-    }).on('error', sass.logError))
-    .pipe(postcss([
-      autoprefixer()
-    ]))
-    .pipe(gulpif(isProduction, cleanCSS({
-      level: 2
-    })))
-    .pipe(gulpif(!isProduction, sourcemaps.write('.')))
-    .pipe(dest(paths.styles.dest))
-    .pipe(browserSync.stream());
-}
-
-// Scripts task
-function scripts() {
-  return src(paths.scripts.src)
-    .pipe(gulpif(!isProduction, sourcemaps.init()))
-    .pipe(babel({
-      presets: ['@babel/preset-env']
-    }))
-    .pipe(concat('main.js'))
-    .pipe(gulpif(isProduction, terser({
-      compress: {
-        drop_console: true
-      }
-    })))
-    .pipe(gulpif(isProduction, rename({ suffix: '.min' })))
-    .pipe(gulpif(!isProduction, sourcemaps.write('.')))
-    .pipe(dest(paths.scripts.dest))
-    .pipe(browserSync.stream());
-}
-
-// Images task
-function images() {
-  return src(paths.images.src)
-    .pipe(gulpif(isProduction, imagemin([
-      imagemin.gifsicle({ interlaced: true }),
-      imagemin.mozjpeg({ quality: 80, progressive: true }),
-      imagemin.optipng({ optimizationLevel: 5 }),
-      imagemin.svgo({
-        plugins: [
-          { removeViewBox: false },
-          { cleanupIDs: false }
-        ]
+function compileDevCSS() {
+  console.log("🔄 Compiling CSS...");
+  return gulp
+    .src(scssPath, { sourcemaps: true })
+    .pipe(sass().on("error", sass.logError))
+    .pipe(postcss([autoprefixer()]))
+    .pipe(
+      rename(function (file) {
+        if (file.basename === "style") {
+          file.basename = path.basename(file.dirname);
+        }
+        file.dirname = "";
       })
-    ])))
-    .pipe(dest(paths.images.dest));
+    )
+    .pipe(gulp.dest(outputPath, { sourcemaps: "." }));
 }
 
-// Fonts task
-function fonts() {
-  return src(paths.fonts.src)
-    .pipe(dest(paths.fonts.dest));
+// Compile minified CSS for production
+function compileProdCSS() {
+  console.log("⚙️ Compiling minified CSS...");
+  return gulp
+    .src(scssPath)
+    .pipe(sass().on("error", sass.logError))
+    .pipe(postcss([autoprefixer()]))
+    .pipe(cleanCSS())
+    .pipe(
+      rename(function (file) {
+        if (file.basename === "style") {
+          file.basename = path.basename(file.dirname);
+        }
+        file.dirname = "";
+      })
+    )
+    .pipe(gulp.dest(outputPath));
 }
 
-// Browser Sync
-function serve() {
-  browserSync.init({
-    server: {
-      baseDir: './assets',
-      serveStaticOptions: {
-        extensions: ['html']
-      }
-    },
-    port: 3000,
-    open: true,
-    notify: false,
-    middleware: function (req, res, next) {
-      // Add proper MIME types for fonts
-      if (req.url.match(/\.(woff|woff2|ttf|eot|otf)$/)) {
-        res.setHeader('Content-Type', 'font/woff2');
-      }
-      next();
-    }
-  });
-
-  watch(paths.html.src, html);
-  watch(paths.styles.watch, styles);
-  watch(paths.scripts.src, scripts);
-  watch(paths.images.src, images);
-  watch(paths.fonts.src, fonts);
+// compile js 
+function compileDevJS() {
+  console.log("🔄 Compiling JS...");
+  return gulp
+    .src("src/js/*.js", { sourcemaps: true })
+    .pipe(gulp.dest(jsOutputPath, { sourcemaps: "." })); // changed outputPath → jsOutputPath
 }
 
-// Set production environment
-function setProduction(done) {
-  isProduction = true;
-  done();
+// Watch SCSS files
+function watchSCSS() {
+  console.log("👀 Watching for SCSS changes...");
+  gulp.watch(watchPath, compileDevCSS);
 }
 
-// Development build
-const dev = series(
-  clean,
-  parallel(html, styles, scripts, images, fonts),
-  serve
+// Watch JS files
+function watchJS() {
+  console.log("👀 Watching for JS changes...");
+  gulp.watch("src/js/*.js", compileDevJS);
+}
+
+// Default task
+exports.default = gulp.series(
+  compileDevCSS,
+  gulp.parallel(watchSCSS, watchJS) // watchers run concurrently
 );
 
-// Production build
-const build = series(
-  setProduction,
-  clean,
-  parallel(html, styles, scripts, images, fonts)
-);
-
-// Watch task
-function watchFiles() {
-  watch(paths.html.src, html);
-  watch(paths.styles.watch, styles);
-  watch(paths.scripts.src, scripts);
-  watch(paths.images.src, images);
-  watch(paths.fonts.src, fonts);
-}
-
-// Export tasks
-exports.clean = clean;
-exports.html = html;
-exports.styles = styles;
-exports.scripts = scripts;
-exports.images = images;
-exports.fonts = fonts;
-exports.serve = serve;
-exports.watch = watchFiles;
-exports.build = build;
-exports.default = dev;
+// Production build task
+exports.build = gulp.series(compileProdCSS);

@@ -1,0 +1,106 @@
+// =============================================================
+// _utilities.scss
+// Utility classes — flex, grid, spacing, typography helpers.
+// All generated from maps using @each loops.
+// Prefix: .sl-  (sentinelegal short form)
+// =============================================================
+
+@use "variables" as *;
+@use "mixins"     as *;
+
+$container-max-width: 1440px;
+$container-padding: 15px;
+
+.container {
+    width: 100%;
+    max-width: $container-max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $container-padding;
+    padding-right: $container-padding;
+}
+
+
+// ╔═══════════════════════════════════════════════════════════╗
+// ║  FLEXBOX UTILITIES                                        ║
+// ╚═══════════════════════════════════════════════════════════╝
+
+// Display
+.d-flex         { display: flex; }
+.d-flex-inline  { display: inline-flex; }
+.d-block         { display: block; }
+.d-block-inline  { display: inline-block; }
+.d-none          { display: none; }
+
+// Justify-content
+.justify-start    { justify-content: flex-start; }
+.justify-end      { justify-content: flex-end; }
+.justify-center   { justify-content: center; }
+.space-between  { justify-content: space-between; }
+.space-around   { justify-content: space-around; }
+.space-evenly   { justify-content: space-evenly; }
+
+// Align-items
+.align-start   { align-items: flex-start; }
+.align-end      { align-items: flex-end; }
+.align-center   { align-items: center; }
+.align-baseline { align-items: baseline; }
+.align-stretch  { align-items: stretch; }
+
+// Align-self
+.align-self-start   { align-self: flex-start; }
+.align-self-end     { align-self: flex-end; }
+.align-self-center  { align-self: center; }
+.align-self-stretch { align-self: stretch; }
+.align-self-auto    { align-self: auto; }
+
+// Flex grow / shrink / none
+.flex-1      { flex: 1 1 0%; }
+.flex-auto   { flex: 1 1 auto; }
+.flex-none   { flex: none; }
+.flex-grow   { flex-grow: 1; }
+.flex-shrink { flex-shrink: 1; }
+.no-shrink   { flex-shrink: 0; }
+
+// text alignment
+.text-left   { text-align: left; }
+.text-center { text-align: center; justify-content: center; }
+.text-right  { text-align: right; }
+.text-justify { text-align: justify; }
+
+// Shorthand combos
+.flex-center { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.transition {
+    transition: all 0.3s ease-in-out;
+}
+
+// Positioning
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.sticky { position: sticky; }
+
+// font-style
+.italic { font-style: italic; }
+
+// case
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }
+.section-spacing {
+    margin-block: clamp(20px, 3vw, 44px);
+}
