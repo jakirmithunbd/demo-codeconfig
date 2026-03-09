@@ -3,10 +3,51 @@
 @use "sass:map";
 @use "sass:math";
 
-@mixin bp($key) {
+// Breakpoints
+$minbreakpoints: (
+    xs:  0,
+    sm:  576,
+    md:  768,
+    lg:  1025,
+    xl:  1281,
+    2xl: 1441,
+);
+$maxbreakpoints: (
+    xs: 575,
+    sm:  767,
+    md:  1024,
+    lg:  1280,
+    xl:  1440,
+    2xl: 1920,
+);
+
+$space: (
+    1: 4,
+    2: 8,
+    3: 12,
+    4: 16,
+    5: 24,
+    6: 32,
+    7: 48,
+    8: 64,
+    9: 96,
+);
+
+// (font-size-min, font-size-max, line-height-min, line-height-max)
+$type: (
+    xs:   (12, 14,  16, 18),
+    sm:   (14, 16,  20, 22),
+    base: (16, 18,  24, 28),
+    lg:   (18, 22,  26, 32),
+    xl:   (20, 28,  28, 38),
+    2xl:  (24, 36,  32, 46),
+    3xl:  (72, 78,  80, 88),
+);
+
+@mixin minbp($key) {
     $val: null;
-    @if map.has-key($breakpoints, $key) {
-        $val: map.get($breakpoints, $key);
+    @if map.has-key($minbreakpoints, $key) {
+        $val: map.get($minbreakpoints, $key);
         @media (min-width: #{$val}px) {
             @content;
         }
@@ -22,6 +63,28 @@
         }
     }
 }
+
+@mixin maxbp($key) {
+    $val: null;
+    @if map.has-key($maxbreakpoints, $key) {
+        $val: map.get($maxbreakpoints, $key);
+        @media (max-width: #{$val}px) {
+            @content;
+        }
+    } @else {
+        $media-val: null;
+        @if math.unit($key) == "" {
+            $media-val: #{$key}px;
+        } @else {
+            $media-val: #{$key};
+        }
+        @media (max-width: $media-val) {
+            @content;
+        }
+    }
+}
+
+
 
 @mixin font-size($font-size, $line-height) {
     font-size: math.div($font-size, $base-font-size) * 1rem;
@@ -120,13 +183,13 @@ $col-breakpoints: (
     xs:  0,
     sm:  576,
     md:  768,
-    lg:  1024,
-    xl:  1280,
-    2xl: 1440,
+    lg:  1025,
+    xl:  1281,
+    2xl: 1441,
 );
 
-@each $bp, $val in $col-breakpoints {
-    @include bp($val) {
-        @include make-cols("-#{$bp}");
+@each $minbp, $val in $col-breakpoints {
+    @include minbp($val) {
+        @include make-cols("-#{$minbp}");
     }
 }

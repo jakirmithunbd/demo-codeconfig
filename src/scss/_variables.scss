@@ -1,42 +1,15 @@
 $base-font-size: 16 !default;
 
 // Colors
-$primary: #f37022;
-$secondary: #ddd;
-$accent: red;
-$text: #000;
+$cc-primary: #0061fe;
+$cc-secondary: #000d23;
+$cc-text: #3c4770;
+$cc-border-color: #e0f5ff;
+// $cc-bg-color: #f5f5f5;
+$cc-white: #ffffff;
+$cc-black: #000000;
+$cc-warning: #ff0000;
 
 // Typography
 $dm: "DM Mono", sans-serif;
 
-// Breakpoints
-$breakpoints: (
-    sm:  576,
-    md:  768,
-    lg:  1024,
-    xl:  1280,
-    2xl: 1440,
-);
-
-$space: (
-    1: 4,
-    2: 8,
-    3: 12,
-    4: 16,
-    5: 24,
-    6: 32,
-    7: 48,
-    8: 64,
-    9: 96,
-);
-
-// (font-size-min, font-size-max, line-height-min, line-height-max)
-$type: (
-    xs:   (12, 14,  16, 18),
-    sm:   (14, 16,  20, 22),
-    base: (16, 18,  24, 28),
-    lg:   (18, 22,  26, 32),
-    xl:   (20, 28,  28, 38),
-    2xl:  (24, 36,  32, 46),
-    3xl:  (72, 78,  80, 88),
-);

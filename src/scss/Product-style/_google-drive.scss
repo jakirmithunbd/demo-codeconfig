@@ -1,0 +1,377 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../base' as *;
+@use '../utilities' as *;
+
+// Variables
+$ccpigd-primary: #00ac47;
+$ccpigd-secondary: #e1f2a6;
+$ccpigd-text: #f0fff6b2;
+$ccpigd-bg: #00ac470d;
+$ccpigd-border: #00ac4733;
+
+$ccpigd-primary-radius: 16px;
+$ccpigd-secondary-radius: 12px;
+$ccpigd-radius-full: 100%;
+$ccpigd-radius-zero: 0;
+
+.ccpigd-section {
+    margin-inline: clamp(rem(50), 6.5vw, rem(80));
+
+    p {
+        color: $ccpigd-text;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $cc-white;
+    }
+
+    h1,
+    h2 {
+        @include font(30, 54);
+        text-transform: capitalize;
+    }
+
+    h3 {
+        @include font(26, 44);
+    }
+
+    h4 {
+        @include font(24, 34);
+    }
+
+    h5 {
+        @include font(18, 24);
+    }
+    h6 {
+        @include font(16, 22);
+    }
+
+    &.ccpigd-section-top {
+        padding-top: calc(var(--header-height, 200px) + 30px) !important;
+        
+        @include minbp(lg) {
+            padding-top: calc(var(--header-height, 200px) + 50px) !important;
+        }
+
+        &.cc-user-logged-in {
+            @include maxbp(md) {
+                padding-top: calc(var(--header-height, 200px) + 10px) !important;
+            }
+        }
+    }
+}
+
+.ccpigd-container {
+  width: 100%;
+  max-width: rem(1370);
+  margin: 0 auto;
+  padding: 0 rem(25);
+}
+
+// Button Style 
+  .ccpigd-btn-group {
+    @extend .flex-center, .flex-wrap, .cc-relative;
+    gap: rem(15) rem(10);
+    z-index: 2;
+
+    @include maxbp(xs) {
+      flex-direction: column;
+    }
+  }
+
+.ccpigd-btn {
+    @extend .flex-center, .cc-transition;
+    font-size: clamp(16, 20, 100);
+    font-weight: 500;
+    padding: rem(15) clamp(rem(10), 2vw, rem(30));
+    gap: rem(10);
+    border-style: solid;
+    border-width: rem(1);
+    border-radius: $ccpigd-secondary-radius;
+
+    @include maxbp(xs) {
+        width: 80%;
+    }
+
+    &.icon-right {
+        flex-direction: row-reverse;
+    }
+
+    &.icon {
+        @extend .cc-relative;
+
+        &::before {
+        content: "";
+        width: 18px;
+        aspect-ratio: 1;
+        @extend .cc-mask-cover, .cc-transition;
+        }
+    }
+    &.icon-wordpress {
+        &::before {
+        mask: url("../images/google-drive/wordpress.svg");
+        }
+    }
+    &.icon-crown {
+        &::before {
+        mask: url("../images/google-drive/crown.svg");
+        }
+    }
+    &.icon-shapes {
+        &::before {
+        mask: url("../images/google-drive/shapes.svg");
+        }
+    }
+
+    &.primary {
+        color: $cc-white;
+        background: $ccpigd-primary;
+        border-color: $ccpigd-primary;
+
+        &::before {
+        background-color: $cc-white;
+        }
+
+        &:hover {
+        color: $ccpigd-primary;
+        background: $ccpigd-bg;
+        border-color: $ccpigd-border;
+
+        &::before {
+            background-color: $ccpigd-primary;
+        }
+        }
+    }
+    &.secondary {
+        color: $ccpigd-primary;
+        background: $ccpigd-bg;
+        border-color: $ccpigd-border;
+
+        &::before {
+        background-color: $ccpigd-primary;
+        }
+
+        &:hover {
+        color: $cc-white;
+        background: $ccpigd-primary;
+        border-color: $ccpigd-primary;
+
+        &::before {
+            background-color: $cc-white;
+        }
+        }
+    }
+    &.white {
+        color: $cc-white;
+        
+        &::before {
+        background-color: $cc-white;
+        }
+    }
+}
+
+.ccpigd-title-tag {
+  width: fit-content;
+  margin-bottom: rem(10);
+
+  @include minbp(lg) {
+    margin-bottom: rem(20);
+  }
+
+  span {
+    @include font(18, 24);
+    font-weight: 600;
+    color: $ccpigd-primary;
+    text-transform: capitalize;
+    margin: 0;
+  }
+}
+
+
+// Google Drive Header Style start //
+.ccpigd-header {
+  padding-bottom: 0;
+
+  .header-menu-wrap  {
+    border: 1px solid $ccpigd-border;
+    padding: 15px 25px;
+    border-radius: $ccpigd-radius-zero;
+    
+    @include minbp(lg) {
+        padding: 20px;
+        border-radius: $ccpigd-primary-radius;
+    }
+
+    .logo-wrapper {
+
+      .bars {
+
+        span {
+          background: $ccpigd-primary;;
+        }
+      }
+    }
+    .main-header-menu {
+      @include maxbp(md) {
+        background-color: #002003;
+      }
+      .main-menu {
+  
+        .menu-item {
+          @include maxbp(md) {
+            border-color: $ccpigd-border !important;
+          }
+
+          a {
+            color: $cc-white;
+  
+            &:hover {
+              color: $ccpigd-primary;
+            }
+            
+            @include maxbp(1160) {
+              font-size: 16px !important;
+            }
+            @include maxbp(md) {
+              font-size: 18px !important;
+            }
+          }
+  
+          &.current-menu-item {
+            a {
+              color: $ccpigd-primary;
+            }
+          }
+  
+          &.ccpigd-header-btn {
+            padding: 0 0 0 rem(10);
+  
+            @include maxbp(lg) {
+              padding: 0;
+            }
+  
+            a {
+              @extend .cc-transition, .cc-relative, .flex-center;
+              gap: 10px;
+              color: $cc-white !important;
+              background: $ccpigd-primary;
+              padding: 11px 22px;
+              border: 1px solid transparent;
+              border-radius: $ccpigd-secondary-radius;
+              font-family: $dm;
+              font-weight: 500;
+              @include font(18, 24);
+  
+              @include maxbp(1160) {
+                padding: 8px 20px;
+              }
+  
+              @include maxbp(md) {
+                margin: 30px auto;
+              }
+  
+              @include maxbp(xs) {
+                width: 80%;
+              }
+  
+              &:before {
+                content: "";
+                width: 24px;
+                aspect-ratio: 1;
+                mask: url(../images/google-drive/crown.svg);
+                background: $cc-white;
+                @extend .cc-transition, .cc-mask-cover;
+  
+                @include maxbp(1125) {
+                  width: 20px;
+                }
+              }
+  
+              &:hover {
+                background: $ccpigd-bg;
+                color: $ccpigd-primary !important;
+                border-color: $ccpigd-border;
+  
+                &:before {
+                  background: $ccpigd-primary;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.sticky-bar {
+    .header-menu-wrap {
+      backdrop-filter: blur(20px);
+    }
+  }
+
+  &.sticky-hero {
+    .header-menu-wrap {
+      background: $ccpigd-bg !important;
+    }
+  }
+
+  @include maxbp(md) {
+    padding-top: 0;
+
+    .ccpigd-container {
+      padding: 0;
+    }
+  }
+}
+// Logo style 
+.igd-logos {
+
+  .logo-divider {
+    width: 1px;
+    height: 22px;
+    background: $cc-white;
+  }
+
+  a {
+    @include font(20, 23, 120);
+    font-weight: 500;
+
+    img {
+      width: rem(42);
+      aspect-ratio: 1 /1;
+    }
+
+    &.ccp-google-drive-logo {
+      gap: rem(10);
+
+      @include minbp(md) {
+        min-width: max-content;
+      }
+
+      .logo-label {
+        span {
+          color: $ccpigd-text;
+          @include font(12, 16);
+          font-weight: 400;
+        }
+
+        h6 {
+          @include font(20, 22);
+          background: radial-gradient(
+            70.16% 212.6% at 29.84% -132.28%,
+            #e1f2a6 0%,
+            #15be7c 100%
+          );
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+  }
+}
+// Google Drive Header Style end //

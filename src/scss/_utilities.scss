@@ -8,18 +8,6 @@
 @use "variables" as *;
 @use "mixins"     as *;
 
-$container-max-width: 1440px;
-$container-padding: 15px;
-
-.container {
-    width: 100%;
-    max-width: $container-max-width;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: $container-padding;
-    padding-right: $container-padding;
-}
-
 
 // ╔═══════════════════════════════════════════════════════════╗
 // ║  FLEXBOX UTILITIES                                        ║
@@ -75,32 +63,60 @@ $container-padding: 15px;
     align-items: center;
 }
 
-.flex-between {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .flex-wrap {
     flex-wrap: wrap;
 }
-.transition {
+.cc-transition {
     transition: all 0.3s ease-in-out;
 }
 
 // Positioning
-.relative { position: relative; }
-.absolute { position: absolute; }
-.fixed { position: fixed; }
-.sticky { position: sticky; }
+.cc-relative { position: relative; }
+.cc-absolute { position: absolute; }
+.cc-fixed { position: fixed; }
+.cc-sticky { position: sticky; }
 
 // font-style
-.italic { font-style: italic; }
+.cc-italic { font-style: italic; }
 
 // case
-.uppercase { text-transform: uppercase; }
-.lowercase { text-transform: lowercase; }
-.capitalize { text-transform: capitalize; }
-.section-spacing {
-    margin-block: clamp(20px, 3vw, 44px);
+.cc-uppercase { text-transform: uppercase; }
+.cc-lowercase { text-transform: lowercase; }
+.cc-capitalize { text-transform: capitalize; }
+
+
+.cc-mask-cover {
+    mask-size: cover !important;
+    mask-position: center !important;
+    mask-repeat: no-repeat !important;
+}
+.cc-bg-cover {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.hide-desktop {
+    @include minbp(lg) {
+        display: none;
+    }
+}   
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hide-tab {
+        display: none;
+    }
+}
+
+.hide-mobile {
+    @include maxbp(sm) {
+        display: none;
+    }
+}
+
+.text-center-mobile {
+    @include maxbp(sm) {
+        text-align: center;
+        justify-content: center;
+    }
 }

@@ -24,8 +24,9 @@ html {
 
 body {
   font-size: 100%;
+  line-height: 1.5;
   scroll-behavior: smooth;
-  color: $text;
+  color: $cc-text;
 }
 
 
@@ -40,66 +41,62 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 400;
+  font-weight: 700;
+  margin-bottom: rem(20);
   font-family: $dm;
 }
 
 h1 {
-  @include font(32, 66);
+  @include font(30, 44);
 }
 h2 {
-  @include font(28, 46);
+  @include font(30, 44);
 }
 h3 {
-  @include font(20, 36);
+  @include font(26, 36);
 }
 h4 {
-  @include font(18, 28);
+  @include font(20, 30);
 }
 h5 {
-  @include font(16, 22);
+  @include font(18, 26);
 }
 h6 {
-  @include font(18, 18);
+  @include font(16, 24);
 }
 
+p {
+  @include font(16, 28, 160);
+
+  & + p {
+    margin-top: rem(20);
+  }
+
+  a {
+    color: $cc-primary;
+    text-decoration: underline;
+
+    &:hover {
+      color: $cc-secondary;
+    }
+  }
+}
 a {
   text-decoration: none;
   font-family: $dm;
-  color: $accent;
+  color: currentColor;
   cursor: pointer;
-  @include font(12, 12);
   @include transition;
 
   &:hover {
     text-decoration: underline;
-    color: $primary;
+    color: $cc-primary;
   }
 }
-
-p {
-  color: inherit;
-  @include font(12, 13, 180);
-
-  & + p {
-    margin-top: rem(10);
-  }
-
-  a {
-    color: $primary;
-    text-decoration: underline;
-
-    &:hover {
-      color: $secondary;
-    }
-  }
-}
-
 .container {
   width: 100%;
-  max-width: rem(1400);
-  padding-inline: 20px;
+  max-width: rem(1330);
+  padding-inline: 25px;
   margin-inline: auto;
-  
 }
 
