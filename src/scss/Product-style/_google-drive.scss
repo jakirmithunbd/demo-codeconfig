@@ -3,6 +3,10 @@
 @use '../base' as *;
 @use '../utilities' as *;
 
+.single-igd-feature {
+  background: #00130b;
+}
+
 // Variables
 $ccpigd-primary: #00ac47;
 $ccpigd-secondary: #e1f2a6;
@@ -686,6 +690,125 @@ $ccpigd-radius-zero: 0;
               color: $ccpigd-primary;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+
+.ccpigd-information-faq {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 172, 71, 0.05) 0%,
+    rgba(0, 172, 71, 0) 100%
+  );
+  padding: clamp(30px, 4vw, 60px) 0;
+}
+
+// Faq Section Global
+.ccpigd-faq-wrapper {
+  gap: clamp(10px, 2vw, 24px);
+  padding-top: clamp(10px, 1.5vw, 20px);
+
+  .ccpigd-faq-item {
+    border: 1px solid $ccpigd-border;
+    background: $ccpigd-bg;
+    border-radius: $ccpigd-primary-radius;
+
+    .ccpigd-faq-question {
+      display: grid;
+      padding: clamp(20px, 2.2vw, 24px);
+      grid-template-columns: 1fr 30px;
+      background: transparent;
+      width: 100%;
+      text-align: left;
+
+      h4 {
+        font-size: clamp(16px, 2vw, 22px);
+        line-height: clamp(20px, 2.4vw, 26px);
+        font-weight: 500;
+
+        span {
+          color: $ccpigd-primary;
+          padding-right: 8px;
+          font-weight: 700;
+
+          @include maxbp(sm) {
+            padding-right: 5px;
+          }
+        }
+      }
+      .ccpigd-dropdown-arrow {
+        @extend .flex-center, .cc-relative, .cc-transition;
+        justify-self: end;
+        width: 20px;
+        aspect-ratio: 1 / 1;
+        cursor: pointer;
+
+        &::after,
+        &::before {
+          background: $ccpigd-secondary;
+          content: "";
+          width: 2px;
+          height: 12px;
+          position: absolute;
+          border-radius: 5px;
+          @extend .cc-absolute, .cc-transition;
+        }
+
+        &::before {
+          right: 5px;
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          left: 5px;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    .ccpigd-faq-answer {
+      color: #CFE3DA;
+      padding: clamp(20px, 2.2vw, 24px);
+      padding-top: 0;
+
+      p {
+        font-size: clamp(16px, 1.7vw, 18px);
+        line-height: 160%;
+      }
+
+      ul,
+      ol {
+        padding: 10px 0 10px clamp(30px, 3.5vw, 40px);
+        color: currentColor;
+      }
+
+      a {
+        color: currentColor;
+        text-decoration: underline;
+        @extend .cc-transition;
+
+        &:hover {
+          color: $ccpigd-primary;
+        }
+      }
+    }
+
+    &.open-body {
+      .ccpigd-dropdown-arrow {
+        &::after,
+        &::before {
+          background: $ccpigd-primary;
+        }
+
+        &::before {
+          transform: rotate(-45deg);
+        }
+
+        &::after {
+          transform: rotate(45deg);
         }
       }
     }

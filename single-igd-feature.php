@@ -10,18 +10,19 @@
 get_header(
     null,
     array(
-        'class_prefix' => 'cc',
+        'class_prefix' => 'ccpigd',
         'logos' => 'cc-logo',
         'menu_name' => 'header-menu',
-        'mobile_menu' => 'full',
+        'mobile_menu' => '',
     )
 )
 ?>
 
 <!-- Hero Section Start -->
 <section class="ccpigd-section ccpigd-hero-section ccpigd-section-top cc-relative ccpigd-single-feature-section">
-    <div class="ccpigd-hero-section-bg ccc-absolute">
-        <img width="1920" height="1053" src="<?php echo GET_THEME_URI; ?>/assets/images/google-drive/Codeconfig-igd-banner-bg.png ?>" alt="<?php echo esc_attr__('Hero Background', 'demo-codeconfig'); ?>">
+    <div class="ccpigd-hero-section-bg cc-absolute">
+        <img src="<?php echo esc_url(get_theme_file_uri('assets/images/google-drive/Codeconfig-igd-banner-bg.png')); ?>"
+                alt="<?php echo esc_attr__('Hero Background', 'demo-codeconfig'); ?>">
     </div>
 
     <?php $hero_contents = get_field('hero_contents'); ?>
@@ -32,7 +33,7 @@ get_header(
                 <div class="ccpigd-hero-content-box section-title-box">
                     <span class="ccpigd-hero-sub-title d-flex align-center">
                         <i class="flex-center">
-                            <img src="<?php echo GET_THEME_URI; ?>/assets/images/google-drive/shield_lock.svg" alt="Security icon" width="24" height="24">
+                            <img src="<?php echo esc_url(get_theme_file_uri('assets/images/google-drive/shield_lock.svg')); ?>" alt="Security icon" width="24" height="24">
                         </i>
                         <?php echo esc_html__($hero_contents['title_tag'] ?? ''); ?>
                     </span>
@@ -173,22 +174,21 @@ endif;
 
 
 
+<!-- Default CTA -->
+<?php get_template_part('/template-parts/footer/footer-cta-default'); ?>
+<!-- Default CTA -->
 
-<?php
-get_template_part('template-part/footer/footer-cta-default');
-
-
+<?php 
 get_footer(null, array(
-    'class_prefix' => 'cta-on-footer cc',
+    'class_prefix' => 'ccpigd',
     'logos' => 'cc-logo',
     'footer_description' => 'cc-footer-description',
     'first_menu_title' => 'Company',
     'first_menu_name' => 'company-menu',
     'second_menu_title' => 'Resources',
     'second_menu_name' => 'resources-menu',
-    'payment_logos' => 'colorful',
-    'footer_perticles' => 'cc-perticles',
+    'payment_logos' => 'light',
+    'footer_perticles' => '',
     'popup' => '',
 )); 
-
 ?>

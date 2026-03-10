@@ -66,6 +66,12 @@
 .flex-wrap {
     flex-wrap: wrap;
 }
+.flex-col {
+    flex-direction: column;
+}
+.flex-grow {
+    flex-direction: row;
+}
 .cc-transition {
     transition: all 0.3s ease-in-out;
 }
