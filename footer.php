@@ -14,9 +14,9 @@ $popup = $args['popup'] ?? '';
 
 
 <footer class="<?php echo esc_attr($class_prefix); ?>-footer codeconfig-footer">
-	<div class="footer-bottom relative">
+	<div class="footer-bottom cc-relative">
 
-		<div class="<?php echo esc_attr($class_prefix); ?>-container container relative">
+		<div class="<?php echo esc_attr($class_prefix); ?>-container container cc-relative">
 
 			<?php
 			if (!empty($footer_perticles)) {
@@ -95,11 +95,11 @@ $popup = $args['popup'] ?? '';
 		</div>
 	</div>
 	<div class="copyright">
-		<div class="container relative">
+		<div class="container cc-relative">
 			<button
-				class="cc-scroll-top-btn flex-center transition"
+				class="cc-scroll-top-btn flex-center cc-transition"
 				aria-label="Scroll to top">
-				<span class="scroll-top-btn-icon transition"></span>
+				<span class="scroll-top-btn-icon cc-transition"></span>
 			</button>
 
 			<div class="copyright-payment d-flex align-center space-between">
@@ -127,10 +127,10 @@ $popup = $args['popup'] ?? '';
 					$is_light = $payment_logos_color === 'light';
 					$ul_style = $is_light ? ' style="width: 100%; max-width: 450px;"' : '';
 					?>
-					<ul class="unstyle d-flex align-center"<?php echo $ul_style; ?>>
+					<ul class="d-flex align-center"<?php echo $ul_style; ?>>
 						<?php foreach ($payment_logos as $logo): 
 							$image_path = $is_light 
-								? '/assets/images/accessiy-page/' . $logo['path']
+								? '/assets/images/' . $logo['path']
 								: '/assets/images/' . $logo['default'];
 						?>
 							<li>
@@ -153,63 +153,6 @@ if (!empty($popup)) {
 }
 ?>
 <!-- Popup end-->
-
-<?php
-if (is_page('home') && empty($_COOKIE['codeconfig_reviews'])):
-	$reviewer_list = get_field('cc_review_area', 'options');
-?>
-	<div class="cc-review-slider-window hide-mobile hide-tab cc-cookie-body" data-cookie-id="codeconfig_reviews">
-		<?php if (!empty($reviewer_list['review-list']) && is_array($reviewer_list['review-list'])):
-			foreach ($reviewer_list['review-list'] as $reviewer):
-				$review_processor = $reviewer['class_name'] ? 'WordPress' : 'Freemius';
-				$review_verified_url = $reviewer['verified_url'] ?? site_url();
-				$client_profile_url = $reviewer['client_profile_url'] ?? site_url();
-				$reviewerMeta = $reviewer['client'];
-				$review_product = $reviewer['select_product']['label'];
-				$cc_products = get_field('cc_product', 'options') ?: [];
-				$product_image = null;
-				$product_name = null;
-
-				foreach ($cc_products as $product) {
-					if (empty($product['select_product']['label'])) {
-						continue;
-					}
-					if (strcasecmp($product['select_product']['label'], $review_product) === 0) {
-						$product_image = $product['product_image']['url'] ?? null;
-						$product_name = $product['select_product']['label'] ?? null;
-						$class_name = isset($product['select_product']['value'])
-							? $product['select_product']['value'] . '-icon'
-							: 'codeconfig-icon';
-
-						break;
-					}
-				}
-
-		?>
-				<div class="cc-review-card d-flex" title="Verify Review from the source">
-
-					<div class="cc-product-image cc-review-product-logo <?php echo esc_attr($class_name); ?>">
-						<img src="<?php echo esc_url($product_image); ?>" alt="<?php echo esc_attr($product_name); ?>">
-					</div>
-
-
-					<div class="cc-review-title">
-						<?php printf('<p class="quote-title"><i></i><i></i><i></i><i></i><i></i> Form <a href="%s" target="_blank">%s</a> on <a href="%s">%s</a></p>', esc_url($client_profile_url), esc_html($reviewerMeta['client_name'] ?? 'Client'), $review_verified_url, esc_html($review_processor));
-						$shortened_quote = $reviewer['client_quote'];
-						printf('<p class="cc-quote">%s</p>', esc_attr($shortened_quote)); ?>
-					</div>
-				</div>
-		<?php
-
-			endforeach;
-		endif; ?>
-
-		<div class="cc-cookie-close-btn cc-review-window-close">
-			<span></span>
-			<span></span>
-		</div>
-	</div>
-<?php endif; ?>
 
 
 <?php wp_footer(); ?>

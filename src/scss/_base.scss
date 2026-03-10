@@ -29,6 +29,11 @@ body {
   color: $cc-text;
 }
 
+img,
+svg {
+  width: 100%;
+  height: auto
+}
 
 /* #####################################
 *          TYPOGRAPHY SETTINGS
@@ -74,7 +79,6 @@ p {
 
   a {
     color: $cc-primary;
-    text-decoration: underline;
 
     &:hover {
       color: $cc-secondary;
@@ -99,3 +103,120 @@ a {
   margin-inline: auto;
 }
 
+// Animation start 
+@keyframes cc-scroll-button-animation {
+  0% {
+    transform: translate(0, 10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0, -10px);
+    opacity: 1;
+  }
+}
+
+// Animation end
+
+.cc-per-capsule {
+  @extend .cc-absolute;
+  width: 20px;
+  height: 10px;
+  border-radius: 100px;
+  transform: rotate(35deg);
+
+  &.color-pink {
+    background: radial-gradient(
+      77.5% 77.5% at 55.83% 20%,
+      #f2ccfe 0%,
+      #d650ff 100%
+    );
+  }
+}
+
+.cc-per-triangle {
+  z-index: 1;
+  @extend .cc-absolute;
+  width: 16px;
+  height: 15px;
+  mask: url("./../images/cc-per-triangle.svg");
+  mask-position: center;
+  mask-size: cover;
+  mask-repeat: no-repeat;
+
+  &.color-pink {
+    background: radial-gradient(
+      72.22% 72.22% at 57% 27.78%,
+      #fff7ff 0%,
+      #ff84fd 100%
+    );
+  }
+
+  &.color-pink-deep {
+    background: radial-gradient(
+      72.22% 72.22% at 57% 27.78%,
+      #fff7ff 0%,
+      #ff49fc 100%
+    );
+  }
+}
+
+.cc-per-star {
+  z-index: -1;
+  @extend .cc-absolute;
+  width: 16px;
+  height: 16px;
+  mask: url("./../images/cc-per-star.svg");
+  mask-position: center;
+  mask-size: cover;
+  mask-repeat: no-repeat;
+
+  &.color-blue {
+    background: radial-gradient(
+      68.75% 68.75% at 59.38% 31.25%,
+      #c5dbff 0%,
+      #5a99ff 100%
+    );
+  }
+}
+
+.cc-per-circle {
+  @extend .cc-absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 100px;
+
+  &.color-blue {
+    background: radial-gradient(
+      77.5% 77.5% at 55.83% 20%,
+      #ffffff 0%,
+      #00bbff 100%
+    );
+  }
+
+  &.color-yellow {
+    background: radial-gradient(
+      77.5% 77.5% at 55.83% 20%,
+      #ffffff 0%,
+      #ff9000 100%
+    );
+  }
+}
+
+.wordpress-watermark-logo {
+  @extend .cc-absolute;
+  mask: url(./../images/wordpress-watermark-logo.svg);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  background: #fff;
+}
+
+.codeconfig-watermark-logo {
+  @extend .cc-absolute;
+  mask: url(./../images/codeconfig-watermark-logo.svg);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  background: #fff;
+}

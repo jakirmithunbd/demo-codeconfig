@@ -103,11 +103,24 @@
     }
   }
 
+  // Scroll To Top
+  function scrollToTop() {
+    const cc_scroll_top_button = document.querySelector(".cc-scroll-top-btn");
+    if (cc_scroll_top_button) {
+      cc_scroll_top_button.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    }
+  }
 
 
   // Global On Load
   function codeConfigGlobalOnLoad() {
     updateHeaderHeights();
     ccpCommonHeader();
+    scrollToTop();
   }
   window.addEventListener("DOMContentLoaded", codeConfigGlobalOnLoad);

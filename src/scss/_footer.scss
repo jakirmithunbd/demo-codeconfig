@@ -4,6 +4,105 @@
 @use "base" as *;
 @use "utilities" as *;
 
+.cc-cta-default {
+  .cc-cta-default-wrap {
+    background: $cc-primary;
+    padding: 77px 50px;
+
+    @include maxbp(md) {
+      padding: 70px 20px;
+    }
+
+    @include maxbp(md) {
+      padding: 50px 0;
+    }
+
+    @include maxbp(sm) {
+      padding: 40px 30px;
+    }
+
+    @include maxbp(xs) {
+      padding: 20px 0;
+    }
+
+    .container {
+      @include maxbp(sm) {
+        flex-wrap: wrap;
+      }
+
+      .content-side {
+        width: 56%;
+
+        @include maxbp(880) {
+          width: 100%;
+          text-align: center;
+        }
+
+        @include maxbp(sm) {
+          width: 100%;
+          text-align: center;
+        }
+
+        @include maxbp(xs) {
+          text-align: center;
+        }
+
+        h2,
+        p {
+          color: white;
+        }
+
+        p {
+          @include maxbp(sm) {
+            padding-bottom: 0;
+          }
+        }
+      }
+
+      .button-side {
+        width: 40%;
+        text-align: end;
+
+        @include maxbp(880) {
+          width: 100%;
+        }
+
+        @include maxbp(sm) {
+          text-align: center;
+        }
+
+        .cc-btn {
+          &:hover {
+            background: $cc-secondary;
+            color: white !important;
+
+            .cc-btn-icon {
+              background: $cc-primary;
+            }
+          }
+        }
+      }
+
+      .partial-one,
+      .partial-two {
+        height: 30px;
+        width: 30px;
+        filter: opacity(0.2);
+      }
+
+      .partial-one {
+        left: -14px;
+        top: -34px;
+      }
+
+      .partial-two {
+        right: 40%;
+        bottom: -20px;
+      }
+    }
+  }
+}
+
 
 .codeconfig-footer {
   .footer-bottom {
@@ -11,12 +110,12 @@
     overflow: hidden;
     z-index: 11;
 
-    @include breakpoint(768) {
+    @include maxbp(sm) {
       border-radius: 30px 30px 0px 0px;
     }
 
     .logos {
-      @include breakpoint(1024) {
+      @include maxbp(md) {
         justify-content: center;
       }
     }
@@ -28,7 +127,7 @@
       top: -150px;
       right: -260px;
 
-      @include breakpoint(1366) {
+      @include maxbp(1366) {
         top: -100px;
         right: 10px;
       }
@@ -40,7 +139,7 @@
       top: -70px;
       right: -100px;
 
-      @include breakpoint(1366) {
+      @include maxbp(1366) {
         right: 130px;
       }
     }
@@ -49,7 +148,7 @@
       top: -95px;
       right: -100px;
 
-      @include breakpoint(1024) {
+      @include maxbp(md) {
         top: 0;
         right: 0;
       }
@@ -71,11 +170,11 @@
         #ff00fb 100%
       );
 
-      @include breakpoint(1024) {
+      @include maxbp(md) {
         left: 50%;
       }
 
-      @include breakpoint(575) {
+      @include maxbp(xs) {
         left: 0;
         top: calc(100% - 10px);
       }
@@ -84,17 +183,17 @@
     .left-side {
       width: 30%;
 
-      @include breakpoint(1200) {
+      @include maxbp(1200) {
         width: 32%;
       }
 
-      @include breakpoint(1024) {
+      @include maxbp(md) {
         width: 60%;
         text-align: center;
         margin: 0 auto;
       }
 
-      @include breakpoint(768) {
+      @include maxbp(sm) {
         width: 100%;
       }
     }
@@ -103,22 +202,22 @@
       width: 64%;
       column-gap: 30px;
 
-      @include breakpoint(1200) {
+      @include maxbp(1200) {
         width: 65%;
       }
 
-      @include breakpoint(1024) {
+      @include maxbp(md) {
         width: 100%;
         justify-content: space-around;
         gap: 10px;
         flex-wrap: wrap;
       }
 
-      @include breakpoint(768) {
+      @include maxbp(sm) {
         column-gap: 10px;
       }
 
-      @include breakpoint(575) {
+      @include maxbp(xs) {
         flex-direction: column;
       }
     }
@@ -128,18 +227,18 @@
     }
 
     .footer-menu {
-      @include breakpoint(1024) {
+      @include maxbp(md) {
         text-align: center;
         padding-top: 20px;
       }
 
       h2 {
-        @include font(22, 32);
+        @include font(22, 22, 150);
         font-style: normal;
         font-weight: 600;
         letter-spacing: 0.23px;
 
-        @include breakpoint(575) {
+        @include maxbp(xs) {
           margin-bottom: 0;
         }
       }
@@ -152,7 +251,7 @@
           list-style: none;
 
           a {
-            @include font(17, 45);
+            @include font(17, 17, 200);
             font-weight: 400;
             letter-spacing: 0.16px;
             padding-bottom: 8px;
@@ -160,9 +259,8 @@
             width: fit-content;
             margin-right: auto;
 
-            @include breakpoint(1024) {
+            @include maxbp(md) {
               margin-left: auto;
-              @include font(17, 35);
               padding-bottom: 5px;
             }
 
@@ -200,7 +298,7 @@
           padding: 30px 0 20px;
 
           ul {
-            @include breakpoint(1024) {
+            @include maxbp(md) {
               width: fit-content;
               margin: 0 auto;
             }
@@ -223,9 +321,9 @@
       border-radius: 100px;
       box-shadow: 0px 4px 20px 0px #f1fbff40;
       z-index: 12;
-      @extend .transition;
+      @extend .cc-transition;
 
-      @include breakpoint(575) {
+      @include maxbp(xs) {
         width: 50px;
         height: 50px;
         left: calc(50% - 25px);
@@ -243,7 +341,7 @@
         mask-size: cover;
         mask-repeat: no-repeat;
         mask-position: center;
-        background-color: $primary;
+        background-color: $cc-primary;
         animation: cc-scroll-button-animation 2s infinite;
       }
     }
@@ -252,30 +350,30 @@
       border-top: 2px solid #e0f5ff;
       padding: 50px 0 30px;
 
-      @include breakpoint(1024) {
+      @include maxbp(md) {
         padding: 45px 0 30px;
         flex-wrap: wrap;
         flex-direction: column-reverse;
         gap: 30px;
       }
 
-      @include breakpoint(768) {
+      @include maxbp(sm) {
         padding: 30px 0 20px;
       }
 
       p {
-        @include font(18, 28);
+        @include font(18, 18, 150);
         color: #000;
         font-weight: 400;
         margin: 0;
 
-        @include breakpoint(1024) {
+        @include maxbp(md) {
           text-align: center;
         }
 
         a {
-          color: $primary;
-          @extend .transition;
+          color: $cc-primary;
+          @extend .cc-transition;
 
           &:hover {
             text-decoration: underline;
@@ -286,7 +384,7 @@
       .payment-method {
         gap: 5px;
 
-        @include breakpoint(768) {
+        @include maxbp(sm) {
           flex-wrap: wrap;
           flex-direction: column;
           gap: 10px;
@@ -308,7 +406,7 @@
               border-left: 1px solid #cbdfe8;
             }
 
-            @include breakpoint(575) {
+            @include maxbp(xs) {
               padding: 0 5px;
             }
           }
@@ -321,7 +419,7 @@
       padding: 180px 0 65px;
       margin-top: -100px;
 
-      @include breakpoint(768) {
+      @include maxbp(sm) {
         padding: 100px 0 45px;
         margin-top: -60px;
       }
@@ -347,7 +445,7 @@
       background-size: cover;
       z-index: -1;
 
-      @include breakpoint(880) {
+      @include maxbp(880) {
         filter: opacity(0.4);
       }
     }
@@ -359,7 +457,7 @@
       left: 0;
       background-image: url(./../images/Codeconfig-footer-bg-left.png);
 
-      @include breakpoint(1024) {
+      @include maxbp(md) {
         width: 380px;
         height: 285px;
         top: 100px;
@@ -373,21 +471,21 @@
       right: 0;
       background-image: url(./../images/Codeconfig-footer-bg-right.png);
 
-      @include breakpoint(1024) {
+      @include maxbp(md) {
         width: 305px;
         height: 250px;
         bottom: 0;
       }
 
-      @include breakpoint(575) {
+      @include maxbp(xs) {
         bottom: 0;
       }
     }
     .cc-footer-description {
       .subscribe-title {
-        @include font(16, 26);
+        @include font(16, 16, 150);
         font-weight: 400;
-        color: $secondary;
+        color: $cc-secondary;
         padding: 25px 0 15px;
         margin: 0;
       }
@@ -395,23 +493,25 @@
       .social-icons {
         padding: 30px 0;
 
-        @include breakpoint(1024) {
+        @include maxbp(md) {
           padding: 30px 0 20px;
         }
 
         ul {
           gap: 10px;
 
-          @include breakpoint(1024) {
+          @include maxbp(md) {
             justify-content: center;
           }
 
           li {
+            list-style: none;
+
             a {
               width: 40px;
               height: 40px;
               border-radius: 40px;
-              background: $primary;
+              background: $cc-primary;
               position: relative;
               font-size: 0;
 
@@ -490,7 +590,7 @@
       ul {
         li {
           a {
-            color: $text;
+            color: $cc-text;
 
             &:after {
               background: #476df4;
@@ -499,7 +599,7 @@
 
           &.active {
             a {
-              color: $primary;
+              color: $cc-primary;
             }
           }
         }
@@ -547,18 +647,18 @@
 
       h3,
       h4 {
-        font-family: $dms;
+        font-family: $dm;
         color: #000e25;
 
-        @include breakpoint(575) {
+        @include maxbp(xs) {
           margin-bottom: 10px;
         }
       }
       p {
-        font-family: $dms;
+        font-family: $dm;
         color: #3c4770;
 
-        @include breakpoint(575) {
+        @include maxbp(xs) {
           margin-bottom: 10px;
         }
       }
@@ -573,10 +673,10 @@
         span {
           width: 100%;
           color: #000e25;
-          @include font(16, 24);
+          @include font(16, 16, 150);
 
-          @include breakpoint(768) {
-            @include font(14, 20);
+          @include maxbp(sm) {
+            @include font(14, 14, 150);
           }
         }
 
@@ -599,7 +699,7 @@
           padding: clamp(8px, 1.1vw, 14px) clamp(10px, 1.5vw, 20px);
           color: #0061fe;
           font-size: clamp(12px, 1.5vw, 18px);
-          font-family: $dms;
+          font-family: $dm;
           line-height: 100%;
           margin-bottom: clamp(20px, 2.5vw, 30px);
 
@@ -622,7 +722,7 @@
           border-radius: 8px;
           padding: clamp(12px, 1.4vw, 18px) clamp(20px, 2.5vw, 30px);
           color: #fff;
-          font-family: $dms;
+          font-family: $dm;
           font-size: clamp(14px, 1.7vw, 20px);
           line-height: 100%;
           cursor: pointer;
@@ -638,7 +738,7 @@
         }
         .wpcf7-response-output {
           color: #0061fe;
-          @include font(16, 24);
+          @include font(16, 16, 150);
         }
 
         .field-btn {
@@ -657,7 +757,7 @@
 
       &::before,
       &::after {
-        @extend .absolute, .transition;
+        @extend .cc-absolute, .cc-transition;
         content: "";
         height: 2px;
         width: 100%;

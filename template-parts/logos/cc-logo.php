@@ -6,7 +6,7 @@
     $ccLogoAlt = isset($ccLogo['title']) ?? 'CodeConfig Logo';
     ?>
     <a href="<?php echo esc_url(site_url()); ?>" class="cc-logo d-flex">
-        <img class="transition" src="<?php echo esc_url($ccLogoUrl); ?>" height="24" width="203"
+        <img class="cc-transition" src="<?php echo esc_url($ccLogoUrl); ?>" height="24" width="203"
             alt="<?php echo esc_attr($ccLogoAlt); ?>">
     </a>
 </div>
