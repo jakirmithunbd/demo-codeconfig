@@ -1,12 +1,12 @@
 <?php
 
-function sentinelegal_load_scripts()
+function codeconfigdemo_load_scripts()
 {
-    wp_enqueue_style('sentinelegal-style', get_stylesheet_uri(), [], _S_VERSION);
+    wp_enqueue_style('codeconfigdemo-style', get_stylesheet_uri(), [], _S_VERSION);
 
-    wp_enqueue_style('sentinelegal-main', ASSETS_DIR . '/css/main.css', [], time(), 'all');
+    wp_enqueue_style('codeconfigdemo-main', ASSETS_DIR . '/css/main.css', [], time(), 'all');
 
-    wp_enqueue_script('sentinelegal_scripts', get_template_directory_uri() . '/assets/js/scripts.js', ['jquery', 'wp-util'], time(), true);
+    wp_enqueue_script('codeconfigdemo_scripts', get_template_directory_uri() . '/assets/js/main.js', ['jquery', 'wp-util'], time(), true);
 
     $data = [
         'site_url' => get_template_directory_uri(),
@@ -16,6 +16,6 @@ function sentinelegal_load_scripts()
     ];
 
 
-    wp_localize_script('sentinelegal_scripts', 'ajax', $data);
+    wp_localize_script('codeconfigdemo_scripts', 'ajax', $data);
 }
-add_action('wp_enqueue_scripts', 'sentinelegal_load_scripts');
+add_action('wp_enqueue_scripts', 'codeconfigdemo_load_scripts');

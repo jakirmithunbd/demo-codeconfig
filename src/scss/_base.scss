@@ -89,7 +89,6 @@ a {
   @include transition;
 
   &:hover {
-    text-decoration: underline;
     color: $cc-primary;
   }
 }

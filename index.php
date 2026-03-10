@@ -1,6 +1,14 @@
 <?php defined( 'ABSPATH' ) || exit ;?>
 
-<?php get_header() ;?>
+<?php get_header(
+    null,
+    array(
+        'class_prefix' => 'cc',
+        'logos' => 'cc-logo',
+        'menu_name' => 'header-menu',
+        'mobile_menu' => 'full',
+    )
+) ;?>
 
 <section class="sl-hero relative">
     <div class="container">
@@ -20,4 +28,19 @@
     </div>
 </div>
 
-<?php get_footer(); ?>
+
+
+<?php 
+get_footer(null, array(
+    'class_prefix' => 'cta-on-footer cc',
+    'logos' => 'cc-logo',
+    'footer_description' => 'cc-footer-description',
+    'first_menu_title' => 'Company',
+    'first_menu_name' => 'company-menu',
+    'second_menu_title' => 'Resources',
+    'second_menu_name' => 'resources-menu',
+    'payment_logos' => 'colorful',
+    'footer_perticles' => 'cc-perticles',
+    'popup' => '',
+)); 
+?>

@@ -10,13 +10,13 @@
   border-bottom: 1px solid;
   border-color: transparent;
 
-  @include breakpoint(575) {
+  @include maxbp(xs) {
     padding: 22px 0;
   }
 
   .header-menu-wrap {
     .logo-wrapper {
-      @include breakpoint(1024) {
+      @include maxbp(md) {
         width: 100%;
 
         .bars {
@@ -42,7 +42,7 @@
 
     .main-header-menu {
 
-      @include breakpoint(1024) {
+      @include maxbp(md) {
         position: absolute;
         width: 100%;
         max-width: 500px;
@@ -58,10 +58,10 @@
       }
       
       .main-menu {
-        @extend .d-flex, .align-center, .unstyle;
+        @extend .d-flex, .align-center;
         gap: 10px;
         
-        @include breakpoint(1024) {
+        @include maxbp(md) {
           max-height: calc(100vh - 180px);
           overflow-y: scroll;
           flex-direction: column;
@@ -73,9 +73,10 @@
   
   
         li.menu-item {
+          list-style: none;
           @extend .d-flex, .justify-center;
   
-          @include breakpoint(1024) {
+          @include maxbp(md) {
             width: 100%;
             flex-direction: column;
   
@@ -86,15 +87,15 @@
   
           a {
             padding: 10px;
-            @include font(18, 22);
+            @include font(18, 18, 120);
             font-weight: 400;
-            @extend .transition;
+            @extend .cc-transition;
   
-            @include breakpoint(1200) {
+            @include maxbp(1200) {
               padding: 10px 7px;
             }
   
-            @include breakpoint(1024) {
+            @include maxbp(md) {
               width: fit-content;
               padding: 15px 10px 15px 0;
             }
@@ -102,7 +103,7 @@
   
           // Dropdown start
           &.menu-item-has-children {
-            @extend .relative;
+            @extend .cc-relative;
   
             &::after {
               position: absolute;
@@ -117,15 +118,15 @@
               top: 13px;
               right: 10px;
               transform-origin: 56% 76%;
-              @extend .transition;
+              @extend .cc-transition;
   
-              @include breakpoint(1024) {
+              @include maxbp(md) {
                 top: 18px;
               }
             }
   
             a {
-              @include minbreakpoint(1025) {
+              @include minbp(lg) {
                 padding-right: 27px;
               }
             }
@@ -134,9 +135,9 @@
               width: 100%;
               padding: 20px;
               border-radius: 16px;
-              @extend .relative;
+              @extend .cc-relative;
   
-              @include minbreakpoint(1025) {
+              @include minbp(lg) {
                 position: absolute;
                 top: 42px;
                 opacity: 0;
@@ -144,7 +145,7 @@
                 transition: all 0.3s ease;
               }
   
-              @include breakpoint(1024) {
+              @include maxbp(md) {
                 display: none;
               }
   
@@ -160,9 +161,9 @@
                 -webkit-transition: 0.3s;
                 transition: all 0.3s ease 0s;
                 z-index: -1;
-                @extend .transition;
+                @extend .cc-transition;
   
-                @include breakpoint(1024) {
+                @include maxbp(md) {
                   display: none;
                 }
               }
@@ -170,7 +171,7 @@
               .megamenu-column {
                 ul {
                   // @extend .d-flex, .flex-wrap;
-                  @extend .d-grid;
+                  display: grid;
                   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
                   gap: 16px;
   
@@ -182,10 +183,10 @@
                       padding: 15px;
                       border-radius: 10px;
                       z-index: 1;
-                      @extend .d-flex, .relative, .transition;
+                      @extend .d-flex, .cc-relative, .cc-transition;
                       width: 100%;
   
-                      @include breakpoint(1024) {
+                      @include maxbp(md) {
                         width: 100%;
                       }
   
@@ -199,7 +200,7 @@
                         z-index: -1;
                         border-radius: 10px;
                         opacity: 0;
-                        @extend .transition;
+                        @extend .cc-transition;
                       }
   
                       &:hover {
@@ -218,25 +219,17 @@
                       span {
                         width: 50%;
                         flex-grow: 1;
-                        @include font(22, 29);
+                        @include font(18, 22, 150);
                         font-weight: 600;
-  
-                        @include breakpoint(1200) {
-                          @include font(20, 28);
-                        }
-  
-                        @include breakpoint(768) {
-                          @include font(18, 26);
-                        }
-  
+
                         small {
-                          @include font(12, 18);
+                          @include font(12, 12, 150);
                           font-weight: 400;
-                          color: $text;
+                          color: $cc-text;
                           display: inline-block;
                           margin-top: 10px;
   
-                          @include breakpoint(1024) {
+                          @include maxbp(md) {
                             display: block;
                           }
                         }
@@ -263,7 +256,7 @@
   
             &:hover {
               &::after {
-                @include minbreakpoint(1025) {
+                @include minbp(lg) {
                   transform: rotate(223deg);
                 }
               }
@@ -273,7 +266,7 @@
                 visibility: visible;
   
                 &::before {
-                  @include minbreakpoint(1025) {
+                  @include minbp(lg) {
                     top: -10px;
                   }
                 }
@@ -290,7 +283,7 @@
   
           &.two-column-menu {
             .dropdown-menu {
-              @include minbreakpoint(1025) {
+              @include minbp(lg) {
                 width: max-content;
                 max-width: 760px;
               }
@@ -299,7 +292,7 @@
                 ul {
                   grid-template-columns: repeat(2, 1fr);
   
-                  @include breakpoint(768) {
+                  @include maxbp(sm) {
                     grid-template-columns: repeat(1, 1fr);
                   }
   
@@ -336,7 +329,7 @@
         height: inherit;
         top: calc(var(--only-header-height) - 2px);
 
-        @include breakpoint(575) {
+        @include maxbp(xs) {
           height: 100vh;
         }
 
@@ -348,7 +341,7 @@
   }
 
   &.ccp-mobile-menu-active {
-    @include breakpoint(1024) {
+    @include maxbp(md) {
       .logo-wrapper {
         .bars {
           span {
@@ -393,9 +386,9 @@
   height: 2px;
   z-index: 999;
   border-radius: 0 20px 20px 0;
-  background: $primary;
+  background: $cc-primary;
 
-  @include breakpoint(1024) {
+  @include maxbp(md) {
     height: 1px;
   }
 }
@@ -411,7 +404,7 @@ body {
     transform: translateY(-50px);
     opacity: 0;
     visibility: hidden;
-    @extend .transition;
+    @extend .cc-transition;
 
     &.sticky-bar,
     &.sticky-hero,
@@ -420,13 +413,13 @@ body {
       opacity: 1;
       visibility: visible;
 
-      @include breakpoint(600) {
+      @include maxbp(600) {
         z-index: 999;
       }
     }
   }
 
-  @include breakpoint(600) {
+  @include maxbp(600) {
     &:has(.sticky) {
       &:has(#wpadminbar) {
         &:has(#countDownTimerSection) {
@@ -458,46 +451,46 @@ body {
 
       .cc-logo {
 
-        @include breakpoint(575) {
+        @include maxbp(xs) {
           width: max(50%, 150px);
         }
       }
 
-      @include breakpoint(1024) {
+      @include maxbp(md) {
         .bars {
           span {
-            background: $primary;
+            background: $cc-primary;
           }
         }
       }
     }
 
     .main-header-menu {
-      @include breakpoint(1024) {
+      @include maxbp(md) {
         background: #fff;
         box-shadow: 4px 4px 30px 0px #e0f5ffb2;
       }
       .main-menu {
 
         li.menu-item {
-          @include breakpoint(1024) {
-            border-color: $border-color !important;
+          @include maxbp(md) {
+            border-color: $cc-border-color !important;
           }
 
           a {
-            color: $secondary;
+            color: $cc-secondary;
           }
 
           &.current-menu-item {
             a {
-              color: $primary;
+              color: $cc-primary;
             }
           }
 
           &:hover {
             a {
-              @include minbreakpoint(1025) {
-                color: $primary;
+              @include minbp(lg) {
+                color: $cc-primary;
               }
             }
           }
@@ -505,25 +498,25 @@ body {
           &.contact-btn {
             padding-left: 35px;
 
-            @include breakpoint(1280) {
+            @include maxbp(lg) {
               padding-left: 10px;
             }
 
-            @include breakpoint(1024) {
+            @include maxbp(md) {
               padding-left: 0;
             }
 
             a {
-              background: $primary;
-              @include font(17, 28);
+              background: $cc-primary;
+              @include font(17, 17, 150);
               font-weight: 500;
               padding: 6px 14px 6px 6px;
-              @extend .relative, .d-flex, .align-center, .transition;
+              @extend .cc-relative, .d-flex, .align-center, .cc-transition;
               gap: 10px;
               border-radius: 30px;
               color: #fff !important;
 
-              @include breakpoint(1024) {
+              @include maxbp(md) {
                 margin: 20px auto;
               }
 
@@ -546,25 +539,25 @@ body {
           // Dropdown start
           &.menu-item-has-children {
             &::after {
-              border-color: $secondary;
+              border-color: $cc-secondary;
             }
 
             .dropdown-menu {
               box-shadow: 4px 4px 30px 0px #e0f5ffb2;
 
-              @include minbreakpoint(1025) {
+              @include minbp(lg) {
                 background: #ffffff;
               }
 
               &::before {
-                border-bottom: 15px solid $border-color;
+                border-bottom: 15px solid $cc-border-color;
               }
 
               .megamenu-column {
                 ul {
                   li.menu-item {
                     a {
-                      border: 1px solid $border-color;
+                      border: 1px solid $cc-border-color;
 
                       &::after {
                         background: var(--product-color);
@@ -574,7 +567,7 @@ body {
                         color: var(--product-color);
 
                         small {
-                          color: $text;
+                          color: $cc-text;
                         }
                       }
                     }
@@ -591,7 +584,7 @@ body {
 
             &:hover {
               &::after {
-                @include minbreakpoint(1025) {
+                @include minbp(lg) {
                   border-color: #476df4;
                 }
               }
@@ -606,6 +599,6 @@ body {
   &.sticky {
     backdrop-filter: blur(20px);
     background-color: #ffffffb3;
-    border-color: $border-color;
+    border-color: $cc-border-color;
   }
 }
