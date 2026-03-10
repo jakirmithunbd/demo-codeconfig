@@ -16,7 +16,7 @@ $ccpigd-radius-full: 100%;
 $ccpigd-radius-zero: 0;
 
 .ccpigd-section {
-    margin-inline: clamp(rem(50), 6.5vw, rem(80));
+    margin-block: clamp(rem(50), 6.5vw, rem(80));
 
     p {
         color: $ccpigd-text;
@@ -375,3 +375,319 @@ $ccpigd-radius-zero: 0;
   }
 }
 // Google Drive Header Style end //
+
+
+
+// Hero Section style //
+.ccpigd-hero-section {
+  padding-bottom: 0;
+  z-index: 1;
+  margin-top: 0 !important;
+
+  @include maxbp(md) {
+    &::before {
+      height: 30vh;
+      filter: opacity(0.5);
+    }
+  }
+  @include maxbp(xs) {
+    &::before {
+      height: 15vh;
+    }
+  }
+
+  .ccpigd-hero-section-bg {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -2;
+  }
+
+  .ccpigd-watermark-logo {
+    width: 40%;
+    max-width: 360px;
+    z-index: -1;
+
+    &.igd-wp {
+      bottom: 260px;
+      left: 0;
+    }
+    &.igd-gd {
+      bottom: 60px;
+      right: 0;
+    }
+  }
+
+  .ccpigd-hero-content-box {
+    width: 100%;
+    max-width: 1070px;
+    margin: 0 auto;
+    padding-bottom: clamp(5px, 1.5vw, 20px);
+
+    .ccpigd-hero-sub-title {
+      width: fit-content;
+      margin: 0 auto 30px;
+      @include font(16, 16, 150);
+      color: $ccpigd-secondary;
+      font-weight: 500;
+      gap: 10px;
+      padding: 10px 12px;
+      background: $ccpigd-bg;
+      border: 1px solid $ccpigd-border;
+      border-radius: $ccpigd-secondary-radius;
+
+      @include minbp(lg) {
+        margin: 0 auto 20px;
+      }
+
+      img {
+        max-width: 16px;
+      }
+    }
+    h1 {
+      margin-bottom: 30px;
+
+      @include minbp(lg) {
+        margin-bottom: 20px;
+        padding: 0 10px;
+        letter-spacing: -2px;
+      }
+    }
+    .ccpigd-btn-group {
+      padding-top: 20px;
+    }
+  }
+  .ccpigd-hero-tab {
+    @extend .cc-relative;
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
+    z-index: 3;
+
+    .ccpigd-tab-header {
+      padding-bottom: 30px;
+
+      @include maxbp(xs) {
+        display: none;
+      }
+
+      .buttons {
+        gap: 30px 2px;
+
+        button {
+          background: transparent;
+          width: 124px;
+          padding: 0 10px;
+          gap: 10px;
+          @extend .cc-relative;
+
+          &:not(:last-child)::after {
+            @extend .cc-absolute;
+            content: "";
+            width: 2px;
+            height: calc(100% - 10px);
+            right: 0;
+            top: 5px;
+            background: linear-gradient(
+              180deg,
+              rgba(0, 172, 71, 0.05) 0%,
+              rgba(0, 172, 71, 0.2) 50%,
+              rgba(0, 172, 71, 0.05) 100%
+            );
+          }
+
+          .button-icon {
+            @extend .cc-transition;
+            width: clamp(30px, 3vw, 48px);
+            aspect-ratio: 1;
+            border: 1px solid $ccpigd-border;
+            border-radius: $ccpigd-secondary-radius;
+            background: radial-gradient(
+              172.92% 172.92% at -38.54% -78.12%,
+              rgba(0, 172, 71, 0.2) 0%,
+              rgba(0, 172, 71, 0.05) 100%
+            );
+
+            img {
+              width: clamp(18px, 2vw, 24px);
+              aspect-ratio: 1;
+            }
+          }
+          .button-text {
+            @extend .cc-transition;
+            font-weight: 400;
+            @include font(16, 16, 140);
+            color: $cc-white;
+          }
+          &.active,
+          &:hover {
+            .button-icon {
+              box-shadow: 0px 0px 0px 4px #00ac4799;
+
+              @include maxbp(md) {
+                box-shadow: 0px 0px 0px 2px #00ac4799;
+              }
+            }
+            .button-text {
+              color: $ccpigd-primary;
+            }
+          }
+        }
+      }
+    }
+    .ccpigd-tab-body {
+      .ccpigd-tab-content {
+        padding: clamp(12px, 1.6vw, 20px) clamp(12px, 1.6vw, 20px) 0;
+        background: $ccpigd-bg;
+        border: 2px solid $ccpigd-border;
+        border-radius: clamp(12px, 2vw, 28px);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        @extend .cc-transition, .cc-relative;
+
+        &:after {
+          position: absolute;
+          content: "";
+          width: calc(100% + 4px);
+          height: 70%;
+          bottom: -2px;
+          left: -2px;
+          background: linear-gradient(
+            180deg,
+            transparent 20%,
+            rgba(0, 21, 13, 0.9333333333) 100%
+          );
+          z-index: 2;
+          @extend .cc-transition;
+        }
+
+        .tab-image-wrapper {
+          grid-column: 1/2;
+          grid-row: 1/2;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.7s ease-in-out;
+
+          &.active {
+            opacity: 1;
+            visibility: visible;
+          }
+
+          img {
+            width: 100%;
+            border: 1px solid $ccpigd-border;
+            border-radius: clamp(4px, 1vw, 16px);
+            aspect-ratio: 16 / 9.6;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+        &:hover {
+          &::after {
+            height: 16%;
+          }
+        }
+      }
+    }
+  }
+  &.ccpigd-home-hero {
+    border-bottom: 2px solid $ccpigd-border;
+
+    .ccpigd-hero-content-box {
+      padding-bottom: clamp(50px, 4vw, 60px);
+
+      h1 {
+        font-size: clamp(36px, calc(18px + 3.7vw), 70px);
+        line-height: clamp(44px, calc(28px + 3.7vw), 86px);
+      }
+    }
+  }
+}
+
+
+// Google drive single feature page style start //
+.ccpigd-single-feature-section {
+  .ccpigd-row {
+    column-gap: 22px;
+    row-gap: 30px;
+    padding-bottom: clamp(40px, 5vw, 80px);
+    border-bottom: 2px solid $ccpigd-border;
+
+    @include maxbp(md) {
+      flex-wrap: wrap;
+    }
+
+    .content-box {
+      width: 50%;
+
+      @include maxbp(md) {
+        width: 100%;
+        text-align: center;
+      }
+
+      .ccpigd-hero-sub-title {
+        
+        @include minbp(lg){
+          margin-left: 0;
+        }
+      }
+      .ccpigd-btn-group {
+        @include minbp(lg){
+          justify-content: flex-start;
+        }
+      }
+    }
+    .image-box {
+      width: 50%;
+
+      @include maxbp(md) {
+        width: 100%;
+      }
+
+      img {
+        border-radius: clamp(6px, 1vw, 16px);
+      }
+    }
+  }
+}
+.ccpigd-demo-feature {
+  .demo-feature-list {
+    gap: clamp(20px, 3vw, 35px);
+
+    .demo-feature-item {
+      width: 100%;
+      padding: clamp(20px, 3vw, 40px);
+      background: $ccpigd-bg;
+      border: 1px solid $ccpigd-border;
+      border-radius: clamp(10px, 2vw, 28px);
+
+      .demo-feature-shortcode {
+        margin-top: clamp(20px, 3.5vw, 50px);
+        padding: clamp(20px, 2.2vw, 24px);
+        background: #00150D;
+        border: 1px solid $ccpigd-border;
+        border-radius: clamp(4px, 1vw, 16px);
+
+        .igd-feature-content {
+          color: $ccpigd-text;
+
+          ul,
+          ol {
+            color: currentColor;
+            padding: 10px 0 10px clamp(30px, 3.5vw, 40px);
+          }
+          a {
+            @extend .cc-transition;
+            color: currentColor;
+            text-decoration: underline;
+            
+            &:hover {
+              color: $ccpigd-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

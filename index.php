@@ -10,11 +10,16 @@
     )
 ) ;?>
 
-
-
+<section class="ccpigd-section ccpigd-section-top flex-center" style="min-height: 600px; background-color: #d8defa;">
+    <div class="container">
+        <div class="cc-section-title text-center">
+            <h1 style="color: #000;">Home Page</h1>
+        </div>
+    </div>
+</section>
 
 <!-- Default CTA -->
-<?php get_template_part('/template-parts/footer/footer_cta_default'); ?>
+<?php get_template_part('/template-parts/footer/footer-cta-default'); ?>
 <!-- Default CTA -->
 
 <?php 

@@ -4,6 +4,50 @@
 @use "base" as *;
 @use "utilities" as *;
 
+
+
+.cc-footer-cta {
+  width: 100%;
+  margin: 0 auto;
+  z-index: 12;
+
+  .cc-cta-default-wrap,
+  .cc-cta-docs-wrap {
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    z-index: 1;
+  }
+}
+
+.cta-container-width {
+  max-width: 1330px;
+  padding: 0 25px;
+  z-index: 20;
+
+  .cc-cta-default-wrap {
+    border-radius: 20px;
+  }
+}
+
+.cta-full-width {
+  max-width: 100%;
+}
+
+.cta-full-width + .codeconfig-footer {
+  .footer-bottom {
+    padding-top: 110px;
+
+    @include maxbp(md) {
+      padding-top: 80px;
+    }
+
+    @include maxbp(sm) {
+      padding-top: 50px;
+    }
+  }
+}
+
 .cc-cta-default {
   .cc-cta-default-wrap {
     background: $cc-primary;
@@ -49,7 +93,7 @@
 
         h2,
         p {
-          color: white;
+          color: $cc-white;
         }
 
         p {
@@ -61,25 +105,14 @@
 
       .button-side {
         width: 40%;
-        text-align: end;
+        @extend .d-flex, .justify-end;
 
         @include maxbp(880) {
           width: 100%;
         }
 
         @include maxbp(sm) {
-          text-align: center;
-        }
-
-        .cc-btn {
-          &:hover {
-            background: $cc-secondary;
-            color: white !important;
-
-            .cc-btn-icon {
-              background: $cc-primary;
-            }
-          }
+          justify-content: center;
         }
       }
 
@@ -102,6 +135,7 @@
     }
   }
 }
+
 
 
 .codeconfig-footer {

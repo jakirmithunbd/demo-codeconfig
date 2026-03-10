@@ -24,7 +24,7 @@
 .justify-start    { justify-content: flex-start; }
 .justify-end      { justify-content: flex-end; }
 .justify-center   { justify-content: center; }
-.space-between  { justify-content: space-between; }
+.space-between  { justify-content: space-between; gap: rem(16); }
 .space-around   { justify-content: space-around; }
 .space-evenly   { justify-content: space-evenly; }
 

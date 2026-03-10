@@ -71,7 +71,7 @@ h6 {
 }
 
 p {
-  @include font(16, 28, 160);
+  @include font(16, 16, 160);
 
   & + p {
     margin-top: rem(20);
@@ -219,4 +219,111 @@ a {
   mask-repeat: no-repeat;
   mask-size: cover;
   background: #fff;
+}
+
+
+.cc-btn {
+    @extend .flex-center, .cc-transition;
+    font-size: clamp(16, 20, 100);
+    font-weight: 500;
+    padding: rem(15) clamp(rem(10), 2vw, rem(30));
+    gap: rem(10);
+    border-style: solid;
+    border-width: rem(1);
+    border-radius: rem(100);
+
+    @include maxbp(xs) {
+        width: 80%;
+    }
+
+    &.icon-right {
+        flex-direction: row-reverse;
+    }
+
+    &.icon {
+        @extend .cc-relative;
+
+        &::before {
+        content: "";
+        width: 18px;
+        aspect-ratio: 1;
+        @extend .cc-mask-cover, .cc-transition;
+        }
+    }
+    &.icon-wordpress {
+        &::before {
+        mask: url("../images/google-drive/wordpress.svg");
+        }
+    }
+    &.icon-crown {
+        &::before {
+        mask: url("../images/google-drive/crown.svg");
+        }
+    }
+    &.icon-shapes {
+        &::before {
+        mask: url("../images/google-drive/shapes.svg");
+        }
+    }
+    &.icon-window {
+        &::before {
+        mask: url("../images/explore-products-icon.svg");
+        }
+    }
+
+    &.primary {
+        color: $cc-white;
+        background: $cc-primary;
+        border-color: $cc-primary;
+
+        &::before {
+        background-color: $cc-white;
+        }
+
+        &:hover {
+        color: $cc-primary;
+        background: $cc-white;
+
+        &::before {
+            background-color: $cc-primary;
+        }
+        }
+    }
+    &.secondary {
+        color: $cc-primary;
+        background: $cc-white;
+        border-color: $cc-primary;
+
+        &::before {
+        background-color: $cc-primary;
+        }
+
+        &:hover {
+        color: $cc-white;
+        background: $cc-primary;
+
+        &::before {
+            background-color: $cc-white;
+        }
+        }
+    }
+    &.white {
+      color: $cc-black;
+      background: $cc-white;
+      border-color: $cc-white;
+      
+      &::before {
+        background-color: $cc-black;
+      }
+
+      &:hover {
+        color: $cc-white;
+        background: $cc-black;
+        border-color: $cc-black;
+        
+        &::before {
+          background-color: $cc-white;
+        }
+      }
+    }
 }
