@@ -37,7 +37,7 @@ $ccpigd-radius-zero: 0;
 
     h1,
     h2 {
-        @include font(30, 54);
+        @include font(30, 54, 120);
         text-transform: capitalize;
     }
 
@@ -91,7 +91,7 @@ $ccpigd-radius-zero: 0;
 
 .ccpigd-btn {
     @extend .flex-center, .cc-transition;
-    font-size: clamp(16, 20, 100);
+    @include font(16, 20, 100);
     font-weight: 500;
     padding: rem(15) clamp(rem(10), 2vw, rem(30));
     gap: rem(10);
@@ -270,7 +270,7 @@ $ccpigd-radius-zero: 0;
               border-radius: $ccpigd-secondary-radius;
               font-family: $dm;
               font-weight: 500;
-              @include font(18, 24);
+              @include font(18, 23);
   
               @include maxbp(1160) {
                 padding: 8px 20px;
@@ -366,6 +366,7 @@ $ccpigd-radius-zero: 0;
 
         h6 {
           @include font(20, 22);
+          margin: 0;
           background: radial-gradient(
             70.16% 212.6% at 29.84% -132.28%,
             #e1f2a6 0%,
@@ -697,7 +698,7 @@ $ccpigd-radius-zero: 0;
 }
 
 
-.ccpigd-information-faq {
+.ccpigd-faq {
   background: linear-gradient(
     180deg,
     rgba(0, 172, 71, 0.05) 0%,

@@ -11,8 +11,8 @@ get_header(
     null,
     array(
         'class_prefix' => 'ccpigd',
-        'logos' => 'cc-logo',
-        'menu_name' => 'header-menu',
+        'logos' => 'igd-logo',
+        'menu_name' => 'google-drive-menu',
         'mobile_menu' => '',
     )
 )
@@ -129,7 +129,7 @@ endif;
 $faq_section_title = get_field('faq_section_title');
 if (!empty($faq_section_title['title'])) :
 ?>
-    <section class="ccpigd-section cc-relative z-index-plus-1 ccpigd-information-faq">
+    <section class="ccpigd-section cc-relative z-index-plus-1 ccpigd-faq">
         <div class="ccpigd-container ccpigd-small-width">
 
             <div class="section-title-box text-center">
