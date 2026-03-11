@@ -95,14 +95,14 @@ if ($igd_feature) :
                             <?php
                             $feature_type = $feature['feature_type'];
 
-                            if ($feature_type === 'short_code') :
+                            if ($feature_type === 'short_code' && !empty($feature['short_code'])) :
                                 echo do_shortcode($feature['short_code']);
 
-                            elseif ($feature_type === 'image') :
+                            elseif ($feature_type === 'image' && !empty($feature['feature_image'])) :
                             ?>
                                 <img src="<?php echo esc_url($feature['feature_image']['url']); ?>" alt="<?php echo esc_attr($feature['feature_image']['alt']); ?>" />
                             <?php
-                            elseif ($feature_type === 'content') :
+                            elseif ($feature_type === 'content' && !empty($feature['feature_content'])) :
                             ?>
                                 <div class="igd-feature-content">
                                     <?php
