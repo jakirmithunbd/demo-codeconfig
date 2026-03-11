@@ -270,6 +270,11 @@ a {
         mask: url("../images/explore-products-icon.svg");
         }
     }
+    &.icon-arrow {
+        &::before {
+        mask: url("../images/google-drive/arrow-right.svg");
+        }
+    }
 
     &.primary {
         color: $cc-white;

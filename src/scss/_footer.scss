@@ -426,7 +426,7 @@
 
         p {
           margin: 0;
-          @include font(18, 28);
+          @include font(18, 18, 150);
           color: #000;
           font-weight: 500;
         }
@@ -691,6 +691,7 @@
       p {
         font-family: $dm;
         color: #3c4770;
+        margin-bottom: rem(20);
 
         @include maxbp(xs) {
           margin-bottom: 10px;

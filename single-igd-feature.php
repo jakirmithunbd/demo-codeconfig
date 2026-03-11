@@ -53,7 +53,7 @@ get_header(
                         <!-- Left Button end -->
 
                         <!-- Right Button start -->
-                        <button class="ccp-free-download-btn ccpigd-btn secondary icon icon-wordpress"><?php echo esc_html('Download Free', 'demo-codeconfig'); ?></button>
+                        <button class="ccp-free-download-btn ccpigd-btn secondary white icon icon-right icon-arrow"><?php echo esc_html('Download Free', 'demo-codeconfig'); ?></button>
                         <!-- Right Button end -->
                     </div><!-- Button Group -->
 
@@ -143,20 +143,20 @@ get_template_part('template-parts/faq', null, $faqData);
 
 
 <!-- Default CTA -->
-<?php get_template_part('/template-parts/footer/footer-cta-default'); ?>
+<?php get_template_part('/template-parts/footer/footer-cta-igd'); ?>
 <!-- Default CTA -->
 
 <?php 
 get_footer(null, array(
     'class_prefix' => 'ccpigd',
-    'logos' => 'cc-logo',
-    'footer_description' => 'cc-footer-description',
+    'logos' => 'igd-logo',
+    'footer_description' => 'igd-footer-description',
     'first_menu_title' => 'Company',
     'first_menu_name' => 'company-menu',
     'second_menu_title' => 'Resources',
-    'second_menu_name' => 'resources-menu',
+    'second_menu_name' => 'igd-resources',
     'payment_logos' => 'light',
     'footer_perticles' => '',
-    'popup' => '',
+    'popup' => 'igd-download-popup',
 )); 
 ?>

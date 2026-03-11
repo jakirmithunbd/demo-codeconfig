@@ -134,11 +134,129 @@
     });
   }
 
+  // Free Download PopUp start
+  function freeDownloadPopUp() {
+      const ccpFreeDownloadButtons = document.querySelectorAll(".ccp-free-download-btn");
+      const popupSection = document.querySelector(".ccp-download-popup-section");
+      const popupBox = document.querySelector(".ccp-download-popup");
+      const closeButtons = document.querySelectorAll(".ccp-popup-close-btn");
+      const ccpFreeDownloadLinkEl = document.getElementById("ccp-free-download-link-url");
+
+      let lastFocusedElement = null;
+
+      if (popupSection && ccpFreeDownloadButtons.length) {
+
+          /* =========================
+            OPEN POPUP
+          ========================== */
+          function openPopup(triggerBtn) {
+              lastFocusedElement = triggerBtn;
+
+              popupSection.classList.add("active");
+              popupSection.setAttribute("aria-hidden", "false");
+
+              // Move focus to first focusable element
+              const focusable = popupBox.querySelector(
+                  'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+              );
+              focusable?.focus();
+
+              document.addEventListener("keydown", handleKeydown);
+          }
+
+          /* =========================
+            CLOSE POPUP
+          ========================== */
+          function closePopup() {
+              popupSection.classList.remove("active");
+              popupSection.setAttribute("aria-hidden", "true");
+
+              document.removeEventListener("keydown", handleKeydown);
+
+              // Restore focus
+              lastFocusedElement?.focus();
+          }
+
+          /* =========================
+            KEYBOARD HANDLING
+          ========================== */
+          function handleKeydown(e) {
+              if (e.key === "Escape") {
+                  closePopup();
+              }
+
+              // Focus trap
+              if (e.key === "Tab") {
+                  const focusableElements = popupBox.querySelectorAll(
+                      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                  );
+
+                  const first = focusableElements[0];
+                  const last = focusableElements[focusableElements.length - 1];
+
+                  if (e.shiftKey && document.activeElement === first) {
+                      e.preventDefault();
+                      last.focus();
+                  } else if (!e.shiftKey && document.activeElement === last) {
+                      e.preventDefault();
+                      first.focus();
+                  }
+              }
+          }
+
+          /* =========================
+            BUTTON OPEN
+          ========================== */
+          ccpFreeDownloadButtons.forEach(btn => {
+              btn.addEventListener("click", () => openPopup(btn));
+          });
+
+          /* =========================
+            CLOSE BUTTONS
+          ========================== */
+          closeButtons.forEach(btn => {
+              btn.addEventListener("click", closePopup);
+          });
+
+          /* =========================
+            OUTSIDE CLICK CLOSE
+          ========================== */
+          popupSection.addEventListener("click", e => {
+              if (!popupBox.contains(e.target)) {
+                  closePopup();
+              }
+          });
+
+          /* =========================
+            CF7 SUCCESS → DOWNLOAD + CLOSE
+          ========================== */
+          document.addEventListener("wpcf7mailsent", function(event) {
+              if (!event.target.closest('.free-downolad-form')) return;
+
+              if (!ccpFreeDownloadLinkEl) return;
+
+              const fileUrl = ccpFreeDownloadLinkEl.getAttribute("href");
+              if (!fileUrl) return;
+
+              const a = document.createElement("a");
+              a.href = fileUrl;
+              a.download = "";
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+
+              closePopup();
+          });
+      }
+    }
+    // Free Download PopUp JS end
+
   // Global On Load
   function codeConfigGlobalOnLoad() {
     updateHeaderHeights();
     ccpCommonHeader();
     scrollToTop();
     ccAccordion();
+    freeDownloadPopUp();
   }
   window.addEventListener("DOMContentLoaded", codeConfigGlobalOnLoad);//# sourceMappingURL=main.js.map

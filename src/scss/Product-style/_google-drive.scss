@@ -132,7 +132,11 @@ $ccpigd-radius-zero: 0;
         mask: url("../images/google-drive/shapes.svg");
         }
     }
-
+    &.icon-arrow {
+        &::before {
+        mask: url("../images/google-drive/arrow-right.svg");
+        }
+    }
     &.primary {
         color: $cc-white;
         background: $ccpigd-primary;
@@ -381,6 +385,299 @@ $ccpigd-radius-zero: 0;
 }
 // Google Drive Header Style end //
 
+// Footer style start 
+.ccpigd-footer-cta {
+  .ccpigd-container {
+    .ccpigd-footer-cta-wrapper {
+      overflow: hidden;
+      padding: clamp(30px, 5vw, 80px);
+      border: 1px solid $ccpigd-border;
+      border-radius: $ccpigd-primary-radius;
+      background-color: #00ac470d;
+      background-image: url("/wp-content/themes/codeconfig/assets/images/google-drive/igd-cta-bg.svg");
+      @extend .cc-bg-cover;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 21, 13, 0.2) 0%,
+          #00150d 100%
+        );
+      }
+
+      .section-title-box {
+        padding-bottom: clamp(20px, 3vw, 40px);
+        @extend .cc-relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 890px;
+        margin: 0 auto;
+
+        h3 {
+          font-size: clamp(24px, 3vw, 44px);
+          line-height: 120%;
+        }
+      }
+
+      .ccpigd-btn-group {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.ccpigd-footer {
+
+  .footer-bottom {
+    background: $ccpigd-bg;
+    border-top: 1px solid $ccpigd-border;
+
+    .left-side {
+
+      .logos {
+        gap: 10px;
+        padding-bottom: clamp(10px, 1.5vw, 30px);
+
+        @include maxbp(md) {
+          border-bottom: 1px solid $ccpigd-border;
+        }
+
+        a {
+
+          &.ccp-google-drive-logo {
+
+            .logo-label {
+              display: block;
+            }
+          }
+        }
+        .logo-divider {
+          background: $ccpigd-border;
+        }
+      }
+    }
+
+    .right-side {
+
+      @include maxbp(md) {
+        flex-wrap: wrap;
+        row-gap: 30px;
+      }
+
+      @include maxbp(sm) {
+        row-gap: 30px;
+      }
+      @include maxbp(xs) {
+        row-gap: 20px;
+      }
+    }
+
+    .footer-description {
+      gap: 24px;
+
+      @include maxbp(md) {
+        display: none;
+        width: 100%;
+        align-items: center;
+      }
+
+      .description {
+        width: 100%;
+        border-bottom: 1px solid $ccpigd-border;
+        padding-bottom: rem(20);
+
+        @include minbp(lg) {
+          max-width: 330px;
+        }
+
+        p {
+          @include font(16, 16, 150);
+          color: $cc-white;
+
+          @include maxbp(md) {
+            text-align: center;
+          }
+        }
+      }
+      .ratting-status {
+        span {
+          @insclude font(16, 16, 100);
+          color: $cc-white;
+          text-transform: capitalize;
+          padding: 15px 20px;
+          border: 1px solid $ccpigd-border;
+          border-radius: $ccpigd-secondary-radius;
+          gap: 5px;
+
+          &::before {
+            content: "";
+            width: 16px;
+            height: 16px;
+            mask: url(../images/google-drive/wordpress.svg);
+            mask-size: contain;
+            mask-position: center;
+            mask-repeat: no-repeat;
+            background-color: $cc-white;
+          }
+        }
+      }
+    }
+    .footer-description-optional {
+      @include maxbp(md) {
+        display: block;
+
+        .footer-description {
+          display: flex;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .footer-menu {
+      h2 {
+        color: #fff;
+      }
+
+      ul {
+        li {
+
+          a {
+            color: #ffffff;
+
+            &::after {
+              background: $ccpigd-primary !important;
+            }
+
+            span {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+
+      &.cc-products-menu {
+        padding-bottom: 0 !important;
+        ul {
+          li {
+            margin-bottom: clamp(16px, 1.8vw, 20px);
+            a {
+              @include font(20, 20);
+              color: #ffffff;
+              text-align: start;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .copyright {
+    .cc-scroll-top-btn {
+      background: #001b0e;
+      border: 1px solid $ccpigd-border;
+      box-shadow: 0px 4px 20px 0px $ccpigd-border;
+
+      &:hover {
+        border: 1px solid $ccpigd-primary;
+      }
+
+      .scroll-top-btn-icon {
+        background-color: $ccpigd-primary;
+      }
+    }
+
+    .copyright-payment {
+      border-color: $ccpigd-border;
+      padding: 24px 0;
+
+      h5,
+      p {
+        color: $cc-white;
+        a {
+          color: $ccpigd-primary;
+        }
+      }
+      .payment-method {
+        p {
+          color: $cc-white;
+        }
+      }
+    }
+  }
+}
+
+// Free Download popup style start
+.ccpigd-download-popup-section {
+  background: rgba(0, 0, 0, .76);
+
+  .ccp-download-popup {
+    border-radius: clamp(8px, 1.8vw, 28px);
+    background: rgba(0, 172, 71, .05);
+    backdrop-filter: blur(100px);
+    border: 1px solid rgba(0, 172, 71, .2);
+    box-shadow: 5px 0 20px 10px rgba(0, 172, 71, .0509803922);
+
+    .ccp-download-popup-content {
+
+      h3,
+      h4 {
+        color: #ffffff;
+      }
+      p {
+        color: rgba(240, 255, 246, .6980392157);
+      }
+
+      .free-downolad-form {
+
+        span {
+          color: #ffffff;
+        }
+
+        input[type="email"] {
+          background: $ccpigd-bg;
+          border: 1px solid $ccpigd-border;
+          color: #ffffff;
+          font-family: $dm;
+
+          &::placeholder {
+            color: #A8B9B1;
+          }
+        }
+
+        input[type="submit"] {
+          background: $ccpigd-primary;
+          border: 1px solid $ccpigd-primary;
+          color: #fff;
+
+          &:hover {
+            background: transparent;
+            color: $ccpigd-primary;
+          }
+        }
+        .wpcf7-response-output {
+          color: #ffffff;
+        }
+      }
+    }
+    .ccp-popup-close {
+      &:hover {
+        &::before,
+        &::after {
+          box-shadow: 0px 0px 2px 1px #fff;
+        }
+      }
+    }
+  }
+}
+// free Download popup style end
+// Footer style end
 
 
 // Hero Section style //
