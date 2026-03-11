@@ -406,7 +406,7 @@
   text-align: justify;
 }
 
-.flex-center, .ccpigd-btn-group, .ccpigd-btn, .ccpigd-header .header-menu-wrap .main-header-menu .main-menu .menu-item.ccpigd-header-btn a, .ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question .ccpigd-dropdown-arrow, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a .image-wrapper, .cc-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.contact-btn a:before, .cc-btn {
+.flex-center, .ccpigd-btn-group, .ccpigd-btn, .ccpigd-header .header-menu-wrap .main-header-menu .main-menu .menu-item.ccpigd-header-btn a, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a .image-wrapper, .cc-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.contact-btn a:before, .cc-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -424,15 +424,15 @@
   flex-direction: row;
 }
 
-.cc-transition, .ccpigd-btn, .ccpigd-btn.icon::before, .ccpigd-header .header-menu-wrap .main-header-menu .main-menu .menu-item.ccpigd-header-btn a, .ccpigd-header .header-menu-wrap .main-header-menu .main-menu .menu-item.ccpigd-header-btn a:before, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-header .buttons button .button-icon, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-header .buttons button .button-text, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-body .ccpigd-tab-content, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-body .ccpigd-tab-content:after, .ccpigd-demo-feature .demo-feature-list .demo-feature-item .demo-feature-shortcode .igd-feature-content a, .ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question .ccpigd-dropdown-arrow, .ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question .ccpigd-dropdown-arrow::after, .ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question .ccpigd-dropdown-arrow::before, .ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-answer a, .codeconfig-footer .copyright .cc-scroll-top-btn, .codeconfig-footer .copyright .copyright-payment p a, .ccp-download-popup-section .ccp-download-popup .ccp-popup-close::before, .ccp-download-popup-section .ccp-download-popup .ccp-popup-close::after, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item a, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children::after, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu::before, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a::after, body #cc-header, .cc-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.contact-btn a, .cc-btn, .cc-btn.icon::before {
+.cc-transition, .ccpigd-btn, .ccpigd-btn.icon::before, .ccpigd-header .header-menu-wrap .main-header-menu .main-menu .menu-item.ccpigd-header-btn a, .ccpigd-header .header-menu-wrap .main-header-menu .main-menu .menu-item.ccpigd-header-btn a:before, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-header .buttons button .button-icon, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-header .buttons button .button-text, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-body .ccpigd-tab-content, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-body .ccpigd-tab-content:after, .ccpigd-demo-feature .demo-feature-list .demo-feature-item .demo-feature-shortcode .igd-feature-content a, .codeconfig-footer .copyright .cc-scroll-top-btn, .codeconfig-footer .copyright .copyright-payment p a, .ccp-download-popup-section .ccp-download-popup .ccp-popup-close::before, .ccp-download-popup-section .ccp-download-popup .ccp-popup-close::after, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item a, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children::after, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu::before, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a::after, body #cc-header, .cc-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.contact-btn a, .cc-btn, .cc-btn.icon::before {
   transition: all 0.3s ease-in-out;
 }
 
-.cc-relative, .ccpigd-btn-group, .ccpigd-btn.icon, .ccpigd-header .header-menu-wrap .main-header-menu .main-menu .menu-item.ccpigd-header-btn a, .ccpigd-hero-section .ccpigd-hero-tab, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-header .buttons button, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-body .ccpigd-tab-content, .ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question .ccpigd-dropdown-arrow, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a, .cc-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.contact-btn a, .cc-btn.icon {
+.cc-relative, .ccpigd-btn-group, .ccpigd-btn.icon, .ccpigd-header .header-menu-wrap .main-header-menu .main-menu .menu-item.ccpigd-header-btn a, .ccpigd-hero-section .ccpigd-hero-tab, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-header .buttons button, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-body .ccpigd-tab-content, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a, .cc-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.contact-btn a, .cc-btn.icon {
   position: relative;
 }
 
-.cc-absolute, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-header .buttons button:not(:last-child)::after, .ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question .ccpigd-dropdown-arrow::after, .ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question .ccpigd-dropdown-arrow::before, .ccp-download-popup-section .ccp-download-popup .ccp-popup-close::before, .ccp-download-popup-section .ccp-download-popup .ccp-popup-close::after, .cc-per-capsule, .cc-per-triangle, .cc-per-star, .cc-per-circle, .wordpress-watermark-logo, .codeconfig-watermark-logo {
+.cc-absolute, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-header .buttons button:not(:last-child)::after, .ccp-download-popup-section .ccp-download-popup .ccp-popup-close::before, .ccp-download-popup-section .ccp-download-popup .ccp-popup-close::after, .cc-per-capsule, .cc-per-triangle, .cc-per-star, .cc-per-circle, .wordpress-watermark-logo, .codeconfig-watermark-logo {
   position: absolute;
 }
 
@@ -785,6 +785,105 @@ a:hover {
 }
 .cc-btn.white:hover::before {
   background-color: #ffffff;
+}
+
+.ccpigd-faq-wrapper {
+  gap: clamp(10px, 2vw, 24px);
+  padding-top: clamp(10px, 1.5vw, 20px);
+}
+.ccpigd-faq-wrapper .ccpigd-faq-item {
+  border: 1px solid #e0f5ff;
+  background: #ffffff;
+  border-radius: clamp(4px, 1vw, 16px);
+  interpolate-size: allow-keywords;
+}
+.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question {
+  cursor: pointer;
+  display: grid;
+  padding: clamp(20px, 2.2vw, 24px);
+  grid-template-columns: 1fr 30px;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+}
+.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question h4 {
+  color: #000000;
+  font-size: clamp(16px, 2vw, 22px);
+  line-height: clamp(20px, 2.4vw, 26px);
+  font-weight: 500;
+  margin: 0;
+}
+.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question h4 span {
+  color: #0061fe;
+  padding-right: 8px;
+  font-weight: 700;
+}
+@media (max-width: 767px) {
+  .ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question h4 span {
+    padding-right: 5px;
+  }
+}
+.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question .ccpigd-dropdown-arrow {
+  justify-self: end;
+  width: 20px;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+}
+.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question .ccpigd-dropdown-arrow::after, .ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question .ccpigd-dropdown-arrow::before {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 12px;
+  background: #0061fe;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question .ccpigd-dropdown-arrow::before {
+  right: 5px;
+  transform: rotate(45deg);
+}
+.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question .ccpigd-dropdown-arrow::after {
+  left: 5px;
+  transform: rotate(-45deg);
+}
+.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-answer {
+  padding: clamp(20px, 2.2vw, 24px);
+  padding-top: 0;
+  height: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-answer p {
+  color: #3c4770;
+  font-size: clamp(16px, 1.7vw, 18px);
+  line-height: 160%;
+}
+.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-answer ul,
+.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-answer ol {
+  padding: 10px 0 10px clamp(30px, 3.5vw, 40px);
+  color: currentColor;
+}
+.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-answer a {
+  color: currentColor;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-answer a:hover {
+  color: #0061fe;
+}
+.ccpigd-faq-wrapper .ccpigd-faq-item.accordion-active .ccpigd-dropdown-arrow::after, .ccpigd-faq-wrapper .ccpigd-faq-item.accordion-active .ccpigd-dropdown-arrow::before {
+  background: #0061fe;
+}
+.ccpigd-faq-wrapper .ccpigd-faq-item.accordion-active .ccpigd-dropdown-arrow::before {
+  transform: rotate(-45deg);
+}
+.ccpigd-faq-wrapper .ccpigd-faq-item.accordion-active .ccpigd-dropdown-arrow::after {
+  transform: rotate(45deg);
+}
+.ccpigd-faq-wrapper .ccpigd-faq-item.accordion-active .ccpigd-faq-answer {
+  height: auto;
+  padding-bottom: clamp(20px, 2.2vw, 24px);
 }
 
 .codeconfig-header {
@@ -2562,88 +2661,26 @@ body #cc-header.sticky-bar, body #cc-header.sticky-hero, body #cc-header.ccp-mob
   background: linear-gradient(180deg, rgba(0, 172, 71, 0.05) 0%, rgba(0, 172, 71, 0) 100%);
   padding: clamp(30px, 4vw, 60px) 0;
 }
-
-.ccpigd-faq-wrapper {
-  gap: clamp(10px, 2vw, 24px);
-  padding-top: clamp(10px, 1.5vw, 20px);
-}
-.ccpigd-faq-wrapper .ccpigd-faq-item {
+.ccpigd-faq .ccpigd-faq-wrapper .ccpigd-faq-item {
   border: 1px solid rgba(0, 172, 71, 0.2);
   background: rgba(0, 172, 71, 0.0509803922);
   border-radius: 16px;
 }
-.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question {
-  display: grid;
-  padding: clamp(20px, 2.2vw, 24px);
-  grid-template-columns: 1fr 30px;
-  background: transparent;
-  width: 100%;
-  text-align: left;
+.ccpigd-faq .ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question h4 {
+  color: #ffffff;
 }
-.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question h4 {
-  font-size: clamp(16px, 2vw, 22px);
-  line-height: clamp(20px, 2.4vw, 26px);
-  font-weight: 500;
-}
-.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question h4 span {
+.ccpigd-faq .ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question h4 span {
   color: #00ac47;
-  padding-right: 8px;
-  font-weight: 700;
 }
-@media (max-width: 767px) {
-  .ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question h4 span {
-    padding-right: 5px;
-  }
-}
-.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question .ccpigd-dropdown-arrow {
-  justify-self: end;
-  width: 20px;
-  aspect-ratio: 1/1;
-  cursor: pointer;
-}
-.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question .ccpigd-dropdown-arrow::after, .ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question .ccpigd-dropdown-arrow::before {
+.ccpigd-faq .ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question .ccpigd-dropdown-arrow::after, .ccpigd-faq .ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question .ccpigd-dropdown-arrow::before {
   background: #e1f2a6;
-  content: "";
-  width: 2px;
-  height: 12px;
-  position: absolute;
-  border-radius: 5px;
 }
-.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question .ccpigd-dropdown-arrow::before {
-  right: 5px;
-  transform: rotate(45deg);
-}
-.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-question .ccpigd-dropdown-arrow::after {
-  left: 5px;
-  transform: rotate(-45deg);
-}
-.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-answer {
+.ccpigd-faq .ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-answer p {
   color: #CFE3DA;
-  padding: clamp(20px, 2.2vw, 24px);
-  padding-top: 0;
 }
-.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-answer p {
-  font-size: clamp(16px, 1.7vw, 18px);
-  line-height: 160%;
-}
-.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-answer ul,
-.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-answer ol {
-  padding: 10px 0 10px clamp(30px, 3.5vw, 40px);
-  color: currentColor;
-}
-.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-answer a {
-  color: currentColor;
-  text-decoration: underline;
-}
-.ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-answer a:hover {
+.ccpigd-faq .ccpigd-faq-wrapper .ccpigd-faq-item .ccpigd-faq-answer a:hover {
   color: #00ac47;
 }
-.ccpigd-faq-wrapper .ccpigd-faq-item.open-body .ccpigd-dropdown-arrow::after, .ccpigd-faq-wrapper .ccpigd-faq-item.open-body .ccpigd-dropdown-arrow::before {
+.ccpigd-faq .ccpigd-faq-wrapper .ccpigd-faq-item.accordion-active .ccpigd-dropdown-arrow::after, .ccpigd-faq .ccpigd-faq-wrapper .ccpigd-faq-item.accordion-active .ccpigd-dropdown-arrow::before {
   background: #00ac47;
-}
-.ccpigd-faq-wrapper .ccpigd-faq-item.open-body .ccpigd-dropdown-arrow::before {
-  transform: rotate(-45deg);
-}
-.ccpigd-faq-wrapper .ccpigd-faq-item.open-body .ccpigd-dropdown-arrow::after {
-  transform: rotate(45deg);
 }/*# sourceMappingURL=main.css.map */

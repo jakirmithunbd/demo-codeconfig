@@ -474,7 +474,7 @@ body {
 
         li.menu-item {
           @include maxbp(md) {
-            border-color: $cc-border-color !important;
+            border-color: $cc-border !important;
           }
 
           a {
@@ -550,14 +550,14 @@ body {
               }
 
               &::before {
-                border-bottom: 15px solid $cc-border-color;
+                border-bottom: 15px solid $cc-border;
               }
 
               .megamenu-column {
                 ul {
                   li.menu-item {
                     a {
-                      border: 1px solid $cc-border-color;
+                      border: 1px solid $cc-border;
 
                       &::after {
                         background: var(--product-color);
@@ -599,6 +599,6 @@ body {
   &.sticky {
     backdrop-filter: blur(20px);
     background-color: #ffffffb3;
-    border-color: $cc-border-color;
+    border-color: $cc-border;
   }
 }

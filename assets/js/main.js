@@ -116,11 +116,29 @@
     }
   }
 
+  // Accordion 
+  function ccAccordion() {
+    document.querySelectorAll('.accordion-head').forEach(function(head){
+      head.addEventListener('click', function(){
+
+          const item = this.closest('.accordion-item');
+
+          document.querySelectorAll('.accordion-item').forEach(function(el){
+              if(el !== item){
+                  el.classList.remove('accordion-active');
+              }
+          });
+
+          item.classList.toggle('accordion-active');
+        });
+    });
+  }
 
   // Global On Load
   function codeConfigGlobalOnLoad() {
     updateHeaderHeights();
     ccpCommonHeader();
     scrollToTop();
+    ccAccordion();
   }
   window.addEventListener("DOMContentLoaded", codeConfigGlobalOnLoad);//# sourceMappingURL=main.js.map

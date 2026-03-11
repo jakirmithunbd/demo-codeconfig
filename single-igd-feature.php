@@ -126,49 +126,17 @@ endif;
 
 <!-- FAQ Section Start -->
 <?php
-$faq_section_title = get_field('faq_section_title');
-if (!empty($faq_section_title['title'])) :
+$faq_section = get_field('faq_section');
+
+$faqData = [
+    'faq_section_title' => !empty($faq_section['faq_section_title']) ?$faq_section['faq_section_title'] : '',
+    'faqs' => !empty($faq_section['faqs']) ? $faq_section['faqs'] : '',
+];
+
+get_template_part('template-parts/faq', null, $faqData);
 ?>
-    <section class="ccpigd-section cc-relative z-index-plus-1 ccpigd-faq">
-        <div class="ccpigd-container ccpigd-small-width">
 
-            <div class="section-title-box text-center">
-                <h2><?php echo esc_html($faq_section_title['title']); ?></h2>
-                <?php if (!empty($faq_section_title['description'])) : ?>
-                    <p><?php echo esc_html($faq_section_title['description']); ?></p>
-                <?php endif; ?>
-            </div>
 
-            <div class="ccpigd-faq-wrapper d-flex flex-col cc-accordion" role="list">
-                <?php
-                $faqs = get_field('faqs');
-                if ($faqs) :
-                    foreach ($faqs as $faq) :
-                ?>
-                        <div class="ccpigd-faq-item accordion-item open-body" role="listitem">
-                            <button class="ccpigd-faq-question d-grid align-center accordion-head">
-                                <h4 class="ccpigd-faq-question-title margin_bottom-0">
-                                    <span aria-hidden="true">Q.</span>
-                                    <?php echo esc_html($faq['question']); ?>
-                                </h4>
-                                <span class="ccpigd-dropdown-arrow" aria-hidden="true"></span>
-                            </button>
-
-                            <div class="ccpigd-faq-answer margin-0 accordion-body">
-                                <?php echo wp_kses_post($faq['answer']); ?>
-                            </div>
-                        </div>
-                <?php
-                    endforeach;
-                endif;
-                ?>
-            </div><!-- /.ccpigd-faq-wrapper -->
-
-        </div><!-- /.ccpigd-container -->
-    </section>
-<?php
-endif;
-?>
 <!-- FAQ Section End -->
 
 
