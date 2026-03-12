@@ -1,6 +1,6 @@
 <?php
 function cc_demo_acf_json_save_point( $path ) {
-    return get_stylesheet_directory() . '../';
+    return get_stylesheet_directory() . '/acf-fields';
 }
 add_filter( 'acf/settings/save_json', 'cc_demo_acf_json_save_point' );
 

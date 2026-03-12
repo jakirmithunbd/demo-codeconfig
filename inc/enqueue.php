@@ -4,8 +4,6 @@ function codeconfigdemo_load_scripts()
 {
     wp_enqueue_style('codeconfigdemo-style', get_stylesheet_uri(), [], _S_VERSION);
 
-    wp_enqueue_style('codeconfigdemo-google-fonts', get_template_directory_uri() . '/assets/fonts/google-fonts.css', [], time(), false);
-
     wp_enqueue_style('codeconfigdemo-main', ASSETS_DIR . '/css/main.css', [], time(), 'all');
 
     wp_enqueue_script('codeconfigdemo_scripts', get_template_directory_uri() . '/assets/js/main.js', ['jquery', 'wp-util'], time(), true);
