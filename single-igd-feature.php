@@ -135,8 +135,6 @@ $faqData = [
 
 get_template_part('template-parts/faq', null, $faqData);
 ?>
-
-
 <!-- FAQ Section End -->
 
 
