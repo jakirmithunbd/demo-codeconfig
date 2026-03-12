@@ -19,6 +19,7 @@
 .d-block         { display: block; }
 .d-block-inline  { display: inline-block; }
 .d-none          { display: none; }
+.d-grid          { display: grid; }
 
 // Justify-content
 .justify-start    { justify-content: flex-start; }
@@ -101,7 +102,11 @@
     background-position: center !important;
     background-repeat: no-repeat !important;
 }
-
+.unstyle {
+    li {
+        list-style-type: none;
+    }
+}
 .hide-desktop {
     @include minbp(lg) {
         display: none;
