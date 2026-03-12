@@ -29,8 +29,8 @@ jobs:
             - name: 🧱 Prepare deploy directory
               run: |
                   mkdir deploy
-                  cp -r assets core acf-fields inc deploy/
-                  cp index.php style.css functions.php deploy/
+                  cp -r acf-fields assets core inc page-templates template-parts deploy/
+                  cp index.php style.css functions.php 404.php archives.php comments.php footer.php header.php index.php page.php Screenshot.png search.php single-igd-feature.php single.php deploy/
 
             - name: 🌎 Deploying
               uses: SamKirkland/FTP-Deploy-Action@v4.3.4
