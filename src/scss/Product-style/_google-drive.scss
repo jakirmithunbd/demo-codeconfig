@@ -676,6 +676,7 @@ $ccpigd-radius-zero: 0;
       filter: opacity(0.5);
     }
   }
+  
   @include maxbp(xs) {
     &::before {
       height: 15vh;
