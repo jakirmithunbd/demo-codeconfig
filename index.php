@@ -10,7 +10,7 @@
     )
 ) ;?>
 
-<section class="ccpigd-section ccpigd-section-top flex-center" style="min-height: 600px; background-color: #d8defa;">
+<section class="ccpigd-section section-top flex-center" style="min-height: 600px; background-color: #d8defa;">
     <div class="container">
         <div class="cc-section-title text-center">
             <h1 style="color: #000;">Google Drive Features</h1>

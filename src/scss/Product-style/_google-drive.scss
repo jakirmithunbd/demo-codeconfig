@@ -20,7 +20,6 @@ $ccpigd-radius-full: 100%;
 $ccpigd-radius-zero: 0;
 
 .ccpigd-section {
-    margin-block: clamp(rem(50), 6.5vw, rem(80));
 
     p {
         color: $ccpigd-text;
@@ -54,20 +53,6 @@ $ccpigd-radius-zero: 0;
     }
     h6 {
         @include font(16, 22);
-    }
-
-    &.ccpigd-section-top {
-        padding-top: calc(var(--header-height, 200px) + 30px) !important;
-        
-        @include minbp(lg) {
-            padding-top: calc(var(--header-height, 200px) + 50px) !important;
-        }
-
-        &.cc-user-logged-in {
-            @include maxbp(md) {
-                padding-top: calc(var(--header-height, 200px) + 10px) !important;
-            }
-        }
     }
 }
 
@@ -684,7 +669,6 @@ $ccpigd-radius-zero: 0;
 .ccpigd-hero-section {
   padding-bottom: 0;
   z-index: 1;
-  margin-top: 0 !important;
 
   @include maxbp(md) {
     &::before {

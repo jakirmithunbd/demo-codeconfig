@@ -19,7 +19,7 @@ get_header(
 ?>
 
 <!-- Hero Section Start -->
-<section class="ccpigd-section ccpigd-hero-section ccpigd-section-top cc-relative ccpigd-single-feature-section">
+<section class="ccpigd-section ccpigd-hero-section section-top cc-relative ccpigd-single-feature-section">
     <div class="ccpigd-hero-section-bg cc-absolute">
         <img src="<?php echo esc_url(get_theme_file_uri('assets/images/google-drive/Codeconfig-igd-banner-bg.png')); ?>"
                 alt="<?php echo esc_attr__('Hero Background', 'demo-codeconfig'); ?>">

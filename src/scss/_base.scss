@@ -99,6 +99,24 @@ a {
     color: $cc-primary;
   }
 }
+section {
+    margin-block: clamp(rem(50), 6.5vw, rem(80));
+
+    &.section-top {
+      margin-top: 0;
+      padding-top: calc(var(--header-height, 200px) + 30px) !important;
+    
+      @include minbp(lg) {
+        padding-top: calc(var(--header-height, 200px) + 50px) !important;
+      }
+
+      &.cc-user-logged-in {
+        @include maxbp(md) {
+            padding-top: calc(var(--header-height, 200px) + 10px) !important;
+        }
+      }
+    }
+}
 .container {
   width: 100%;
   max-width: rem(1330);
