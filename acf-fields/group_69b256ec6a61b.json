@@ -1,0 +1,82 @@
+{
+    "key": "group_69b256ec6a61b",
+    "title": "Mega Menu",
+    "fields": [
+        {
+            "key": "field_69b256ede0375",
+            "label": "Product Logo",
+            "name": "product_logo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_69b25792e0378",
+            "label": "Product Color",
+            "name": "product_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#0061FE",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 0,
+            "show_custom_palette": 0,
+            "show_color_wheel": 1,
+            "custom_palette_source": "",
+            "palette_colors": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "nav_menu_item",
+                "operator": "==",
+                "value": "location\/header-menu"
+            }
+        ],
+        [
+            {
+                "param": "nav_menu_item",
+                "operator": "==",
+                "value": "location\/products-menu"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1773295592
+}

@@ -301,7 +301,7 @@
     grid-column: span 12;
   }
 }
-.d-flex, .cc-cta-default .cc-cta-default-wrap .container .button-side, .ccp-download-popup-section .ccp-download-popup .ccp-download-popup-content .free-downolad-form label:has(input[type=checkbox]), .codeconfig-header .header-menu-wrap .main-header-menu .main-menu, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a, .cc-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.contact-btn a {
+.d-flex, .cc-cta-default .cc-cta-default-wrap .container .button-side, .ccp-download-popup-section .ccp-download-popup .ccp-download-popup-content .free-downolad-form label:has(input[type=checkbox]), .codeconfig-header .header-menu-wrap .main-header-menu .main-menu, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a, .cc-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.contact-btn a, .cc-products-menu ul li a {
   display: flex;
 }
 
@@ -354,7 +354,7 @@
   align-items: flex-end;
 }
 
-.align-center, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu, .cc-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.contact-btn a {
+.align-center, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu, .cc-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.contact-btn a, .cc-products-menu ul li a {
   align-items: center;
 }
 
@@ -427,7 +427,7 @@
   text-align: justify;
 }
 
-.flex-center, .ccpigd-btn-group, .ccpigd-btn, .ccpigd-header .header-menu-wrap .main-header-menu .main-menu .menu-item.ccpigd-header-btn a, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a .image-wrapper, .cc-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.contact-btn a:before, .cc-btn {
+.flex-center, .ccpigd-btn-group, .ccpigd-btn, .ccpigd-header .header-menu-wrap .main-header-menu .main-menu .menu-item.ccpigd-header-btn a, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a .image-wrapper, .cc-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.contact-btn a:before, .cc-btn, .cc-products-menu ul li a .image-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -445,11 +445,11 @@
   flex-direction: row;
 }
 
-.cc-transition, .ccpigd-btn, .ccpigd-btn.icon::before, .ccpigd-header .header-menu-wrap .main-header-menu .main-menu .menu-item.ccpigd-header-btn a, .ccpigd-header .header-menu-wrap .main-header-menu .main-menu .menu-item.ccpigd-header-btn a:before, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-header .buttons button .button-icon, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-header .buttons button .button-text, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-body .ccpigd-tab-content, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-body .ccpigd-tab-content:after, .ccpigd-demo-feature .demo-feature-list .demo-feature-item .demo-feature-shortcode .igd-feature-content a, .codeconfig-footer .copyright .cc-scroll-top-btn, .codeconfig-footer .copyright .copyright-payment p a, .ccp-download-popup-section .ccp-download-popup .ccp-popup-close::before, .ccp-download-popup-section .ccp-download-popup .ccp-popup-close::after, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item a, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children::after, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu::before, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a::after, body #cc-header, .cc-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.contact-btn a, .cc-btn, .cc-btn.icon::before {
+.cc-transition, .ccpigd-btn, .ccpigd-btn.icon::before, .ccpigd-header .header-menu-wrap .main-header-menu .main-menu .menu-item.ccpigd-header-btn a, .ccpigd-header .header-menu-wrap .main-header-menu .main-menu .menu-item.ccpigd-header-btn a:before, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-header .buttons button .button-icon, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-header .buttons button .button-text, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-body .ccpigd-tab-content, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-body .ccpigd-tab-content:after, .ccpigd-demo-feature .demo-feature-list .demo-feature-item .demo-feature-shortcode .igd-feature-content a, .codeconfig-footer .copyright .cc-scroll-top-btn, .codeconfig-footer .copyright .copyright-payment p a, .ccp-download-popup-section .ccp-download-popup .ccp-popup-close::before, .ccp-download-popup-section .ccp-download-popup .ccp-popup-close::after, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item a, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children::after, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu::before, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a::after, body #cc-header, .cc-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.contact-btn a, .cc-btn, .cc-btn.icon::before, .cc-products-menu ul li a::after {
   transition: all 0.3s ease-in-out;
 }
 
-.cc-relative, .ccpigd-btn-group, .ccpigd-btn.icon, .ccpigd-header .header-menu-wrap .main-header-menu .main-menu .menu-item.ccpigd-header-btn a, .ccpigd-footer-cta .ccpigd-container .ccpigd-footer-cta-wrapper .section-title-box, .ccpigd-hero-section .ccpigd-hero-tab, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-header .buttons button, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-body .ccpigd-tab-content, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a, .cc-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.contact-btn a, .cc-btn.icon {
+.cc-relative, .ccpigd-btn-group, .ccpigd-btn.icon, .ccpigd-header .header-menu-wrap .main-header-menu .main-menu .menu-item.ccpigd-header-btn a, .ccpigd-footer-cta .ccpigd-container .ccpigd-footer-cta-wrapper .section-title-box, .ccpigd-hero-section .ccpigd-hero-tab, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-header .buttons button, .ccpigd-hero-section .ccpigd-hero-tab .ccpigd-tab-body .ccpigd-tab-content, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul li.menu-item a, .cc-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.contact-btn a, .cc-btn.icon, .cc-products-menu ul li a {
   position: relative;
 }
 
@@ -817,6 +817,57 @@ a:hover {
   background-color: #ffffff;
 }
 
+.cc-products-menu ul li {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.cc-products-menu ul li:not(:last-child) {
+  margin-bottom: 20px;
+}
+@media (max-width: 575px) {
+  .cc-products-menu ul li:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+.cc-products-menu ul li a {
+  gap: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.cc-products-menu ul li a::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 1px;
+  background: var(--product-color) !important;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -5px;
+}
+.cc-products-menu ul li a:hover::after {
+  width: 100%;
+}
+.cc-products-menu ul li a .image-wrapper img {
+  width: 100%;
+  max-width: 30px;
+}
+.cc-products-menu ul li a span {
+  font-size: clamp(1.125rem, 0.1785714286vw + 1.0892857143rem, 1.25rem);
+  line-height: 1.1;
+  font-weight: 400;
+  color: #3c4770;
+}
+.cc-products-menu ul li a .product-status {
+  font-size: 0.875rem;
+  line-height: 1;
+  font-weight: 400;
+  color: #fff;
+  background: var(--product-color);
+  border-radius: 100px;
+  padding: 6px 10px;
+}
+
 .ccpigd-faq-wrapper {
   gap: clamp(10px, 2vw, 24px);
   padding-top: clamp(10px, 1.5vw, 20px);
@@ -1064,6 +1115,9 @@ a:hover {
   .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu::before {
     display: none;
   }
+}
+.codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu li {
+  list-style: none;
 }
 .codeconfig-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.menu-item-has-children .dropdown-menu .megamenu-column ul {
   display: grid;
