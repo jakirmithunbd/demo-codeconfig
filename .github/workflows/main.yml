@@ -40,5 +40,5 @@ jobs:
                   password: ${{ secrets.FTP_PASS }}
                   local-dir: ./deploy/
                   server-dir: /wp-content/themes/demo-codeconfig/
-                  timeout: 70000
+                  timeout: 120000
                   protocol: ftp
