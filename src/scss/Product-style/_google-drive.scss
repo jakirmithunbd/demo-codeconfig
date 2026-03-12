@@ -817,8 +817,8 @@ $ccpigd-radius-zero: 0;
           }
           .button-text {
             @extend .cc-transition;
-            font-weight: 400;
             @include font(16, 16, 140);
+            font-weight: 400;
             color: $cc-white;
           }
           &.active,
