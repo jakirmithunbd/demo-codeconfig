@@ -28,7 +28,10 @@ body {
   scroll-behavior: smooth;
   color: $cc-text;
 }
-
+button {
+  cursor: pointer;
+  font-family: $dm;
+}
 img,
 svg {
   width: 100%;
