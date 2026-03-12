@@ -2497,7 +2497,7 @@ body #cc-header.sticky-bar, body #cc-header.sticky-hero, body #cc-header.ccp-mob
   border: 1px solid rgba(0, 172, 71, 0.2);
   border-radius: 16px;
   background-color: rgba(0, 172, 71, 0.0509803922);
-  background-image: url("/wp-content/themes/codeconfig/assets/images/google-drive/igd-cta-bg.svg");
+  background-image: url("../images/google-drive/igd-cta-bg.svg");
 }
 .ccpigd-footer-cta .ccpigd-container .ccpigd-footer-cta-wrapper::after {
   content: "";

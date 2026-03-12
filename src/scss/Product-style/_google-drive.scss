@@ -379,7 +379,7 @@ $ccpigd-radius-zero: 0;
       border: 1px solid $ccpigd-border;
       border-radius: $ccpigd-primary-radius;
       background-color: #00ac470d;
-      background-image: url("/wp-content/themes/codeconfig/assets/images/google-drive/igd-cta-bg.svg");
+      background-image: url("../images/google-drive/igd-cta-bg.svg");
       @extend .cc-bg-cover;
 
       &::after {
@@ -676,7 +676,7 @@ $ccpigd-radius-zero: 0;
       filter: opacity(0.5);
     }
   }
-  
+
   @include maxbp(xs) {
     &::before {
       height: 15vh;
