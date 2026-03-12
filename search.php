@@ -23,6 +23,7 @@ get_header(
     </div>
 </section>
 
+
 <section class="blog-section">
     <div class="container relative">
         <?php if (have_posts()) : ?>
