@@ -103,6 +103,7 @@
   
           // Dropdown start
           &.menu-item-has-children {
+            interpolate-size: allow-keywords; // smoth dropdown animation 
             @extend .cc-relative;
   
             &::after {
@@ -135,9 +136,10 @@
               width: 100%;
               padding: 20px;
               border-radius: 16px;
-              @extend .cc-relative;
+              @extend .unstyle, .cc-relative, .cc-transition;
   
               @include minbp(lg) {
+                width: max-content;
                 position: absolute;
                 top: 42px;
                 opacity: 0;
@@ -146,7 +148,9 @@
               }
   
               @include maxbp(md) {
-                display: none;
+                overflow: hidden;
+                height: 0;
+                padding-block: 0 !important;
               }
   
               &::before {
@@ -169,7 +173,17 @@
               }
 
               li {
-                list-style: none;
+                justify-content: flex-start ! important;
+                
+                a {
+                  color: currentColor;
+                  width: 100%;
+                  padding-right: rem(10);
+
+                  &:hover {
+                    color: $cc-primary;
+                  }
+                }
               }
   
               .megamenu-column {
@@ -255,6 +269,10 @@
   
               &::after {
                 transform: rotate(223deg);
+              }
+              .dropdown-menu {
+                height: auto;
+                padding-block: rem(20) !important;
               }
             }
   

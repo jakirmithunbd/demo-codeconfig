@@ -251,6 +251,34 @@
     }
     // Free Download PopUp JS end
 
+
+    // Mobile Menu Dropdown start
+  function mobileMenuDropdown() {
+    if (window.innerWidth < 992) {
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+        dropdown.addEventListener('click', function(e) {
+
+            // If the clicked element is an <a>, do nothing
+            if (e.target.tagName.toLowerCase() === 'a') return;
+
+            const isActive = this.classList.contains('active-dopdown-menu');
+
+            // Remove from all
+            document.querySelectorAll('.dropdown').forEach(item => {
+                item.classList.remove('active-dopdown-menu');
+            });
+
+            // Toggle
+            if (!isActive) {
+                this.classList.add('active-dopdown-menu');
+            }
+
+        });
+    });
+  }
+  }
+  // Mobile Menu Dropdown end
+
   // Global On Load
   function codeConfigGlobalOnLoad() {
     updateHeaderHeights();
@@ -258,5 +286,6 @@
     scrollToTop();
     ccAccordion();
     freeDownloadPopUp();
+    mobileMenuDropdown();
   }
   window.addEventListener("DOMContentLoaded", codeConfigGlobalOnLoad);//# sourceMappingURL=main.js.map
