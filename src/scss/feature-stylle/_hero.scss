@@ -1,0 +1,39 @@
+@use  '../index' as *;
+
+
+// Hero Section style //
+body.igd-page {
+  --f-hero-title : #{$cc-white};
+  --f-hero-sub-title : #{$ccpigd-secondary};
+  --f-hero-description : #{$ccpigd-text};
+}
+.feature-hero {
+  padding-bottom: 0;
+  z-index: 1;
+  @extend .cc-relative;
+
+  @include maxbp(md) {
+    &::before {
+      height: 30vh;
+      filter: opacity(0.5);
+    }
+  }
+
+  @include maxbp(xs) {
+    &::before {
+      height: 15vh;
+    }
+  }
+
+  &__bg {
+    @extend .cc-absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -2;
+  }
+
+  .section-title {
+    max-width: rem(930);
+  }
+}

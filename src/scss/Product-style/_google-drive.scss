@@ -1,23 +1,5 @@
-@use '../variables' as *;
-@use '../mixins' as *;
-@use '../base' as *;
-@use '../utilities' as *;
+@use '../index' as *;
 
-.single-igd-feature {
-  background: #00130b;
-}
-
-// Variables
-$ccpigd-primary: #00ac47;
-$ccpigd-secondary: #e1f2a6;
-$ccpigd-text: #f0fff6b2;
-$ccpigd-bg: #00ac470d;
-$ccpigd-border: #00ac4733;
-
-$ccpigd-primary-radius: 16px;
-$ccpigd-secondary-radius: 12px;
-$ccpigd-radius-full: 100%;
-$ccpigd-radius-zero: 0;
 
 .ccpigd-section {
 
@@ -56,7 +38,7 @@ $ccpigd-radius-zero: 0;
     }
 }
 
-.ccpigd-container {
+.igd-container {
   width: 100%;
   max-width: rem(1370);
   margin: 0 auto;
@@ -188,8 +170,14 @@ $ccpigd-radius-zero: 0;
 
 
 // Google Drive Header Style start //
-.ccpigd-header {
+.igd-header {
   padding-bottom: 0;
+
+  .container {
+    @include maxbp(md) {
+      padding: 0;
+    }
+  }
 
   .header-menu-wrap  {
     border: 1px solid $ccpigd-border;
@@ -316,7 +304,7 @@ $ccpigd-radius-zero: 0;
   @include maxbp(md) {
     padding-top: 0;
 
-    .ccpigd-container {
+    .igd-container {
       padding: 0;
     }
   }
@@ -372,7 +360,7 @@ $ccpigd-radius-zero: 0;
 
 // Footer style start 
 .ccpigd-footer-cta {
-  .ccpigd-container {
+  .igd-container {
     .ccpigd-footer-cta-wrapper {
       overflow: hidden;
       padding: clamp(30px, 5vw, 80px);
@@ -727,8 +715,13 @@ $ccpigd-radius-zero: 0;
         margin: 0 auto 20px;
       }
 
-      img {
-        max-width: 16px;
+      i {
+        width: 16px;
+        height: 20px;
+        -webkit-mask: url("./../images/google-drive/shield_lock.svg");
+        mask-size: contain;
+        -webkit-mask-size: contain;
+        background-color: $ccpigd-secondary;
       }
     }
     h1 {

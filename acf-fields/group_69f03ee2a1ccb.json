@@ -1,0 +1,79 @@
+{
+    "key": "group_69f03ee2a1ccb",
+    "title": "Page Settings",
+    "fields": [
+        {
+            "key": "field_69f03ee3f795b",
+            "label": "Page Settings",
+            "name": "page_settings",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_69f03f9a9c2e5",
+                    "label": "",
+                    "name": "select_product",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "cc": "CodeConfig",
+                        "igd": "Google Drive",
+                        "idb": "Dropbox",
+                        "aml": "Media Library",
+                        "eaw": "Essential Addons",
+                        "ddm": "Dusky Dark Mode",
+                        "ab": "Announce Bar",
+                        "docs": "Docs"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1777353751
+}

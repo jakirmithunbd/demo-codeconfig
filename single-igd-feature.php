@@ -6,15 +6,10 @@
  *
  * @package Demo_CodeConfig
  */
-
+$page_name = 'igd';
 get_header(
     null,
-    array(
-        'class_prefix' => 'ccpigd',
-        'logos' => 'igd-logo',
-        'menu_name' => 'google-drive-menu',
-        'mobile_menu' => '',
-    )
+    ['page_name' => $page_name,]
 )
 ?>
 
@@ -27,14 +22,12 @@ get_header(
 
     <?php $hero_contents = get_field('hero_contents'); ?>
 
-    <div class="ccpigd-container">
+    <div class="container">
         <div class="ccpigd-row d-flex align-center">
             <div class="content-box">
                 <div class="ccpigd-hero-content-box section-title-box">
                     <span class="ccpigd-hero-sub-title d-flex align-center">
-                        <i class="flex-center">
-                            <img src="<?php echo esc_url(get_theme_file_uri('assets/images/google-drive/shield_lock.svg')); ?>" alt="Security icon" width="24" height="24">
-                        </i>
+                        <i></i>
                         <?php echo esc_html__($hero_contents['title_tag'] ?? ''); ?>
                     </span>
 
@@ -75,7 +68,7 @@ if ($igd_feature) :
 ?>
     <!-- Feature Section Start -->
     <section class="ccpigd-section cc-relative z-index-plus-1 ccpigd-demo-feature">
-        <div class="ccpigd-container">
+        <div class="container">
             <div class="demo-feature-list d-flex flex-wrap">
                 <?php
                 foreach ($igd_feature as $feature) :
@@ -129,7 +122,7 @@ endif;
 $faq_section = get_field('faq_section');
 
 $faqData = [
-    'faq_section_title' => !empty($faq_section['faq_section_title']) ?$faq_section['faq_section_title'] : '',
+    'faq_section_title' => !empty($faq_section['faq_section_title']) ? $faq_section['faq_section_title'] : '',
     'faqs' => !empty($faq_section['faqs']) ? $faq_section['faqs'] : '',
 ];
 
@@ -145,16 +138,5 @@ get_template_part('template-parts/faq', null, $faqData);
 <!-- Default CTA -->
 
 <?php 
-get_footer(null, array(
-    'class_prefix' => 'ccpigd',
-    'logos' => 'igd-logo',
-    'footer_description' => 'igd-footer-description',
-    'first_menu_title' => 'Company',
-    'first_menu_name' => 'company-menu',
-    'second_menu_title' => 'Resources',
-    'second_menu_name' => 'igd-resources',
-    'payment_logos' => 'light',
-    'footer_perticles' => '',
-    'popup' => 'igd-download-popup',
-)); 
+get_footer(null, ['page_name' => $page_name]); 
 ?>

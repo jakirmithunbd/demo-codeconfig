@@ -1,8 +1,11 @@
-// @use "google-fonts"; 
 @use "google-fonts";
-@use "base";
+@use "./index" as *;
 
+@use "./button-style.scss";
 @use "header";
 @use "footer";
-@use "./Product-style/google-drive"
+@use "./product-style/google-drive";
+
+@use "./feature-stylle/hero";
+@use "./feature-stylle/feature";
 

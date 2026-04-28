@@ -5,7 +5,7 @@ $igd_footer_cta = $footer_cta['igd_footer_cta'];
 if(!empty($igd_footer_cta['title'])):
 ?>
 <section class="ccpigd-section ccpigd-footer-cta cc-relative">
-    <div class="ccpigd-container">
+    <div class="container">
         <div class="ccpigd-footer-cta-wrapper text-center cc-relative">
 
                 <div class="section-title-box text-center">

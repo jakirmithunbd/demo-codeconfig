@@ -10,18 +10,51 @@
 // Prevent direct access
 if (!defined('ABSPATH')) {
     exit;
-}
-get_template_part('template-parts/head');
 
-$class_prefix = $args['class_prefix'] ?? '';
-$logos = $args['logos'] ?? '';
-$menu_name = $args['menu_name'];
-$mobile_menu = $args['mobile_menu'] ?? "";
+    }
+$page_name = $args['page_name'] ?? 'cc';
+
+get_template_part('template-parts/head', null, ['page_name' => $page_name]);
+
+
+
+
+
+
+$dataMaps = [
+    'igd' => [
+        'class_prefix' => 'igd',
+        'logos'        => 'igd-logo',
+        'menu_name'    => 'google-drive-menu',
+        'mobile_menu'      => 'half',
+    ],
+    'idb' => [
+        'class_prefix' => 'idb',
+        'menu_name'    => 'dropbox-menu',
+        'container'      => 'contain',
+    ],
+
+    'aml' => [
+        'class_prefix' => 'aml',
+        'menu_name'    => 'aml-menu',
+        'container'      => 'contain',
+    ],
+];
+
+
+$config    = $dataMaps[$page_name] ?? [];
+
+$class_prefix = $config['class_prefix'] ?? 'cc';      
+$logos        = $config['logos']        ?? 'cc-logo';
+$menu_name    = $config['menu_name']    ?? 'header-menu';
+$mobile_menu  = $config['mobile_menu']  ?? 'full';
 ?>
+
+
 
 <header id="cc-header" class="<?php echo esc_attr($class_prefix); ?>-header codeconfig-header sticky-hero sticky-bar">
 
-    <div class="<?php echo esc_attr($class_prefix); ?>-container container">
+    <div class="container">
         <div class="header-menu-wrap d-flex space-between align-center"> <!-- toggle-active -->
             <div class="logo-wrapper d-flex align-center space-between">
                 <?php

@@ -1,14 +1,35 @@
 <?php
-$class_prefix = $args['class_prefix'] ?? '';
-$logos = $args['logos'] ?? '';
-$footer_description = $args['footer_description'] ?? '';
-$first_menu_title = $args['first_menu_title'] ?? '';
-$first_menu_name = $args['first_menu_name'];
-$second_menu_title = $args['second_menu_title'] ?? '';
-$second_menu_name = $args['second_menu_name'];
-$payment_logos_color = $args['payment_logos'] ?? '';
-$footer_perticles = $args['footer_perticles'] ?? '';
-$popup = $args['popup'] ?? '';
+
+$dataMaps = [
+	'igd' => [
+		'class_prefix' => 'ccpigd',
+		'logos' => 'igd-logo',
+		'footer_description' => 'igd-footer-description',
+		'first_menu_title' => 'Company',
+		'first_menu_name' => 'company-menu',
+		'second_menu_title' => 'Resources',
+		'second_menu_name' => 'igd-resources',
+		'payment_logos' => 'light',
+		'footer_perticles' => '',
+		'popup' => 'igd-download-popup',
+	],
+
+];
+
+$page_name = $args['page_name'] ?? 'cc';
+$config    = $dataMaps[$page_name] ?? [];
+
+
+$class_prefix = $config['class_prefix'] ?? 'cta-on-footer cc';
+$logos = $config['logos'] ?? 'cc-logo';
+$footer_description = $config['footer_description'] ?? 'cc-footer-description';
+$first_menu_title = $config['first_menu_title'] ?? 'Company';
+$first_menu_name = $config['first_menu_name'] ?? 'company-menu';
+$second_menu_title = $config['second_menu_title'] ?? 'Resources';
+$second_menu_name = $config['second_menu_name'] ?? 'resources-menu';
+$payment_logos_color = $config['payment_logos'] ?? 'colorful';
+$footer_perticles = $config['footer_perticles'] ?? 'cc-perticles';
+$popup = $config['popup'] ?? '';
 
 ?>
 
@@ -16,7 +37,7 @@ $popup = $args['popup'] ?? '';
 <footer class="<?php echo esc_attr($class_prefix); ?>-footer codeconfig-footer">
 	<div class="footer-bottom cc-relative">
 
-		<div class="<?php echo esc_attr($class_prefix); ?>-container container cc-relative">
+		<div class="container cc-relative">
 
 			<?php
 			if (!empty($footer_perticles)) {

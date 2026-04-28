@@ -1,0 +1,82 @@
+
+@use '../index' as *;
+
+body.igd-page {
+    --dm-feature-primary : #{$ccpigd-primary};
+    --dm-feature-title : #{$cc-white};
+    --dm-feature-text : #{$ccpigd-text};
+    --dm-feature-border : #{$ccpigd-border};
+    --dm-feature-bg : #{$ccpigd-bg};
+
+}
+
+.demo-feature {
+    position: relative;
+    z-index: 1;
+
+    &__wrapper {
+       gap: clamp(16px, 2vw, 24px); 
+
+       &__item {
+         @extend .text-center;
+          padding: clamp(16px, 2vw, 24px);
+          background: var(--dm-feature-bg, transparent);
+          border: 1px solid var(--dm-feature-border, #{$cc-border});
+          border-radius: clamp(12px, 1.4vw, 16px);
+
+          &__icon {
+            width: fit-content;
+            margin: 0 auto 20px;
+            @extend .flex-center;
+            padding: clamp(10px, 1.4vw, 18px);
+            background: var(--dm-feature-primary, #{$cc-primary});
+            border-radius: clamp(6px, 0.9vw, 12px);
+
+            img {
+                max-width: clamp(16px, 2vw, 26px);
+            }
+          }
+
+          h3 {
+            color: var(--dm-feature-title, #{$cc-primary});
+            @include font(20, 24, 120);
+            font-weight: 600;
+            margin-bottom: 10px;
+          }
+          p {
+            color: var(--dm-feature-text, #{$cc-text});
+            @include font(16, 16, 160);
+            font-weight: 500;
+            margin-bottom: 10px;
+          }
+
+          &__link {
+            color: var(--dm-feature-primary, #{$cc-primary});
+            @include font(16, 16, 100);
+            font-weight: 400;
+            @extend .flex-center, .cc-relative;
+            gap: 5px;
+
+            &::after {
+              content: "";
+              width: 22px;
+              height: 20px;
+              mask: url(./../images/google-drive/arrow-right.svg);
+              mask-size: contain;
+              mask-position: center;
+              mask-repeat: no-repeat;
+              background: var(--dm-feature-primary, #{$cc-primary});
+              @extend .cc-transition;
+            }
+
+            &:hover {
+              color: var(--dm-feature-primary, #{$cc-primary});
+
+              &::after {
+                transform: translateX(10px);
+              }
+            }
+          }
+       }
+    }
+}

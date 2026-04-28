@@ -6,7 +6,7 @@ $faq_section_title = $args['faq_section_title'];
 if (!empty($faq_section_title['title'])) :
 ?>
     <section class="ccpigd-section cc-relative ccpigd-faq">
-        <div class="ccpigd-container ccpigd-small-width">
+        <div class="container ccpigd-small-width">
 
             <div class="section-title-box text-center">
                 <h2><?php echo esc_html($faq_section_title['title']); ?></h2>
@@ -44,7 +44,7 @@ if (!empty($faq_section_title['title'])) :
                 ?>
             </div><!-- /.ccpigd-faq-wrapper -->
 
-        </div><!-- /.ccpigd-container -->
+        </div><!-- /.container -->
     </section>
 <?php
 endif;

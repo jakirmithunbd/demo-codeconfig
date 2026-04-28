@@ -1,3 +1,9 @@
+<?php
+defined('ABSPATH') || exit;
+
+$page_name = $args['page_name'] ?? '';
+?>
+
 <!doctype html>
 <html <?php language_attributes(); ?>>
 
@@ -13,6 +19,6 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class($page_name . "-page"); ?>>
 
     <?php wp_body_open(); ?>
