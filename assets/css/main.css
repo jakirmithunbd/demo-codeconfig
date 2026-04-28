@@ -358,7 +358,7 @@
   align-items: flex-end;
 }
 
-.align-center, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu, .cc-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.contact-btn a, .cc-products-menu ul li a, .section-title .title-tag {
+.align-center, .codeconfig-header .header-menu-wrap .main-header-menu .main-menu, .cc-header .header-menu-wrap .main-header-menu .main-menu li.menu-item.contact-btn a, .cc-products-menu ul li a {
   align-items: center;
 }
 
@@ -816,10 +816,6 @@ body.igd-page {
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto 30px;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #e1f2a6;
-  font-weight: 500;
   gap: 10px;
   padding: 10px 12px;
   background: rgba(0, 172, 71, 0.0509803922);
@@ -838,6 +834,15 @@ body.igd-page {
   mask-size: contain;
   -webkit-mask-size: contain;
   background-color: #e1f2a6;
+}
+.section-title .title-tag span {
+  width: 50%;
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #e1f2a6;
+  font-weight: 500;
+  text-align: left;
 }
 .section-title .subtitle {
   color: var(--f-section-primary, #0061fe);
@@ -3228,6 +3233,10 @@ body.igd-page {
 .demo-feature {
   position: relative;
   z-index: 1;
+}
+.demo-feature.background {
+  background: linear-gradient(180deg, rgba(0, 172, 71, 0.05) 0, rgba(0, 172, 71, 0) 100%);
+  padding: clamp(30px, 4vw, 60px) 0;
 }
 .demo-feature__wrapper {
   gap: clamp(16px, 2vw, 24px);

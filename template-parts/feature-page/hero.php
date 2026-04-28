@@ -16,7 +16,8 @@ $dataMaps = [
 $config    = $dataMaps[$page_name] ?? [];
 
 $pro_button = get_field('google_drive_area', 'option');
-$hero_contents = get_field('feature_hero');
+$hero_contents = get_sub_field('banner_content');
+
 
 if (!empty($hero_contents['title'])):
 ?>
@@ -30,7 +31,7 @@ if (!empty($hero_contents['title'])):
         <div class="section-title">
             <span class="title-tag">
                 <i></i>
-                <?php echo esc_html__($hero_contents['sub_title'] ?? ''); ?>
+                <span><?php echo esc_html__($hero_contents['sub_title'] ?? ''); ?></span>
             </span>
 
             <h1><?php echo wp_kses_post($hero_contents['title']) ?></h1>

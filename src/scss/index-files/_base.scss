@@ -326,12 +326,9 @@ body.igd-page {
   padding-bottom: clamp(20px, 3vw, 40px);
   
   .title-tag {
-    @extend .d-flex, .align-center;
+    @extend .d-flex;
     width: fit-content;
     margin: 0 auto 30px;
-    @include font(16, 16, 150);
-    color: $ccpigd-secondary;
-    font-weight: 500;
     gap: 10px;
     padding: 10px 12px;
     background: $ccpigd-bg;
@@ -349,6 +346,14 @@ body.igd-page {
       mask-size: contain;
       -webkit-mask-size: contain;
       background-color: $ccpigd-secondary;
+    }
+    span {
+      width: 50%;
+      flex: 1;
+      @include font(16, 16, 150);
+      color: $ccpigd-secondary;
+      font-weight: 500;
+      text-align: left;
     }
   }
   .subtitle {
