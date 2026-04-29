@@ -23,7 +23,7 @@ if (!empty($hero_contents['title'])):
 ?>
 <section class="feature-hero section-top">
     <div class="feature-hero__bg">
-        <img src="<?php echo esc_url($config['background_url']); ?>"
+        <img src="<?php echo esc_url($config['background_url'] ?? '#'); ?>"
                 alt="<?php echo esc_attr__('Hero Background', 'demo-codeconfig'); ?>">
     </div>
 
