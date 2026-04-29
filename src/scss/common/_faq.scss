@@ -109,6 +109,7 @@ body.igd-page .cc-faqs {
     
         &.open-body {
           .cc-faqs__wrapper__item__question__arrow {
+            
             &::after,
             &::before {
               background: var(--faq-primary, #{$cc-primary});
