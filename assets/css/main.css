@@ -1110,6 +1110,10 @@ body.igd-page {
   -webkit-mask: url("../images/google-drive/arrow-right.svg");
           mask: url("../images/google-drive/arrow-right.svg");
 }
+.feature-btn.icon-category-search::before {
+  -webkit-mask: url("../images/category_search.svg");
+          mask: url("../images/category_search.svg");
+}
 .feature-btn.primary {
   color: #ffffff;
   background: var(--fbtn-primary, #0061fe);

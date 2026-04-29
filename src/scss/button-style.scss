@@ -181,6 +181,11 @@ body.igd-page {
         mask: url("../images/google-drive/arrow-right.svg");
         }
     }
+	&.icon-category-search {
+		&::before {
+			mask: url("../images/category_search.svg");
+		}
+	}
     &.primary {
         color: $cc-white;
         background: var(--fbtn-primary, #{$cc-primary});

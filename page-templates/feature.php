@@ -25,6 +25,9 @@ get_header( null, ['page_name' => $page_name,] )
         <?php elseif( get_row_layout() === 'feature' ): ?>
             <?php get_template_part('template-parts/feature-page/feature-section', null, ['page_name' => $page_name]); ?>
 
+        <?php elseif( get_row_layout() === 'call_to_action' ): ?>
+            <?php get_template_part('template-parts/feature-page/call-to-action', null, ['page_name' => $page_name]); ?>
+
         <?php endif; ?>
 
     <?php endwhile; ?>
@@ -33,7 +36,7 @@ get_header( null, ['page_name' => $page_name,] )
 
 
 <!-- Default CTA -->
-<?php get_template_part('/template-parts/footer/footer-cta'); ?>
+<?php get_template_part('/template-parts/footer/footer-cta', null, ['page_name' => $page_name]); ?>
 <!-- Default CTA -->
 
 <?php 
