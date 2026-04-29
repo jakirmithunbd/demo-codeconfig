@@ -57,7 +57,7 @@
                 {
                     "key": "field_69773aa7bc963",
                     "label": "",
-                    "name": "cc_footer_cta",
+                    "name": "cc",
                     "aria-label": "",
                     "type": "group",
                     "instructions": "",
@@ -94,7 +94,7 @@
                         {
                             "key": "field_69773aa7bc965",
                             "label": "Pro Button",
-                            "name": "cta_pro_button",
+                            "name": "pro_button",
                             "aria-label": "",
                             "type": "link",
                             "instructions": "",
@@ -127,7 +127,7 @@
                             "allow_in_bindings": 0,
                             "rows": 4,
                             "placeholder": "",
-                            "new_lines": ""
+                            "new_lines": "wpautop"
                         }
                     ]
                 },
@@ -152,7 +152,7 @@
                 {
                     "key": "field_69627454bd62f",
                     "label": "",
-                    "name": "igd_footer_cta",
+                    "name": "igd",
                     "aria-label": "",
                     "type": "group",
                     "instructions": "",
@@ -189,7 +189,7 @@
                         {
                             "key": "field_6974646731c32",
                             "label": "Pro Button",
-                            "name": "cta_pro_button",
+                            "name": "pro_button",
                             "aria-label": "",
                             "type": "link",
                             "instructions": "",
@@ -222,7 +222,7 @@
                             "allow_in_bindings": 0,
                             "rows": 4,
                             "placeholder": "",
-                            "new_lines": ""
+                            "new_lines": "wpautop"
                         }
                     ]
                 }
@@ -435,5 +435,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1777358501
+    "modified": 1777439766
 }

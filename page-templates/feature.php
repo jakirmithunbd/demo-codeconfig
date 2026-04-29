@@ -32,8 +32,9 @@ get_header( null, ['page_name' => $page_name,] )
 
 
 
-
-
+<!-- Default CTA -->
+<?php get_template_part('/template-parts/footer/footer-cta'); ?>
+<!-- Default CTA -->
 
 <?php 
 get_footer(null, ['page_name' => $page_name]); 

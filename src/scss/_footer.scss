@@ -2,135 +2,135 @@
 @use './index' as *;
 
 
-.cc-footer-cta {
-  width: 100%;
-  margin: 0 auto;
-  z-index: 12;
+// .cc-footer-cta {
+//   width: 100%;
+//   margin: 0 auto;
+//   z-index: 12;
 
-  .cc-cta-default-wrap,
-  .cc-cta-docs-wrap {
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    z-index: 1;
-  }
-}
+//   .cc-cta-default-wrap,
+//   .cc-cta-docs-wrap {
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     overflow: hidden;
+//     z-index: 1;
+//   }
+// }
 
-.cta-container-width {
-  max-width: 1330px;
-  padding: 0 25px;
-  z-index: 20;
+// .cta-container-width {
+//   max-width: 1330px;
+//   padding: 0 25px;
+//   z-index: 20;
 
-  .cc-cta-default-wrap {
-    border-radius: 20px;
-  }
-}
+//   .cc-cta-default-wrap {
+//     border-radius: 20px;
+//   }
+// }
 
-.cta-full-width {
-  max-width: 100%;
-}
+// .cta-full-width {
+//   max-width: 100%;
+// }
 
-.cta-full-width + .codeconfig-footer {
-  .footer-bottom {
-    padding-top: 110px;
+// .cta-full-width + .codeconfig-footer {
+//   .footer-bottom {
+//     padding-top: 110px;
 
-    @include maxbp(md) {
-      padding-top: 80px;
-    }
+//     @include maxbp(md) {
+//       padding-top: 80px;
+//     }
 
-    @include maxbp(sm) {
-      padding-top: 50px;
-    }
-  }
-}
+//     @include maxbp(sm) {
+//       padding-top: 50px;
+//     }
+//   }
+// }
 
-.cc-cta-default {
-  .cc-cta-default-wrap {
-    background: $cc-primary;
-    padding: 77px 50px;
+// .cc-cta-default {
+//   .cc-cta-default-wrap {
+//     background: $cc-primary;
+//     padding: 77px 50px;
 
-    @include maxbp(md) {
-      padding: 70px 20px;
-    }
+//     @include maxbp(md) {
+//       padding: 70px 20px;
+//     }
 
-    @include maxbp(md) {
-      padding: 50px 0;
-    }
+//     @include maxbp(md) {
+//       padding: 50px 0;
+//     }
 
-    @include maxbp(sm) {
-      padding: 40px 30px;
-    }
+//     @include maxbp(sm) {
+//       padding: 40px 30px;
+//     }
 
-    @include maxbp(xs) {
-      padding: 20px 0;
-    }
+//     @include maxbp(xs) {
+//       padding: 20px 0;
+//     }
 
-    .container {
-      @include maxbp(sm) {
-        flex-wrap: wrap;
-      }
+//     .container {
+//       @include maxbp(sm) {
+//         flex-wrap: wrap;
+//       }
 
-      .content-side {
-        width: 56%;
+//       .content-side {
+//         width: 56%;
 
-        @include maxbp(880) {
-          width: 100%;
-          text-align: center;
-        }
+//         @include maxbp(880) {
+//           width: 100%;
+//           text-align: center;
+//         }
 
-        @include maxbp(sm) {
-          width: 100%;
-          text-align: center;
-        }
+//         @include maxbp(sm) {
+//           width: 100%;
+//           text-align: center;
+//         }
 
-        @include maxbp(xs) {
-          text-align: center;
-        }
+//         @include maxbp(xs) {
+//           text-align: center;
+//         }
 
-        h2,
-        p {
-          color: $cc-white;
-        }
+//         h2,
+//         p {
+//           color: $cc-white;
+//         }
 
-        p {
-          @include maxbp(sm) {
-            padding-bottom: 0;
-          }
-        }
-      }
+//         p {
+//           @include maxbp(sm) {
+//             padding-bottom: 0;
+//           }
+//         }
+//       }
 
-      .button-side {
-        width: 40%;
-        @extend .d-flex, .justify-end;
+//       .button-side {
+//         width: 40%;
+//         @extend .d-flex, .justify-end;
 
-        @include maxbp(880) {
-          width: 100%;
-        }
+//         @include maxbp(880) {
+//           width: 100%;
+//         }
 
-        @include maxbp(sm) {
-          justify-content: center;
-        }
-      }
+//         @include maxbp(sm) {
+//           justify-content: center;
+//         }
+//       }
 
-      .partial-one,
-      .partial-two {
-        height: 30px;
-        width: 30px;
-        filter: opacity(0.2);
-      }
+//       .partial-one,
+//       .partial-two {
+//         height: 30px;
+//         width: 30px;
+//         filter: opacity(0.2);
+//       }
 
-      .partial-one {
-        left: -14px;
-        top: -34px;
-      }
+//       .partial-one {
+//         left: -14px;
+//         top: -34px;
+//       }
 
-      .partial-two {
-        right: 40%;
-        bottom: -20px;
-      }
-    }
-  }
-}
+//       .partial-two {
+//         right: 40%;
+//         bottom: -20px;
+//       }
+//     }
+//   }
+// }
 
 
 

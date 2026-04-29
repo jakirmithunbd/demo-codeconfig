@@ -323,7 +323,7 @@ body.igd-page {
   width: 100%;
   max-width: rem(850);
   margin: 0 auto;
-  padding-bottom: clamp(20px, 3vw, 40px);
+  margin-bottom: clamp(20px, 3vw, 40px);
   
   .title-tag {
     @extend .d-flex;

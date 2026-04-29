@@ -6,114 +6,123 @@
   gap: 12px;
 }
 .cc-btn {
-    @extend .flex-center, .cc-transition;
-    font-size: clamp(16, 20, 100);
-    font-weight: 500;
-    padding: rem(15) clamp(rem(10), 2vw, rem(30));
-    gap: rem(10);
-    border-style: solid;
-    border-width: rem(1);
-    border-radius: rem(100);
+	@extend .align-center, .cc-relative, .cc-transition;
+	display: inline-flex;
+	border-radius: 100px;
+	padding: 10px;
+	gap: 20px;
 
-    @include maxbp(xs) {
-        width: 80%;
-    }
+	@include maxbp(xs) {
+		grid-area: 10px;
+	}
 
-    &.icon-right {
-        flex-direction: row-reverse;
-    }
+	.cc-btn-text {
+		@include font(16, 18, 150);
+		font-weight: 500;
+		font-family: $dm;
+		padding: 0 10px;
 
-    &.icon {
-        @extend .cc-relative;
+		@include maxbp(xs) {
+			padding: 0 5px;
+		}
+	}
 
-        &::before {
-        content: "";
-        width: 18px;
-        aspect-ratio: 1;
-        @extend .cc-mask-cover, .cc-transition;
-        }
-    }
-    &.icon-wordpress {
-        &::before {
-        mask: url("../images/google-drive/wordpress.svg");
-        }
-    }
-    &.icon-crown {
-        &::before {
-        mask: url("../images/google-drive/crown.svg");
-        }
-    }
-    &.icon-shapes {
-        &::before {
-        mask: url("../images/google-drive/shapes.svg");
-        }
-    }
-    &.icon-window {
-        &::before {
-        mask: url("../images/explore-products-icon.svg");
-        }
-    }
-    &.icon-arrow {
-        &::before {
-        mask: url("../images/google-drive/arrow-right.svg");
-        }
-    }
+	&.btn-icon {
+		
+		.cc-btn-icon {
+			@extend .flex-center, .cc-transition;
+			width: 40px;
+			height: 40px;
+			border-radius: 100px;
 
-    &.primary {
-        color: $cc-white;
-        background: $cc-primary;
-        border-color: $cc-primary;
+			@include maxbp(xs) {
+				width: 30px;
+				height: 30px;
+			}
 
-        &::before {
-        background-color: $cc-white;
-        }
+			img {
+				max-width: 17px;
 
-        &:hover {
-        color: $cc-primary;
-        background: $cc-white;
+				@include maxbp(xs) {
+					max-width: 13px;
+				}
+			}
+		}
+	}
 
-        &::before {
-            background-color: $cc-primary;
-        }
-        }
-    }
-    &.secondary {
-        color: $cc-primary;
-        background: $cc-white;
-        border-color: $cc-primary;
+	&.icon-left {
+		flex-direction: row-reverse;
+	}
 
-        &::before {
-        background-color: $cc-primary;
-        }
+	&.btn-blue {
+		background: $cc-primary;
+		color: #fff;
 
-        &:hover {
-        color: $cc-white;
-        background: $cc-primary;
+		&:hover {
+			background: #002abd;
+		}
 
-        &::before {
-            background-color: $cc-white;
-        }
-        }
-    }
-    &.white {
-      color: $cc-black;
-      background: $cc-white;
-      border-color: $cc-white;
-      
-      &::before {
-        background-color: $cc-black;
-      }
+		&.btn-icon {
+			.cc-btn-icon {
+				background: #fff;
+			}
+		}
+	}
 
-      &:hover {
-        color: $cc-white;
-        background: $cc-black;
-        border-color: $cc-black;
-        
-        &::before {
-          background-color: $cc-white;
-        }
-      }
-    }
+	&.btn-violet {
+		background: #9448ff;
+		color: #fff;
+
+		&.btn-icon {
+			.cc-btn-icon {
+				background: transparent;
+			}
+		}
+	}
+
+	&.btn-white {
+		background: #fff;
+		color: #000;
+
+		&:hover {
+			background: #b4b4b4;
+		}
+	}
+
+	&.btn-transparent {
+		background: transparent;
+		color: $cc-primary;
+		border: 1px solid $cc-primary;
+
+		&:hover {
+			background: $cc-primary;
+			color: #fff;
+		}
+	}
+
+	&.icon-bg-black {
+		&.btn-icon {
+			.cc-btn-icon {
+				background: #000;
+
+				img {
+					filter: brightness(0) invert(1);
+				}
+			}
+		}
+	}
+
+	&.icon-rotate {
+		.cc-btn-icon {
+			transform: rotate(0deg);
+		}
+
+		&:hover {
+			.cc-btn-icon {
+				transform: rotate(35deg);
+			}
+		}
+	}
 }
 
 

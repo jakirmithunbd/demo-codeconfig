@@ -35,7 +35,7 @@
 </section>
 
 <!-- Default CTA -->
-<?php get_template_part('/template-parts/footer/footer-cta-default'); ?>
+<?php get_template_part('/template-parts/footer/footer-cta'); ?>
 <!-- Default CTA -->
 
 <?php 

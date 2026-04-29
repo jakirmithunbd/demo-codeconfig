@@ -1,0 +1,122 @@
+
+
+@use "./index" as *;
+
+body.igd-page .footer-cta {
+   --fcta-section-bg:         #{$ccpigd-bg}; 
+   --fcta-section-bg-img:     url(../images/google-drive/igd-cta-bg.svg);
+   --fcta-section-bg-shadow:  linear-gradient(180deg, rgba(0, 21, 13, .2) 0, rgb(0, 21, 13) 100%);
+   --fcta-section-border:     #{$ccpigd-border};
+   --fcta-title:              #{$cc-white};
+   --fcta-text:               #{$cc-white};
+}
+
+.footer-cta {
+    @extend .cc-relative;
+    z-index: 12;
+    margin-top: clamp(rem(40), 6vw, rem(80));
+    margin-bottom: 0;
+    padding: 0 rem(25);
+
+    &:has(.full-container) {
+        padding: 0;
+    }
+
+    &.top-position {
+        margin-bottom: clamp(rem(40), 6vw, rem(80));
+    }
+
+    &__wrapper {
+        @extend .cc-relative, .cc-bg-cover;
+        z-index: 1;
+        border: 1px solid var(--fcta-section-border, #{$cc-primary});
+        border-radius: clamp(rem(12), 1.6vw, rem(20));
+        background-color: var(--fcta-section-bg, #{$cc-primary});
+        background-image: var(--fcta-section-bg-img, url(../images/Codeconfig-footer-top-bg.jpg));
+        overflow: hidden;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: var(--fcta-section-bg-shadow, transparent);
+        }
+        
+        &__inner {
+            @extend .d-flex, .flex-wrap, .align-center, .space-between, .cc-bg-cover;
+            gap: clamp(rem(05), 0.8vw, rem(10)) rem(30);
+            padding: clamp(rem(20), 5vw, rem(75)) clamp(rem(10), 2.5vw, rem(40));
+
+            &__content {
+                width: 56%;
+    
+                @include maxbp(md) {
+                    width: calc(50% - 15px);
+                }
+    
+                @include maxbp(sm) {
+                    width: 100%;
+                    justify-content: center;
+                    text-align: center;
+                }
+    
+                h2 {
+                    color: var(--fcta-title, #{$cc-white});
+                }
+                p {
+                    color: var(--fcta-text, #{$cc-white});
+                }
+            }
+    
+            &__buttons {
+                width: 40%;
+                @extend .d-flex, .flex-wrap, .justify-end;
+                gap: rem(15) rem(10);
+    
+                @include maxbp(md) {
+                    width: calc(50% - 15px);
+                }
+    
+                @include maxbp(sm) {
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+        }
+
+        &.full-container {
+            border-radius: 0;
+        }
+    }
+
+    &.igd-footer-cta,
+    &.idb-footer-cta,
+    &.aml-footer-cta,
+    &.docs-footer-cta {
+
+        .footer-cta__wrapper {
+            &__inner {
+                &__content,
+                &__buttons {
+                    width: 100%;
+                    justify-content: center;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.footer-cta.bottom-position + .cc-footer {
+    margin-top: -100px !important;
+    padding-top: rem(120) !important;
+    
+    @include maxbp(sm) {
+        margin-top: -60px !important;
+        padding-top: rem(60) !important;
+    }
+}
