@@ -121,12 +121,7 @@ endif;
 <?php
 $faq_section = get_field('faq_section');
 
-$faqData = [
-    'faq_section_title' => !empty($faq_section['faq_section_title']) ? $faq_section['faq_section_title'] : '',
-    'faqs' => !empty($faq_section['faqs']) ? $faq_section['faqs'] : '',
-];
-
-get_template_part('template-parts/faq', null, $faqData);
+get_template_part('template-parts/faq', null, ['faq_section' => $faq_section]);
 ?>
 <!-- FAQ Section End -->
 

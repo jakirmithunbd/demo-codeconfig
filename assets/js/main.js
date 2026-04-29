@@ -116,24 +116,6 @@
     }
   }
 
-  // Accordion 
-  function ccAccordion() {
-    document.querySelectorAll('.accordion-head').forEach(function(head){
-      head.addEventListener('click', function(){
-
-          const item = this.closest('.accordion-item');
-
-          document.querySelectorAll('.accordion-item').forEach(function(el){
-              if(el !== item){
-                  el.classList.remove('accordion-active');
-              }
-          });
-
-          item.classList.toggle('accordion-active');
-        });
-    });
-  }
-
   // Free Download PopUp start
   function freeDownloadPopUp() {
       const ccpFreeDownloadButtons = document.querySelectorAll(".ccp-free-download-btn");
@@ -252,40 +234,122 @@
     // Free Download PopUp JS end
 
 
-    // Mobile Menu Dropdown start
-  function mobileMenuDropdown() {
-    if (window.innerWidth < 992) {
-    document.querySelectorAll('.dropdown').forEach(dropdown => {
-        dropdown.addEventListener('click', function(e) {
-
-            // If the clicked element is an <a>, do nothing
-            if (e.target.tagName.toLowerCase() === 'a') return;
-
-            const isActive = this.classList.contains('active-dopdown-menu');
-
-            // Remove from all
-            document.querySelectorAll('.dropdown').forEach(item => {
-                item.classList.remove('active-dopdown-menu');
-            });
-
-            // Toggle
-            if (!isActive) {
-                this.classList.add('active-dopdown-menu');
-            }
-
-        });
-    });
-  }
-  }
-  // Mobile Menu Dropdown end
-
   // Global On Load
   function codeConfigGlobalOnLoad() {
     updateHeaderHeights();
     ccpCommonHeader();
     scrollToTop();
-    ccAccordion();
     freeDownloadPopUp();
-    mobileMenuDropdown();
   }
-  window.addEventListener("DOMContentLoaded", codeConfigGlobalOnLoad);//# sourceMappingURL=main.js.map
+  window.addEventListener("DOMContentLoaded", codeConfigGlobalOnLoad);
+
+
+  
+// jQuery-dependent functions: mobile dropdown, counter, rich accordion
+(function ($) {
+	// Mobile Menu Dropdown
+	function mobileMenuDropdown() {
+		if (window.innerWidth <= 1024) {
+			const menuItemChilden = document.querySelectorAll(
+				".menu-item-has-children",
+			);
+
+			const dropdownMenu = document.querySelectorAll(".dropdown-menu");
+
+			dropdownMenu.forEach((item, i) => {
+				$(item).click(function (e) {
+					e.stopPropagation();
+				});
+			});
+
+			if (menuItemChilden) {
+				menuItemChilden.forEach((item, i) => {
+					$(item).click(function (e) {
+						if (e.target.nodeName === "SPAN") {
+							return;
+						}
+						e.preventDefault();
+
+						dropdownMenu.forEach((answer, index) => {
+							if (i !== index && $(answer).is(":visible")) {
+								$(answer).slideUp(300);
+								$(menuItemChilden[index]).removeClass("active-dopdown-menu");
+							}
+						});
+
+						if ($(dropdownMenu[i]).is(":hidden")) {
+							$(dropdownMenu[i]).slideDown(300);
+							$(item).addClass("active-dopdown-menu");
+						} else {
+							$(dropdownMenu[i]).slideUp(300);
+							$(item).removeClass("active-dopdown-menu");
+						}
+					});
+				});
+			}
+		}
+	}
+
+	// jQuery Accordion (slide animation)
+	function initializeAccordion() {
+		$(".cc-accordion").each(function () {
+			const accordion = $(this);
+			const accordionItems = accordion.find(".accordion-item");
+			const accordionHeaders = accordion.find(".accordion-head");
+			const accordionDefaultClose = accordion.find(".default-close");
+
+			const firstItem = accordionItems.first();
+			if (accordionDefaultClose.length > 0) {
+				firstItem.removeClass("open-body");
+				firstItem.find(".accordion-body").hide();
+			} else {
+				firstItem.addClass("open-body");
+				firstItem.find(".accordion-body").show();
+			}
+
+			accordionItems.slice(1).find(".accordion-body").hide();
+			accordionItems.slice(1).removeClass("open-body");
+
+			if ($(".accordion-another-item").length > 0) {
+				$(".accordion-another-item").first().addClass("open-another-body");
+			}
+
+			accordionHeaders.each(function () {
+				$(this).on("click", function () {
+					const body = $(this).siblings(".accordion-body");
+					const parentItem = $(this).closest(".accordion-item");
+
+					accordion.find(".accordion-body").not(body).slideUp(300);
+					accordion
+						.find(".accordion-item")
+						.not(parentItem)
+						.removeClass("open-body");
+
+					body.slideToggle(300);
+					parentItem.toggleClass("open-body");
+
+					if ($(".accordion-another-item").length > 0) {
+						$(".accordion-another-item").each(function () {
+							if (
+								parentItem.hasClass("open-body") &&
+								parentItem.data("id") === $(this).data("id")
+							) {
+								$(this).addClass("open-another-body");
+							} else {
+								$(this).removeClass("open-another-body");
+							}
+						});
+					}
+				});
+			});
+		});
+	}
+
+	function codeConfigload() {
+		mobileMenuDropdown();
+		initializeAccordion();
+	}
+
+	window.addEventListener("DOMContentLoaded", codeConfigload);
+})(jQuery);
+//# sourceMappingURL=main.js.map

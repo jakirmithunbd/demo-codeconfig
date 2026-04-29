@@ -28,6 +28,11 @@ get_header( null, ['page_name' => $page_name,] )
         <?php elseif( get_row_layout() === 'call_to_action' ): ?>
             <?php get_template_part('template-parts/feature-page/call-to-action', null, ['page_name' => $page_name]); ?>
 
+        <?php elseif( get_row_layout() === 'faq' ): ?>
+
+        <?php $faq_section = get_sub_field('faq_content');
+            get_template_part('template-parts/faq', null, ['faq_section' => $faq_section]); ?>
+
         <?php endif; ?>
 
     <?php endwhile; ?>

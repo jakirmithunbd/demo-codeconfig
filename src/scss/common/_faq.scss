@@ -1,0 +1,126 @@
+
+@use '../index' as *;
+
+
+body.igd-page .cc-faqs {
+    --faq-section-bg:       linear-gradient(180deg, rgba(0, 172, 71, 0.05 ) 0, #00ac4700 100%);
+    --faq-primary:          #{$ccpigd-primary};
+    --faq-heading:          #{$cc-white};
+    --faq-text:             #cfe3da;
+    --faq-bg:               #{$ccpigd-bg};
+    --faq-border:           #{$ccpigd-border};
+}
+
+.cc-faqs {
+    @extend .cc-relative;
+
+    &__wrapper {
+      @extend .d-flex, .flex-col;
+      gap: clamp(10px, 2vw, 24px);
+      padding-top: clamp(10px, 1.5vw, 20px);
+    
+      &__item {
+        border: 1px solid var(--faq-border, #{$cc-border});
+        background: var(--faq-bg, #{$cc-white});
+        border-radius: clamp(4px, 1vw, 16px);
+    
+        &__question {
+          cursor: pointer;
+          display: grid;
+          padding: clamp(20px, 2.2vw, 24px);
+          grid-template-columns: 1fr 30px;
+          background: transparent;
+          width: 100%;
+          text-align: left;
+    
+          &__title {
+            color: var(--faq-heading, #{$cc-primary});
+            font-size: clamp(16px, 2vw, 22px);
+            line-height: clamp(20px, 2.4vw, 26px);
+            font-weight: 500;
+            margin: 0;
+    
+            span {
+              color: var(--faq-primary, #{$cc-primary});
+              padding-right: 8px;
+              font-weight: 700;
+    
+              @include maxbp(sm) {
+                padding-right: 5px;
+              }
+            }
+          }
+          &__arrow {
+            justify-self: end;
+            width: 20px;
+            aspect-ratio: 1 / 1;
+            cursor: pointer;
+    
+            &::after,
+            &::before {
+              position: absolute;
+              content: "";
+              width: 2px;
+              height: 12px;
+              background: var(--faq-text, #{$cc-primary});
+              border-radius: 5px;
+              transition: all 0.3s ease;
+            }
+    
+            &::before {
+              right: 5px;
+              transform: rotate(45deg);
+            }
+    
+            &::after {
+              left: 5px;
+              transform: rotate(-45deg);
+            }
+          }
+        }
+    
+        &__answer {
+          padding: clamp(20px, 2.2vw, 24px);
+          padding-top: 0;
+    
+          p {
+            color: var(--faq-text, #{$cc-text});
+            @include font(16, 18, 160);
+          }
+    
+          ul,
+          ol {
+            padding: 10px 0 10px clamp(30px, 3.5vw, 40px);
+            color: var(--faq-text, #{$cc-text});
+          }
+    
+          a {
+            color: currentColor;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+    
+            &:hover {
+              color: var(--faq-primary, #{$cc-primary});
+            }
+          }
+        }
+    
+        &.open-body {
+          .cc-faqs__wrapper__item__question__arrow {
+            &::after,
+            &::before {
+              background: var(--faq-primary, #{$cc-primary});
+            }
+    
+            &::before {
+              transform: rotate(-45deg);
+            }
+    
+            &::after {
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+    }
+}
