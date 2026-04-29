@@ -15,7 +15,7 @@ $dataMaps = [
 
 $config    = $dataMaps[$page_name] ?? [];
 
-$pro_button = get_field('google_drive_area', 'option');
+$pro_button = get_field('igd_global', 'option');
 $hero_contents = get_sub_field('banner_content');
 
 
@@ -41,11 +41,13 @@ if (!empty($hero_contents['title'])):
 
             <div class="btn-group">                        
                 <button class="ccp-free-download-btn feature-btn primary icon icon-left icon-wordpress"><?php echo esc_html('Download Free', 'demo-codeconfig'); ?></button>
+                <?php if (!empty($pro_button['pro_button']['url'])) : ?>
                 <a href="<?php echo esc_url($pro_button['pro_button']['url'] ?? ''); ?>"
                     class="ccpigd-link-btn feature-btn secondary icon icon-crown"
                     target="<?php echo esc_attr($pro_button['pro_button']['target'] ?? '_self'); ?>">
                     <?php echo esc_html($pro_button['pro_button']['title'] ?? ''); ?>
                 </a>
+                <?php endif; ?>
             </div>
 
         </div>

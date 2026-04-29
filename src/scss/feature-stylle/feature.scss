@@ -2,11 +2,12 @@
 @use '../index' as *;
 
 body.igd-page {
-    --dm-feature-primary : #{$ccpigd-primary};
-    --dm-feature-title : #{$cc-white};
-    --dm-feature-text : #{$ccpigd-text};
-    --dm-feature-border : #{$ccpigd-border};
-    --dm-feature-bg : #{$ccpigd-bg};
+    --dm-feature-section-bg :   linear-gradient(180deg, rgba(0, 172, 71, .05) 0, rgba(0, 172, 71, 0) 100%);
+    --dm-feature-primary :      #{$ccpigd-primary};
+    --dm-feature-title :        #{$cc-white};
+    --dm-feature-text :         #{$ccpigd-text};
+    --dm-feature-border :       #{$ccpigd-border};
+    --dm-feature-bg :           #{$ccpigd-bg};
 
 }
 
@@ -15,7 +16,7 @@ body.igd-page {
     z-index: 1;
 
     &.background {
-      background: linear-gradient(180deg, rgba(0, 172, 71, .05) 0, rgba(0, 172, 71, 0) 100%);
+      background: var(--dm-feature-section-bg, transparent);
       padding: clamp(30px, 4vw, 60px) 0;
     }
 

@@ -234,12 +234,24 @@
     // Free Download PopUp JS end
 
 
+    function reviewItemCalculate() {
+    const codeConfigReviews = document.querySelector(".cc-reviews");
+    if (codeConfigReviews) {
+        const reviewItems = document.querySelectorAll(".cc-review-item");
+
+        if (reviewItems.length <= 3) {
+            codeConfigReviews.classList.add("limited-reviews");
+        }
+    }
+  }
+
   // Global On Load
   function codeConfigGlobalOnLoad() {
     updateHeaderHeights();
     ccpCommonHeader();
     scrollToTop();
     freeDownloadPopUp();
+    reviewItemCalculate();
   }
   window.addEventListener("DOMContentLoaded", codeConfigGlobalOnLoad);
 

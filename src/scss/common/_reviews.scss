@@ -1,0 +1,138 @@
+
+@use '../index' as *;
+
+body.igd-page .feature-review{
+    --review-primary-color:    #{$ccpigd-primary};
+    --review-section-bg:       linear-gradient(180deg, rgba(0, 172, 71, 0.05 ) 0, #00ac4700 100%);
+    --review-section-paddding:  clamp(40px, 6vw, 80px);
+    --review-bg:               radial-gradient(60.69% 64.43% at 0% 100%, rgba(0, 172, 71, 0.2) 0%, rgba(0, 172, 71, 0.05) 100%);
+    --review-border:           #{$ccpigd-border};
+    --review-bg-logo:          url(../images/igd-review-watermark-logo.svg);
+    --review-title:            #{$cc-white};
+    --review-text:             #{$ccpigd-text};
+    --review-name:             #{$cc-white};
+    --review-role:             #{$ccpigd-text};
+}
+
+.feature-review {
+    background: var(--review-section-bg, transparent);
+    padding-block: var(--review-section-paddding, 0);
+
+    .feature-review-list {
+        column-count: 3;
+        text-align: center;
+
+        @include maxbp(md) {
+            column-count: 2;
+        }
+
+        @include maxbp(xs) {
+            column-count: 1;
+        }
+        &.limited-reviews {
+            column-count: inherit;
+            display: grid;
+            gap: rem(24);
+            align-items: baseline;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+            .fm-review-list__item {
+                max-width: unset;
+                margin: 0;
+            }
+        }
+
+        &__item {
+            position: relative;
+            display: inline-block;
+            background: var(--review-bg, transparent);
+            border: 1px solid var(--review-border, #{$cc-border});
+            border-radius: clamp(8px, 1.5vw, 16px);
+            padding: 24px;
+            margin: auto;
+            margin-bottom: 24px;
+            width: 100%;
+            max-width: 424px;
+            text-align: start;
+
+            @include maxbp(md) {
+                max-width: 496px;
+            }
+
+            @include maxbp(sm) {
+                max-width: 100%;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 68px;
+                height: 60px;
+                top: 10px;
+                right: 10px;
+                background-image: var(--review-bg-logo, transparent);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            &__rating {
+                width: 100%;
+                max-width: rem(180);
+                height: rem(30);
+                margin-bottom: clamp(16px, 4vw, 24px);
+                mask: url(../images/stars.svg);
+                mask-size: contain;
+                mask-repeat: no-repeat;
+                mask-position: center;
+                background-color: var(--review-primary-color, #{$cc-primary});
+            }
+
+            h3 {
+                color: var(--review-title, #{$cc-primary});
+                @include font(18, 24, 160);
+                font-weight: 600;
+                margin-bottom: rem(16);
+            }
+            p {
+                color: var(--review-text, #{$cc-text});
+                @include font(16, 16, 160);
+                font-weight: 500;
+                margin-bottom: clamp(16px, 4vw, 24px);
+            }
+            &__client-info {
+                @extend .d-flex, .align-center;
+                gap: rem(10);
+
+                .photo {
+                    @extend .flex-center;
+                    width: rem(50);
+                    aspect-ratio: 1 / 1;
+                    border-radius: rem(8);
+                    border: 1px solid var(--review-primary-color, #{$cc-primary});
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                        aspect-ratio: 1 / 1;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+                .client-bio {
+                    @extend .d-flex, .flex-col;
+                    gap: rem(5);
+
+                    .name {
+                        color: var(--review-name, #{$cc-primary});
+                        @include font(16, 18, 100);
+                        font-weight: 600;
+                    }
+                    .role {
+                        color: var(--review-role, #{$cc-text});
+                        @include font(14, 14, 100);
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+}

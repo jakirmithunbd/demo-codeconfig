@@ -1,6 +1,6 @@
 
 <?php
-$global_popup_section = get_field('google_drive_area', 'option');
+$global_popup_section = get_field('igd_global', 'option');
 $download_popup_box = $global_popup_section['download_popup'] ?? [];
 $ccp_free_download_link = $download_popup_box['ccp_free_download'];
 

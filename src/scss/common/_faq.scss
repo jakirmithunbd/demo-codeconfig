@@ -13,6 +13,8 @@ body.igd-page .cc-faqs {
 
 .cc-faqs {
     @extend .cc-relative;
+    background: var(--faq-section-bg, transparent);
+    padding: clamp(30px, 4vw, 60px) 0;
 
     &__wrapper {
       @extend .d-flex, .flex-col;

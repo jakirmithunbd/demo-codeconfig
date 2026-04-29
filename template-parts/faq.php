@@ -13,7 +13,7 @@ if (!empty($faq_section_title['title'])) :
             <div class="section-title">
                 <h2><?php echo esc_html($faq_section_title['title']); ?></h2>
                 <?php if (!empty($faq_section_title['description'])) : ?>
-                    <p><?php echo esc_html($faq_section_title['description']); ?></p>
+                    <?php echo wp_kses_post($faq_section_title['description']); ?>
                 <?php endif; ?>
             </div>
 
