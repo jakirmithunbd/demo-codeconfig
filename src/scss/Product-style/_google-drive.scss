@@ -976,6 +976,22 @@
             }
           }
         }
+
+        .igd-feature-video {
+          position: relative;
+          padding-bottom: 56.25%;
+          height: 0;
+          overflow: hidden;
+          border-radius: clamp(4px, 1vw, 12px);
+
+          iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
       }
     }
   }

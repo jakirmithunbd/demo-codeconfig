@@ -221,7 +221,8 @@
                     "choices": {
                         "image": "Image",
                         "short_code": "Short Code",
-                        "content": "Content"
+                        "content": "Content",
+                        "video": "Video"
                     },
                     "default_value": false,
                     "return_format": "value",
@@ -328,6 +329,33 @@
                     "toolbar": "full",
                     "media_upload": 1,
                     "delay": 0,
+                    "parent_repeater": "field_697445a4d9150"
+                },
+                {
+                    "key": "field_69ff18b842f31",
+                    "label": "Video",
+                    "name": "video",
+                    "aria-label": "",
+                    "type": "oembed",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_697446dcd9153",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "width": "",
+                    "height": "",
+                    "allow_in_bindings": 0,
                     "parent_repeater": "field_697445a4d9150"
                 }
             ]
@@ -518,5 +546,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1778296907
+    "modified": 1778325841
 }

@@ -102,6 +102,12 @@ if ($igd_feature) :
                                     echo wp_kses_post($feature['feature_content']);
                                     ?>
                                 </div>
+                             <?php
+                            elseif ($feature_type === 'video' && !empty($feature['video'])) :
+                            ?>
+                                <div class="igd-feature-video">
+                                    <?php echo $feature['video']; ?>
+                                </div>
                             <?php
                             endif;
                             ?>
