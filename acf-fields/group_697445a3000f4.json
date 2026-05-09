@@ -422,7 +422,7 @@
                             "allow_in_bindings": 0,
                             "rows": 4,
                             "placeholder": "",
-                            "new_lines": ""
+                            "new_lines": "wpautop"
                         }
                     ]
                 },
@@ -518,5 +518,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1777443953
+    "modified": 1778296907
 }

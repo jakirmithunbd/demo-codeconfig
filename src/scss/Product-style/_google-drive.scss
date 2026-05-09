@@ -949,9 +949,16 @@
         border: 1px solid $ccpigd-border;
         border-radius: clamp(4px, 1vw, 16px);
 
+        & > * {
+          width: 100%;
+        }
+
         .igd-feature-content {
           color: $ccpigd-text;
 
+          p:not(:last-child) {
+            margin-bottom: rem(20);
+          }
           ul,
           ol {
             color: currentColor;

@@ -3030,8 +3030,14 @@ body.igd-page .footer-cta {
   border: 1px solid rgba(0, 172, 71, 0.2);
   border-radius: clamp(4px, 1vw, 16px);
 }
+.ccpigd-demo-feature .demo-feature-list .demo-feature-item .demo-feature-shortcode > * {
+  width: 100%;
+}
 .ccpigd-demo-feature .demo-feature-list .demo-feature-item .demo-feature-shortcode .igd-feature-content {
   color: rgba(240, 255, 246, 0.6980392157);
+}
+.ccpigd-demo-feature .demo-feature-list .demo-feature-item .demo-feature-shortcode .igd-feature-content p:not(:last-child) {
+  margin-bottom: 1.25rem;
 }
 .ccpigd-demo-feature .demo-feature-list .demo-feature-item .demo-feature-shortcode .igd-feature-content ul,
 .ccpigd-demo-feature .demo-feature-list .demo-feature-item .demo-feature-shortcode .igd-feature-content ol {
