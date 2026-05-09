@@ -933,6 +933,8 @@
 }
 
 .ccpigd-demo-feature {
+  z-index: 1;
+  
   .demo-feature-list {
     gap: clamp(20px, 3vw, 35px);
 

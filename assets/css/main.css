@@ -3013,6 +3013,9 @@ body.igd-page .footer-cta {
   border-radius: clamp(6px, 1vw, 16px);
 }
 
+.ccpigd-demo-feature {
+  z-index: 1;
+}
 .ccpigd-demo-feature .demo-feature-list {
   gap: clamp(20px, 3vw, 35px);
 }
