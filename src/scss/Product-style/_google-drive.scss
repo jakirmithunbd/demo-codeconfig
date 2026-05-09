@@ -959,11 +959,13 @@
           p:not(:last-child) {
             margin-bottom: rem(20);
           }
+
           ul,
           ol {
             color: currentColor;
             padding: 10px 0 10px clamp(30px, 3.5vw, 40px);
           }
+          
           a {
             @extend .cc-transition;
             color: currentColor;
